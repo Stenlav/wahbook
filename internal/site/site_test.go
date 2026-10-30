@@ -171,3 +171,72 @@ achievements:
 		t.Error("a rule that names an unknown book must fail the build")
 	}
 }
+
+func TestTranslationStatusOnCards(t *testing.T) {
+	snap := &fantlab.TranslationsFile{Updated: "2026-10-30", Books: map[string]fantlab.Translation{
+		"horus-rising": {Status: fantlab.Published, Publisher: "Фантастика Книжный Клуб", Year: 2021, Translators: []string{"Ирина Савельева"}},
+		"warhawk":      {Status: fantlab.Fan, Translators: []string{"Некто Переводчик"}},
+		"dreadwing":    {Status: fantlab.None},
+		"scars":        {Status: fantlab.Published, Publisher: "Азбука"},
+	}}
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	out := filepath.Join(t.TempDir(), "dist")
+	if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/", Translations: snap}); err != nil {
+		t.Fatal(err)
+	}
+	raw, _ := os.ReadFile(filepath.Join(out, "index.html"))
+	index := string(raw)
+	for _, want := range []string{
+		`<p class="tr tr-published" title="Издана на русском: Фантастика Книжный Клуб, 2021; перевод: Ирина Савельева">На русском</p>`,
+		`<p class="tr tr-fan"`, `>Самиздат</p>`, `>Нет перевода</p>`,
+		`data-tr="published"`, `data-tr="fan"`, `data-tr="none"`,
+		`id="f-tr"`, `<option value="fan">Только самиздат</option>`,
+		`title="Издана на русском: Азбука"`, // no year known: nothing is invented
+	} {
+		if !strings.Contains(index, want) {
+			t.Errorf("index.html lacks %q", want)
+		}
+	}
+	if strings.Contains(index, "Некто Переводчик") {
+		t.Error("translators of a fan translation must not be listed")
+	}
+	// A book with neither a snapshot entry nor an override has an unknown status and gets no line.
+	if strings.Contains(index, `<p class="tr tr-"`) {
+		t.Error("an unknown status must not render a line")
+	}
+	// `translation:` in books.yaml wins over the snapshot; both books without FantLab data are covered by overrides.
+	for id, want := range map[string]string{"lupercal-s-war": fantlab.Fan, "gnev-luperkalya": fantlab.Fan, "wrath-of-terra": fantlab.None} {
+		b, ok := cat.Book(id)
+		if !ok {
+			t.Fatalf("%s missing", id)
+		}
+		if status, _, _ := translationText(b, nil); status != want {
+			t.Errorf("%s: override gives %q, want %q", id, status, want)
+		}
+	}
+}
+
+func TestEveryBookHasATranslationStatus(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	snap, err := fantlab.LoadTranslations("../../data/translations.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	counts := map[string]int{}
+	for _, b := range cat.Books() {
+		status, label, note := translationText(b, snap)
+		if status == "" || label == "" || note == "" {
+			t.Errorf("%s has no translation status: run `go run ./cmd/translations` or set `translation:` in books.yaml", b.ID)
+		}
+		counts[status]++
+	}
+	if counts[fantlab.Published] < 80 || counts[fantlab.Fan] < 10 || counts[fantlab.None] < 3 {
+		t.Errorf("suspicious distribution: %v", counts)
+	}
+}

@@ -31,7 +31,8 @@ type Config struct {
 	APIBase   string        // backend URL for accounts; empty = no accounts, progress stays in the browser
 	Ratings   *fantlab.File // FantLab snapshot; nil = no ratings shown
 
-	Achievements *achievements.Config // nil = no achievements
+	Achievements *achievements.Config      // nil = no achievements
+	Translations *fantlab.TranslationsFile // Russian editions; nil = unknown for every book without an override
 }
 
 // minVotes is how many FantLab ratings a book needs before its average is
@@ -46,6 +47,9 @@ type pageBook struct {
 	mark       float64 // the same rating as a number; 0 = not rated
 	Votes      int
 	FantLabURL string // the work page, or a search when the book is not on FantLab
+	TrStatus   string // published | fan | none; empty when unknown
+	TrLabel    string // short text for the card
+	TrNote     string // longer text for the tooltip and the book dialog
 }
 
 type authorOption struct {
@@ -98,6 +102,7 @@ func Build(cfg Config) error {
 					pb.Rating, pb.Votes, pb.mark = fmt.Sprintf("%.2f", e.Rating), e.Votes, e.Rating
 				}
 			}
+			pb.TrStatus, pb.TrLabel, pb.TrNote = translationText(b, cfg.Translations)
 			if _, err := os.Stat(filepath.Join(cfg.CoversDir, b.ID+".jpg")); err == nil {
 				pb.CoverURL = cfg.BasePath + "covers/" + b.ID + ".jpg"
 			}
@@ -188,6 +193,46 @@ func normalizeBase(b string) string {
 		b += "/"
 	}
 	return b
+}
+
+// translationText says how a book exists in Russian. A `translation:` set by hand in
+// books.yaml wins over the FantLab snapshot; with neither, the status is unknown.
+func translationText(b *catalog.Book, snap *fantlab.TranslationsFile) (status, label, note string) {
+	t, ok := snap.Entry(b.ID)
+	if b.Translation != "" {
+		if !ok || t.Status != b.Translation {
+			t = fantlab.Translation{Status: b.Translation} // no details to show
+		}
+		ok = true
+	}
+	if !ok {
+		return "", "", ""
+	}
+	var parts []string
+	switch t.Status {
+	case fantlab.Published:
+		label = "На русском"
+		parts = append(parts, "Издана на русском")
+		if t.Publisher != "" {
+			edition := t.Publisher
+			if t.Year != 0 {
+				edition += fmt.Sprintf(", %d", t.Year)
+			}
+			parts[0] += ": " + edition
+		}
+	case fantlab.Fan:
+		label = "Самиздат"
+		parts = append(parts, "Официального издания нет: русский текст есть только в самиздате или любительском переводе")
+	default:
+		t.Status = fantlab.None
+		label = "Нет перевода"
+		parts = append(parts, "На русский язык не переведена")
+	}
+	// Credits are shown for official editions only; fan translations are often a team of nicknames.
+	if t.Status == fantlab.Published && len(t.Translators) > 0 {
+		parts = append(parts, "перевод: "+strings.Join(t.Translators, ", "))
+	}
+	return t.Status, label, strings.Join(parts, "; ")
 }
 
 // authorOptions lists the people books are credited to (authors, and editors of

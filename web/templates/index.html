@@ -79,6 +79,14 @@
               {{range .Authors}}<option value="{{.Key}}">{{.Label}}</option>{{end}}
             </select>
           </label>
+          <label class="field"><span>Перевод</span>
+            <select id="f-tr">
+              <option value="">Любой</option>
+              <option value="published">Издана на русском</option>
+              <option value="fan">Только самиздат</option>
+              <option value="none">Нет перевода</option>
+            </select>
+          </label>
           <label class="field"><span>Порядок</span>
             <select id="f-sort">
               <option value="series">По порядку серии</option>
@@ -118,7 +126,7 @@
     </div>
     <ul class="grid">
       {{range .Books}}
-      <li class="card" data-id="{{.ID}}" data-kind="{{.Kind}}" data-authors="{{.PeopleKeys}}" data-fantlab="{{if .Rating}}{{.FantLabURL}}{{end}}" data-rating="{{.Rating}}" data-votes="{{.Votes}}" data-summary="{{.Summary}}"
+      <li class="card" data-id="{{.ID}}" data-kind="{{.Kind}}" data-authors="{{.PeopleKeys}}" data-tr="{{.TrStatus}}" data-tr-note="{{.TrNote}}" data-fantlab="{{if .Rating}}{{.FantLabURL}}{{end}}" data-rating="{{.Rating}}" data-votes="{{.Votes}}" data-summary="{{.Summary}}"
           data-year="{{.Year}}" data-title="{{if .TitleRU}}{{.TitleRU}}{{else}}{{.Title}}{{end}}" data-by="{{if not .IsAnthology}}{{.AuthorLabel}}{{end}}"
           data-search="{{.Title}} {{.TitleRU}} {{.Author}} {{.AuthorRU}} {{.Editors}} {{.EditorsRU}} {{.Year}}">
         <button class="cover" type="button" data-open="{{.ID}}" aria-label="Подробнее: {{.Title}}">
@@ -136,6 +144,7 @@
           <p class="by">{{.AuthorLabel}}</p>
           {{with .AuthorOrig}}<p class="by-orig">{{.}}</p>{{end}}
           <p class="sub">{{.Year}} · {{kindLabel .Kind}}</p>
+          {{if .TrStatus}}<p class="tr tr-{{.TrStatus}}" title="{{.TrNote}}">{{.TrLabel}}</p>{{end}}
           <p class="rate">{{if .Rating}}<a href="{{.FantLabURL}}" target="_blank" rel="noopener" title="Средняя оценка читателей: {{.Rating}} (оценок: {{.Votes}})">★ {{.Rating}} <small>({{.Votes}})</small></a>{{else}}<span class="no-rate" title="На FantLab пока слишком мало оценок">★ нет оценок</span>{{end}}</p>
           <button class="status" type="button" data-status="{{.ID}}">Отметить</button>
         </div>
@@ -151,7 +160,7 @@
   <p>Неофициальный фан-проект. Warhammer 40,000, Horus Heresy и связанные названия — собственность Games Workshop Ltd.;
   обложки принадлежат их правообладателям и используются в информационных целях.</p>
   <p>Всего книг в каталоге: {{.TotalBooks}}. Данные — в <a href="{{.BasePath}}catalog.json">catalog.json</a>.</p>
-  <p>Оценки и аннотации — с <a href="https://fantlab.ru" target="_blank" rel="noopener">FantLab</a>; оценки — средние по читателям{{if .RatingsDate}} на {{.RatingsDate}}{{end}}, показаны, если оценок не меньше 5. Названия и описания серий — по <a href="https://warhammer40k.fandom.com/ru/wiki/Ересь_Хоруса_(серия)" target="_blank" rel="noopener">русской вики</a>.</p>
+  <p>Оценки, аннотации и сведения об изданиях — с <a href="https://fantlab.ru" target="_blank" rel="noopener">FantLab</a>; оценки — средние по читателям{{if .RatingsDate}} на {{.RatingsDate}}{{end}}, показаны, если оценок не меньше 5. Названия и описания серий — по <a href="https://warhammer40k.fandom.com/ru/wiki/Ересь_Хоруса_(серия)" target="_blank" rel="noopener">русской вики</a>.</p>
 </footer>
 
 <dialog id="book-dialog" aria-labelledby="bd-title">
@@ -165,6 +174,7 @@
       <p id="bd-by"></p>
       <p class="bd-orig" id="bd-by-orig"></p>
       <p class="bd-sub" id="bd-sub"></p>
+      <p class="bd-tr" id="bd-tr" hidden></p>
       <p class="bd-rating"><a id="bd-rating" href="#" target="_blank" rel="noopener" hidden></a></p>
       <details class="bd-annotation" id="bd-annotation" hidden>
         <summary>Аннотация</summary>
