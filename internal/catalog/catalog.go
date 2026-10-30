@@ -59,7 +59,7 @@ type Book struct {
 	EditorsRU   string `yaml:"-" json:"editorsRu,omitempty"` // from authors.yaml
 	Wiki        string `yaml:"wiki" json:"-"`                // page on the Russian wiki, "Page#Section"
 	FantLab     int    `yaml:"fantlab" json:"-"`             // FantLab work id; overrides the title search
-	Translation string `yaml:"translation" json:"-"`         // published | fan | none; overrides data/translations.json
+	Translation string `yaml:"translation" json:"-"`         // yes | no; overrides data/translations.json
 	Kind        Kind   `yaml:"kind" json:"kind"`
 }
 
@@ -297,9 +297,9 @@ func Parse(raw []byte) (*Catalog, error) {
 			return nil, fmt.Errorf("catalog: %q: unknown kind %q", b.Title, b.Kind)
 		}
 		switch b.Translation {
-		case "", "published", "fan", "none":
+		case "", "yes", "no":
 		default:
-			return nil, fmt.Errorf("catalog: %q: unknown translation %q (want published, fan or none)", b.Title, b.Translation)
+			return nil, fmt.Errorf("catalog: %q: unknown translation %q (want yes or no)", b.Title, b.Translation)
 		}
 		s, ok := seriesByID[b.Series]
 		if !ok {

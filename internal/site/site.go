@@ -195,44 +195,31 @@ func normalizeBase(b string) string {
 	return b
 }
 
-// translationText says how a book exists in Russian. A `translation:` set by hand in
-// books.yaml wins over the FantLab snapshot; with neither, the status is unknown.
+// translationText says whether a book exists in Russian, and who translated it when FantLab
+// knows. A `translation:` set by hand in books.yaml wins over the snapshot; with neither,
+// the status is unknown (empty).
 func translationText(b *catalog.Book, snap *fantlab.TranslationsFile) (status, label, note string) {
 	t, ok := snap.Entry(b.ID)
-	if b.Translation != "" {
-		if !ok || t.Status != b.Translation {
-			t = fantlab.Translation{Status: b.Translation} // no details to show
-		}
-		ok = true
+	switch b.Translation {
+	case "yes":
+		t.Translated, ok = true, true
+	case "no":
+		t, ok = fantlab.Translation{}, true
 	}
-	if !ok {
+	switch {
+	case !ok:
 		return "", "", ""
+	case !t.Translated:
+		return "no", "Нет перевода", "На русский язык не переведена"
 	}
-	var parts []string
-	switch t.Status {
-	case fantlab.Published:
-		label = "На русском"
-		parts = append(parts, "Издана на русском")
-		if t.Publisher != "" {
-			edition := t.Publisher
-			if t.Year != 0 {
-				edition += fmt.Sprintf(", %d", t.Year)
-			}
-			parts[0] += ": " + edition
-		}
-	case fantlab.Fan:
-		label = "Самиздат"
-		parts = append(parts, "Официального издания нет: русский текст есть только в самиздате или любительском переводе")
-	default:
-		t.Status = fantlab.None
-		label = "Нет перевода"
-		parts = append(parts, "На русский язык не переведена")
+	note = "Есть перевод на русский"
+	switch n := len(t.Translators); {
+	case n == 1:
+		note += ". Переводчик: " + t.Translators[0]
+	case n > 1:
+		note += ". Переводчики: " + strings.Join(t.Translators, ", ")
 	}
-	// Credits are shown for official editions only; fan translations are often a team of nicknames.
-	if t.Status == fantlab.Published && len(t.Translators) > 0 {
-		parts = append(parts, "перевод: "+strings.Join(t.Translators, ", "))
-	}
-	return t.Status, label, strings.Join(parts, "; ")
+	return "yes", "Есть перевод", note
 }
 
 // authorOptions lists the people books are credited to (authors, and editors of

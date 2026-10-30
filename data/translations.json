@@ -2,30 +2,22 @@
   "updated": "2026-10-30",
   "books": {
     "a-thousand-sons": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "age-of-darkness": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021
+      "translated": true
     },
     "alpharius-head-of-the-hydra": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "Никита Бахрамов"
       ]
     },
     "angel-exterminatus": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Foghost",
         "Kashiwagi",
@@ -35,134 +27,104 @@
       ]
     },
     "angels-of-caliban": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "angron-slave-of-nuceria": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Юрий Антипов"
       ]
     },
     "ashes-of-the-imperium": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Антон Краснов"
       ]
     },
     "aurelian": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Владислав Лотовский"
       ]
     },
     "battle-for-the-abyss": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "betrayer": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Brenner",
         "Всеволод Клингенберг"
       ]
     },
     "blood-of-the-emperor": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022
+      "translated": true
     },
     "born-of-flame": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019
+      "translated": true
     },
     "brotherhood-of-the-storm": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "corax-lord-of-shadows": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Юрий Антипов"
       ]
     },
     "corax-soulforge": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Алексей Апанасевич"
       ]
     },
     "corax-soulforger": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018
+      "translated": true
     },
     "cthonia-s-reckoning": {
-      "status": "fan"
+      "translated": true
     },
     "cybernetica": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Екатерина Згурская"
       ]
     },
     "deathfire": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "А. Дубова"
       ]
     },
     "deliverance-lost": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Владислав Лотовский"
       ]
     },
     "descent-of-angels": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "dreadwing": {
-      "status": "none"
+      "translated": false
     },
     "dropsite-massacre": {
-      "status": "fan"
+      "translated": true
     },
     "echoes-of-eternity": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Алексей Абгалдаев",
         "Альре Сноу",
@@ -170,175 +132,135 @@
       ]
     },
     "eidolon-the-auric-hammer": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Антон Краснов",
         "Григорий Грачев"
       ]
     },
     "era-of-ruin": {
-      "status": "fan"
+      "translated": true
     },
     "eye-of-terra": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018
+      "translated": true
     },
     "fallen-angels": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "false-gods": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "fear-to-tread": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Зенур Джемилев"
       ]
     },
     "feat-of-iron": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Зенур Джемилев"
       ]
     },
     "ferrus-manus-the-gorgon-of-medusa": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "fulgrim": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "fulgrim-the-palatine-phoenix": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "fury-of-magnus": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "galaxy-in-flames": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "garro": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "garro-knight-of-grey": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Luminor",
         "Альре Сноу"
       ]
     },
     "garro-vow-of-faith": {
-      "status": "none"
+      "translated": false
     },
     "heirs-of-the-emperor": {
-      "status": "fan"
+      "translated": true
     },
     "heralds-of-the-siege": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020
+      "translated": true
     },
     "horus-rising": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "jaghatai-khan-warhawk-of-chogoris": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "know-no-fear": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Всеволод Клингенберг"
       ]
     },
     "konrad-curze-the-night-haunter": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Никита Бахрамов"
       ]
     },
     "legacies-of-betrayal": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017
+      "translated": true
     },
     "legion": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "leman-russ-the-great-wolf": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "lion-el-jonson-lord-of-the-first": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Алексей Апанасевич",
         "Сергей Красник",
@@ -346,169 +268,133 @@
       ]
     },
     "lorgar-bearer-of-the-word": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "lupercal-s-war": {
-      "status": "none"
+      "translated": false
     },
     "luther-first-of-the-fallen": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "magnus-the-red-master-of-prospero": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "mark-of-calth": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022
+      "translated": true
     },
     "mechanicum": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "mortarion-the-pale-king": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Luminor",
         "Юлия Зонис"
       ]
     },
     "mortis": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "Алина Забияка"
       ]
     },
     "nemesis": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "old-earth": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "perturabo-the-hammer-of-olympia": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Алексей Апанасевич"
       ]
     },
     "pharos": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "А. Дубова"
       ]
     },
     "praetorian-of-dorn": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "О. Ананьина"
       ]
     },
     "prince-of-crows": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Юлия Зонис"
       ]
     },
     "promethean-sun": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "prospero-burns": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "raldoron-revenant": {
-      "status": "none"
+      "translated": false
     },
     "ravenlord": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Владислав Лотовский"
       ]
     },
     "roboute-guilliman-lord-of-ultramar": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "Алексей Апанасевич"
       ]
     },
     "rogal-dorn-the-emperor-s-crusader": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Luminor",
         "Э. Нокс"
       ]
     },
     "ruinstorm": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Никита Бахрамов"
       ]
     },
     "sanguinius-the-great-angel": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Альре Сноу",
         "Евгений Козлочков"
       ]
     },
     "saturnine": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "Алина Забияка",
         "Никита Бахрамов",
@@ -516,350 +402,268 @@
       ]
     },
     "scars": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2016,
+      "translated": true,
       "translators": [
         "Зенур Джемилев"
       ]
     },
     "scions-of-the-emperor": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020
+      "translated": true
     },
     "scorched-earth": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "shadows-of-treachery": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021
+      "translated": true
     },
     "shattered-legions": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018
+      "translated": true
     },
     "sigismund-the-eternal-crusader": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Сöл",
         "Хелбрехт"
       ]
     },
     "slaves-to-darkness": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Екатерина Згурская"
       ]
     },
     "sons-of-the-emperor": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020
+      "translated": true
     },
     "sons-of-the-forge": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "sons-of-the-selenar": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Екатерина Згурская"
       ]
     },
     "spear-of-ultramar": {
-      "status": "none"
+      "translated": false
     },
     "tales-of-heresy": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020
+      "translated": true
     },
     "tallarn": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021
+      "translated": true
     },
     "tallarn-executioner": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Анастасия Липинская"
       ]
     },
     "tallarn-ironclad": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Владислав Лотовский"
       ]
     },
     "the-burden-of-loyalty": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020
+      "translated": true
     },
     "the-buried-dagger": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Екатерина Згурская"
       ]
     },
     "the-crimson-fist": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Зенур Джемилев"
       ]
     },
     "the-crimson-king": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "the-damnation-of-pythos": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "Алексей Апанасевич"
       ]
     },
     "the-end-and-the-death-volume-i": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Антон Краснов",
         "Василий Сафронычев"
       ]
     },
     "the-end-and-the-death-volume-ii": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Антон Краснов",
         "Василий Сафронычев"
       ]
     },
     "the-end-and-the-death-volume-iii": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Антон Краснов",
         "Василий Сафронычев"
       ]
     },
     "the-first-heretic": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "the-first-wall": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Алина Забияка"
       ]
     },
     "the-flight-of-the-eisenstein": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "the-honoured": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Brenner"
       ]
     },
     "the-lion": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Елена Владимировна Долгова"
       ]
     },
     "the-lost-and-the-damned": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Юрий Антипов"
       ]
     },
     "the-master-of-mankind": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Никита Бахрамов"
       ]
     },
     "the-outcast-dead": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "the-path-of-heaven": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017,
+      "translated": true,
       "translators": [
         "Юрий Войтко"
       ]
     },
     "the-primarchs": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021
+      "translated": true
     },
     "the-purge": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Дмитрий Водолаго"
       ]
     },
     "the-reflection-crack-d": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "the-serpent-beneath": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Елена Владимировна Долгова"
       ]
     },
     "the-seventh-serpent": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018,
+      "translated": true,
       "translators": [
         "Никита Аксёнов"
       ]
     },
     "the-silent-war": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2018
+      "translated": true
     },
     "the-solar-war": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Юрий Антипов"
       ]
     },
     "the-unburdened": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Brenner"
       ]
     },
     "the-unremembered-empire": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "А. Козловский",
         "Дмитрий Ерёмин"
       ]
     },
     "titandeath": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "valdor-birth-of-the-imperium": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2021,
+      "translated": true,
       "translators": [
         "Никита Бахрамов"
       ]
     },
     "vengeful-spirit": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2016,
+      "translated": true,
       "translators": [
         "Всеволод Клингенберг"
       ]
     },
     "visions-of-heresy": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "Алексей Апанасевич",
         "Юрий Войтко"
       ]
     },
     "vulkan-lives": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2022,
+      "translated": true,
       "translators": [
         "А. Дубова"
       ]
     },
     "vulkan-lord-of-drakes": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2019,
+      "translated": true,
       "translators": [
         "Ирина Савельева"
       ]
     },
     "war-without-end": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2017
+      "translated": true
     },
     "warhawk": {
-      "status": "fan",
+      "translated": true,
       "translators": [
         "Ulf Voss",
         "Алина Турн",
@@ -869,23 +673,19 @@
       ]
     },
     "wolf-king": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Зенур Джемилев"
       ]
     },
     "wolfsbane": {
-      "status": "published",
-      "publisher": "Фантастика Книжный Клуб",
-      "year": 2020,
+      "translated": true,
       "translators": [
         "Зенур Джемилев"
       ]
     },
     "zardu-layak-the-crimson-apostle": {
-      "status": "none"
+      "translated": false
     }
   }
 }

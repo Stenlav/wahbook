@@ -4,39 +4,24 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"regexp"
 	"sort"
-	"strings"
 )
 
-// Translation statuses.
-const (
-	Published = "published" // there is an official Russian edition
-	Fan       = "fan"       // Russian text exists only as samizdat or a fan translation
-	None      = "none"      // not translated into Russian
-)
-
-// Translation says whether and how a work exists in Russian.
+// Translation says whether a work exists in Russian and, if FantLab knows it, who translated it.
+// Official editions, samizdat and fan translations all count: for the reader it is "есть / нет".
 type Translation struct {
-	Status      string   `json:"status"`
-	Publisher   string   `json:"publisher,omitempty"`   // publisher of the latest official edition
-	Year        int      `json:"year,omitempty"`        // year of that edition
+	Translated  bool     `json:"translated"`
 	Translators []string `json:"translators,omitempty"` // as recorded on FantLab
 }
 
-// FantLab groups editions into blocks: 10 books, 30 audiobooks, 32 comics and
-// artbooks, 27 samizdat and fanzines, 80 editions in other languages.
-const (
-	blockSamizdat = "27"
-	blockForeign  = "80"
-)
+// blockForeign is FantLab's block of editions in other languages; every other block
+// (books, audiobooks, comics, samizdat and fanzines) can hold a Russian edition.
+const blockForeign = "80"
 
 type extendedWork struct {
 	Blocks map[string]struct {
 		List []struct {
-			Lang      string `json:"lang_code"`
-			Year      int    `json:"year"`
-			Publisher string `json:"publisher"`
+			Lang string `json:"lang_code"`
 		} `json:"list"`
 	} `json:"editions_blocks"`
 	Translations []struct {
@@ -58,28 +43,15 @@ func (c *Client) Translation(workID int) (Translation, error) {
 	return translationOf(w), nil
 }
 
-var bbcode = regexp.MustCompile(`\[/?[a-z]+(=[^\]]*)?\]`)
-
 func translationOf(w extendedWork) Translation {
-	t := Translation{Status: None}
+	var t Translation
 	for block, b := range w.Blocks {
 		if block == blockForeign {
 			continue
 		}
 		for _, e := range b.List {
-			if e.Lang != "ru" {
-				continue
-			}
-			if block == blockSamizdat {
-				if t.Status == None {
-					t.Status = Fan
-				}
-				continue
-			}
-			t.Status = Published
-			if e.Year >= t.Year { // the latest official edition tells the reader where to look
-				t.Year = e.Year
-				t.Publisher = strings.TrimSpace(bbcode.ReplaceAllString(e.Publisher, ""))
+			if e.Lang == "ru" {
+				t.Translated = true
 			}
 		}
 	}
@@ -88,9 +60,7 @@ func translationOf(w extendedWork) Translation {
 		if tr.Lang != "ru" {
 			continue
 		}
-		if t.Status == None {
-			t.Status = Fan // a translation is recorded even though no edition is
-		}
+		t.Translated = true // a translation is recorded even if no edition is
 		for _, x := range tr.Translations {
 			for _, p := range x.Translators {
 				if p.Name != "" && !seen[p.Name] {

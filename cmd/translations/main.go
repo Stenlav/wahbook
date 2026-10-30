@@ -1,13 +1,13 @@
 // Command translations records, for every book found on FantLab, whether it exists
-// in Russian: an official edition, only samizdat or a fan translation, or not at all.
-// The snapshot goes to data/translations.json.
+// in Russian (an official edition, samizdat or a fan translation all count) and who
+// translated it. The snapshot goes to data/translations.json.
 //
 //	go run ./cmd/translations            # (re)fetch every book
 //	go run ./cmd/translations -missing   # only books without an entry yet
 //
 // It reads the FantLab work ids from data/ratings.json (run cmd/ratings first).
-// For books FantLab does not know, or where it is wrong, set `translation:` by hand
-// in data/books.yaml; that always wins over the snapshot.
+// For books FantLab does not know, or where it is wrong, set `translation: yes` or
+// `translation: no` by hand in data/books.yaml; that always wins over the snapshot.
 package main
 
 import (
@@ -44,7 +44,7 @@ func main() {
 	}
 	client := fantlab.NewClient()
 
-	counts := map[string]int{}
+	counts := map[bool]int{}
 	var skipped []string
 	for _, b := range cat.Books() {
 		entry, ok := works.Entry(b.ID)
@@ -62,13 +62,13 @@ func main() {
 			continue
 		}
 		snap.Books[b.ID] = t
-		counts[t.Status]++
-		fmt.Printf("  ok  %-45s %-9s %s %d\n", b.Title, t.Status, t.Publisher, t.Year)
+		counts[t.Translated]++
+		fmt.Printf("  ok  %-45s translated=%-5t %v\n", b.Title, t.Translated, t.Translators)
 	}
 
 	snap.Updated = time.Now().Format("2006-01-02")
 	if err := snap.Save(*out); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("\nsaved %d records -> %s: %v\nnot on FantLab (set `translation:` by hand if needed): %v\n", len(snap.Books), *out, counts, skipped)
+	fmt.Printf("\nsaved %d records -> %s: translated %d, not translated %d\nnot on FantLab (set `translation:` by hand if needed): %v\n", len(snap.Books), *out, counts[true], counts[false], skipped)
 }

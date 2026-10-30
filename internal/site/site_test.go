@@ -172,12 +172,12 @@ achievements:
 	}
 }
 
-func TestTranslationStatusOnCards(t *testing.T) {
+func TestTranslationMarkOnCards(t *testing.T) {
 	snap := &fantlab.TranslationsFile{Updated: "2026-10-30", Books: map[string]fantlab.Translation{
-		"horus-rising": {Status: fantlab.Published, Publisher: "Фантастика Книжный Клуб", Year: 2021, Translators: []string{"Ирина Савельева"}},
-		"warhawk":      {Status: fantlab.Fan, Translators: []string{"Некто Переводчик"}},
-		"dreadwing":    {Status: fantlab.None},
-		"scars":        {Status: fantlab.Published, Publisher: "Азбука"},
+		"horus-rising": {Translated: true, Translators: []string{"Ирина Савельева"}},
+		"false-gods":   {Translated: true, Translators: []string{"Анна Иванова", "Пётр Сидоров"}},
+		"warhawk":      {Translated: true}, // translated, translator unknown: nothing is invented
+		"dreadwing":    {},
 	}}
 	cat, err := catalog.Load("../../data/books.yaml")
 	if err != nil {
@@ -190,25 +190,29 @@ func TestTranslationStatusOnCards(t *testing.T) {
 	raw, _ := os.ReadFile(filepath.Join(out, "index.html"))
 	index := string(raw)
 	for _, want := range []string{
-		`<p class="tr tr-published" title="Издана на русском: Фантастика Книжный Клуб, 2021; перевод: Ирина Савельева">На русском</p>`,
-		`<p class="tr tr-fan"`, `>Самиздат</p>`, `>Нет перевода</p>`,
-		`data-tr="published"`, `data-tr="fan"`, `data-tr="none"`,
-		`id="f-tr"`, `<option value="fan">Только самиздат</option>`,
-		`title="Издана на русском: Азбука"`, // no year known: nothing is invented
+		`<p class="tr tr-yes" title="Есть перевод на русский. Переводчик: Ирина Савельева">Есть перевод</p>`,
+		`title="Есть перевод на русский. Переводчики: Анна Иванова, Пётр Сидоров"`,
+		`<p class="tr tr-yes" title="Есть перевод на русский">Есть перевод</p>`,
+		`<p class="tr tr-no" title="На русский язык не переведена">Нет перевода</p>`,
+		`data-tr="yes"`, `data-tr="no"`,
+		`id="f-tr"`, `<option value="yes">Есть перевод</option>`, `<option value="no">Нет перевода</option>`,
 	} {
 		if !strings.Contains(index, want) {
 			t.Errorf("index.html lacks %q", want)
 		}
 	}
-	if strings.Contains(index, "Некто Переводчик") {
-		t.Error("translators of a fan translation must not be listed")
+	// The kind of translation is not shown any more.
+	for _, gone := range []string{"Самиздат", "самиздат", "Издана на русском", "tr-published", "tr-fan"} {
+		if strings.Contains(index, gone) {
+			t.Errorf("index.html must not mention %q", gone)
+		}
 	}
 	// A book with neither a snapshot entry nor an override has an unknown status and gets no line.
 	if strings.Contains(index, `<p class="tr tr-"`) {
 		t.Error("an unknown status must not render a line")
 	}
-	// `translation:` in books.yaml wins over the snapshot; both books without FantLab data are covered by overrides.
-	for id, want := range map[string]string{"lupercal-s-war": fantlab.Fan, "gnev-luperkalya": fantlab.Fan, "wrath-of-terra": fantlab.None} {
+	// `translation:` in books.yaml wins over the snapshot; these books are not on FantLab.
+	for id, want := range map[string]string{"lupercal-s-war": "yes", "gnev-luperkalya": "yes", "wrath-of-terra": "no"} {
 		b, ok := cat.Book(id)
 		if !ok {
 			t.Fatalf("%s missing", id)
@@ -236,7 +240,7 @@ func TestEveryBookHasATranslationStatus(t *testing.T) {
 		}
 		counts[status]++
 	}
-	if counts[fantlab.Published] < 80 || counts[fantlab.Fan] < 10 || counts[fantlab.None] < 3 {
+	if counts["yes"] < 100 || counts["no"] < 3 {
 		t.Errorf("suspicious distribution: %v", counts)
 	}
 }

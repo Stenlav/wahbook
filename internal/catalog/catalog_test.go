@@ -28,7 +28,7 @@ func TestParseRejectsBadInput(t *testing.T) {
 		"unknown kind":    "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: comic}]",
 		"duplicate id":    "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: novel}, {series: a, title: t, author: X, year: 2000, kind: novel}]",
 		"unknown field":   "series: [{id: a, title: A, bogus: 1}]",
-		"bad translation": "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: novel, translation: soon}]",
+		"bad translation": "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: novel, translation: maybe}]",
 	}
 	for name, src := range cases {
 		if _, err := Parse([]byte(src)); err == nil {
