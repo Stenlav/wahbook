@@ -9,9 +9,11 @@ on:
 permissions:
   contents: read
 
+# Свежий запуск отменяет предыдущий для той же ветки или пул-реквеста, но запуск на master
+# не отменяется никогда: иначе правка в открытом PR могла бы сорвать публикацию сайта.
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
 
 jobs:
   test:
@@ -46,10 +48,15 @@ jobs:
         with:
           path: dist
 
+  # Публикация — только после слияния в master (push в master). Пул-реквесты и ручные запуски
+  # на других ветках проходят тесты и сборку, но сайт не публикуют.
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false # начатую публикацию не обрываем
     permissions:
       pages: write
       id-token: write
