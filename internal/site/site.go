@@ -33,6 +33,7 @@ type Config struct {
 
 	Achievements *achievements.Config      // nil = no achievements
 	Translations *fantlab.TranslationsFile // Russian editions; nil = unknown for every book without an override
+	Contents     *fantlab.ContentsFile     // what each anthology consists of; nil = no contents shown
 }
 
 // minVotes is how many FantLab ratings a book needs before its average is
@@ -75,6 +76,8 @@ type pageData struct {
 	RatingsDate string // "30.10.2026", empty without ratings
 
 	Authors []authorOption // for the author filter
+
+	ContentsJSON template.JS // stories of anthologies for the book dialog; empty when there are none
 
 	AchievementsJSON template.JS // resolved rules for the browser, empty without achievements
 }
@@ -124,6 +127,12 @@ func Build(cfg Config) error {
 	}
 
 	data.Authors = authorOptions(cfg.Catalog.Books())
+
+	if js, err := contentsJSON(cfg.Catalog, cfg.Contents); err != nil {
+		return err
+	} else {
+		data.ContentsJSON = js
+	}
 
 	if cfg.Achievements != nil {
 		page, err := cfg.Achievements.Resolve(achievements.Inputs{Catalog: cfg.Catalog, Ratings: cfg.Ratings, MinVotes: minVotes})
@@ -193,6 +202,48 @@ func normalizeBase(b string) string {
 		b += "/"
 	}
 	return b
+}
+
+// contentsStory is a story as the book dialog shows it.
+type contentsStory struct {
+	Title   string `json:"title"`
+	Orig    string `json:"orig,omitempty"`
+	Authors string `json:"authors,omitempty"`
+	Kind    string `json:"kind,omitempty"` // only for what is not a plain story (novella, …)
+	Year    int    `json:"year,omitempty"`
+	Rating  string `json:"rating,omitempty"` // empty when there are too few votes
+	Votes   int    `json:"votes,omitempty"`
+	URL     string `json:"url"`
+}
+
+// contentsJSON turns the snapshot into {bookId: [story, …]} for the page. Stories of books
+// that are not in the catalog are ignored; the result is empty without contents.
+func contentsJSON(cat *catalog.Catalog, snap *fantlab.ContentsFile) (template.JS, error) {
+	out := map[string][]contentsStory{}
+	for _, b := range cat.Books() {
+		stories, ok := snap.Entry(b.ID)
+		if !ok {
+			continue
+		}
+		for _, s := range stories {
+			cs := contentsStory{
+				Title: s.Title, Orig: s.Orig, Authors: strings.Join(s.Authors, ", "),
+				Year: s.Year, URL: fantlab.WorkURL(s.Work),
+			}
+			if s.Kind != "" && s.Kind != "рассказ" {
+				cs.Kind = s.Kind
+			}
+			if s.Votes >= minVotes {
+				cs.Rating, cs.Votes = fmt.Sprintf("%.2f", s.Rating), s.Votes
+			}
+			out[b.ID] = append(out[b.ID], cs)
+		}
+	}
+	if len(out) == 0 {
+		return "", nil
+	}
+	raw, err := json.Marshal(out) // escapes <, > and &, so it is safe inside <script>
+	return template.JS(raw), err
 }
 
 // translationText says whether a book exists in Russian, and who translated it when FantLab

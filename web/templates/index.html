@@ -179,6 +179,10 @@
         <summary>Аннотация</summary>
         <p class="bd-summary" id="bd-summary"></p>
       </details>
+      <details class="bd-contents" id="bd-contents" hidden>
+        <summary id="bd-contents-summary">Состав</summary>
+        <ol id="bd-contents-list"></ol>
+      </details>
       <fieldset class="bd-status">
         <legend>Мой статус</legend>
         <label><input type="radio" name="bd-st" value=""> Нет</label>
@@ -190,6 +194,7 @@
   </div>
 </dialog>
 
+{{if .ContentsJSON}}<script type="application/json" id="contents-data">{{.ContentsJSON}}</script>{{end}}
 {{if .AchievementsJSON}}
 <script type="application/json" id="ach-data">{{.AchievementsJSON}}</script>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">

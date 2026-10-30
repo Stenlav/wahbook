@@ -24,6 +24,7 @@ func main() {
 	var (
 		dataPath = flag.String("data", "data/books.yaml", "catalog file")
 		achieve  = flag.String("achievements", "data/achievements.yaml", "achievement rules; a missing file switches achievements off")
+		contents = flag.String("contents", "data/contents.json", "anthology contents snapshot (see cmd/contents)")
 		transl   = flag.String("translations", "data/translations.json", "Russian editions snapshot (see cmd/translations)")
 		ratings  = flag.String("ratings", "data/ratings.json", "FantLab ratings snapshot (see cmd/ratings)")
 		covers   = flag.String("covers", "assets/covers", "directory with <book-id>.jpg covers")
@@ -46,6 +47,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	stories, err := fantlab.LoadContents(*contents)
+	if err != nil {
+		log.Fatal(err)
+	}
 	var rules *achievements.Config
 	if _, err := os.Stat(*achieve); err == nil {
 		if rules, err = achievements.Load(*achieve); err != nil {
@@ -56,6 +61,7 @@ func main() {
 		Ratings:      snap,
 		Achievements: rules,
 		Translations: trans,
+		Contents:     stories,
 		Catalog:      cat,
 		OutDir:       *out,
 		CoversDir:    *covers,

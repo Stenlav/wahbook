@@ -1,0 +1,2998 @@
+{
+  "updated": "2026-10-30",
+  "books": {
+    "age-of-darkness": [
+      {
+        "work": 356677,
+        "title": "Правила боя",
+        "orig": "Rules of Engagement",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 6.67,
+        "votes": 137
+      },
+      {
+        "work": 356678,
+        "title": "Вклад лжеца",
+        "orig": "Liar's Due",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.08,
+        "votes": 123
+      },
+      {
+        "work": 356679,
+        "title": "Забытые сыны",
+        "orig": "Forgotten Sons",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.23,
+        "votes": 110
+      },
+      {
+        "work": 356681,
+        "title": "Последний летописец",
+        "orig": "The Last Remembrancer",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.64,
+        "votes": 126
+      },
+      {
+        "work": 356682,
+        "title": "Возрождение",
+        "orig": "Rebirth",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.29,
+        "votes": 120
+      },
+      {
+        "work": 356683,
+        "title": "Лик предательства",
+        "orig": "The Face of Treachery",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.38,
+        "votes": 120
+      },
+      {
+        "work": 356684,
+        "title": "Маленький Хорус",
+        "orig": "Little Horus",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.27,
+        "votes": 148
+      },
+      {
+        "work": 356685,
+        "title": "Железо внутри",
+        "orig": "The Iron Within",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 8.16,
+        "votes": 135
+      },
+      {
+        "work": 356686,
+        "title": "Жестокое оружие",
+        "orig": "Savage Weapons",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.58,
+        "votes": 119
+      }
+    ],
+    "blood-of-the-emperor": [
+      {
+        "work": 1410605,
+        "title": "Lupus Daemonis",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.06,
+        "votes": 34
+      },
+      {
+        "work": 1410607,
+        "title": "Съкяльды",
+        "orig": "Skjalds",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.34,
+        "votes": 29
+      },
+      {
+        "work": 1410609,
+        "title": "Шестой культ отверженных",
+        "orig": "The Sixth Cult of the Denied",
+        "authors": [
+          "Дэвид Гаймер"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.41,
+        "votes": 29
+      },
+      {
+        "work": 1272967,
+        "title": "Воля легиона",
+        "orig": "The Will of the Legion",
+        "authors": [
+          "Энди Кларк"
+        ],
+        "kind": "рассказ",
+        "year": 2020,
+        "rating": 6.56,
+        "votes": 32
+      },
+      {
+        "work": 1410612,
+        "title": "Совет Истины",
+        "orig": "Council of Truth",
+        "authors": [
+          "Майк Брукс"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.13,
+        "votes": 30
+      },
+      {
+        "work": 1410614,
+        "title": "Terminus",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.24,
+        "votes": 29
+      }
+    ],
+    "born-of-flame": [
+      {
+        "work": 777959,
+        "title": "Солнце Прометея",
+        "orig": "Promethean Sun",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "повесть",
+        "year": 2011,
+        "rating": 7.11,
+        "votes": 46
+      },
+      {
+        "work": 777960,
+        "title": "Выжженная земля",
+        "orig": "Scorched Earth",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "повесть",
+        "year": 2013,
+        "rating": 7.45,
+        "votes": 38
+      },
+      {
+        "work": 859994,
+        "title": "Артефакты",
+        "orig": "Artefacts",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.59,
+        "votes": 54
+      },
+      {
+        "work": 989163,
+        "title": "Долг бессмертных",
+        "orig": "Immortal Duty",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.93,
+        "votes": 41
+      },
+      {
+        "work": 908617,
+        "title": "Сыны кузни",
+        "orig": "Sons of the Forge",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "повесть",
+        "year": 2016,
+        "rating": 6.96,
+        "votes": 25
+      }
+    ],
+    "corax-soulforger": [
+      {
+        "work": 777962,
+        "title": "Кузница душ",
+        "orig": "Corax: Soulforge",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "повесть",
+        "year": 2013,
+        "rating": 7.07,
+        "votes": 46
+      },
+      {
+        "work": 908216,
+        "title": "Хозяева теней",
+        "orig": "The Shadowmasters",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "микрорассказ",
+        "year": 2015,
+        "rating": 6.57,
+        "votes": 40
+      },
+      {
+        "work": 778421,
+        "title": "Владыка Воронов",
+        "orig": "Ravenlord",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "повесть",
+        "year": 2014,
+        "rating": 7.37,
+        "votes": 46
+      },
+      {
+        "work": 908217,
+        "title": "Польза страха",
+        "orig": "The Value of Fear",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.08,
+        "votes": 38
+      },
+      {
+        "work": 908218,
+        "title": "Раптор",
+        "orig": "Raptor",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.9,
+        "votes": 39
+      },
+      {
+        "work": 990601,
+        "title": "Вергельд",
+        "orig": "Weregeld",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "повесть",
+        "year": 2016,
+        "rating": 7.59,
+        "votes": 39
+      }
+    ],
+    "cthonia-s-reckoning": [
+      {
+        "work": 1577710,
+        "title": "Сыны Хтонии",
+        "orig": "Sons of Cthonia",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2022,
+        "rating": 7.06,
+        "votes": 17
+      },
+      {
+        "work": 1577712,
+        "title": "До последнего",
+        "orig": "To the Last",
+        "authors": [
+          "Майкл Ф. Хаспил"
+        ],
+        "kind": "рассказ",
+        "year": 2022,
+        "rating": 7.6,
+        "votes": 15
+      },
+      {
+        "work": 1577713,
+        "title": "Банды подземья",
+        "orig": "The Gangs Beneath",
+        "authors": [
+          "Гэри Клостер"
+        ],
+        "kind": "рассказ",
+        "year": 2022,
+        "rating": 6.82,
+        "votes": 17
+      },
+      {
+        "work": 1577714,
+        "title": "Жатва плоти",
+        "orig": "The Flesh Harvest",
+        "authors": [
+          "Николас Вулф"
+        ],
+        "kind": "рассказ",
+        "year": 2022,
+        "rating": 7.24,
+        "votes": 17
+      },
+      {
+        "work": 1577715,
+        "title": "Вера предателя",
+        "orig": "Traitor's Faith",
+        "authors": [
+          "Ноа Нгуен"
+        ],
+        "kind": "рассказ",
+        "year": 2022,
+        "rating": 6.89,
+        "votes": 19
+      },
+      {
+        "work": 1577716,
+        "title": "Во имя ненависти",
+        "orig": "For Hate's Sake",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2022,
+        "rating": 7.06,
+        "votes": 17
+      },
+      {
+        "work": 1577717,
+        "title": "Послушник",
+        "orig": "Postulant",
+        "authors": [
+          "Крис Форрестер"
+        ],
+        "kind": "рассказ",
+        "year": 2022,
+        "rating": 6.83,
+        "votes": 18
+      }
+    ],
+    "era-of-ruin": [
+      {
+        "work": 2139951,
+        "title": "Ангелы иной эпохи",
+        "orig": "Angels of Another Age",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 6.8,
+        "votes": 20
+      },
+      {
+        "work": 2139952,
+        "title": "Фульгурит",
+        "orig": "Fulgurite",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 6.95,
+        "votes": 20
+      },
+      {
+        "work": 2139953,
+        "title": "Осколки",
+        "orig": "Fragments (All We Have Left)",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 7.77,
+        "votes": 22
+      },
+      {
+        "work": 2139954,
+        "title": "Экслибрис",
+        "orig": "Ex Libris",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 6.95,
+        "votes": 20
+      },
+      {
+        "work": 2139955,
+        "title": "Очистка системы",
+        "orig": "System Purge",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 7.37,
+        "votes": 19
+      },
+      {
+        "work": 2139956,
+        "title": "Тьма после рассвета",
+        "orig": "After the Dawn, the Darkness",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 7.91,
+        "votes": 22
+      },
+      {
+        "work": 2139957,
+        "title": "Возвращение домой",
+        "orig": "Homebound",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 7.95,
+        "votes": 21
+      },
+      {
+        "work": 2139958,
+        "title": "Гниющий владыка Империума",
+        "orig": "The Carrion Lord of the Imperium",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2025,
+        "rating": 7.39,
+        "votes": 23
+      }
+    ],
+    "eye-of-terra": [
+      {
+        "work": 942719,
+        "title": "Волк из пепла и огня",
+        "orig": "The Wolf of Ash and Fire",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.12,
+        "votes": 78
+      },
+      {
+        "work": 710412,
+        "title": "Аврелиан",
+        "orig": "Aurelian",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "повесть",
+        "year": 2011,
+        "rating": 8.12,
+        "votes": 76
+      },
+      {
+        "work": 942720,
+        "title": "Резня",
+        "orig": "Massacre",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.69,
+        "votes": 52
+      },
+      {
+        "work": 942722,
+        "title": "Братство Луны",
+        "orig": "Brotherhood of the Moon",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.83,
+        "votes": 52
+      },
+      {
+        "work": 942723,
+        "title": "Наследник",
+        "orig": "Inheritor",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.36,
+        "votes": 50
+      },
+      {
+        "work": 942724,
+        "title": "Воракс",
+        "orig": "Vorax",
+        "authors": [
+          "Мэтью Фаррер"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.47,
+        "votes": 51
+      },
+      {
+        "work": 942725,
+        "title": "Железный огонь",
+        "orig": "Ironfire",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.67,
+        "votes": 48
+      },
+      {
+        "work": 859996,
+        "title": "Отмеченные красным",
+        "orig": "Red-Marked",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.07,
+        "votes": 45
+      },
+      {
+        "work": 942728,
+        "title": "Повелитель первого",
+        "orig": "Master of the First",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.85,
+        "votes": 52
+      },
+      {
+        "work": 942729,
+        "title": "Стратагема",
+        "orig": "Stratagem",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.15,
+        "votes": 47
+      },
+      {
+        "work": 942730,
+        "title": "Долгая ночь",
+        "orig": "The Long Night",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.52,
+        "votes": 52
+      },
+      {
+        "work": 942731,
+        "title": "Грехи отца",
+        "orig": "Sins of the Father",
+        "authors": [
+          "Энди Смайлли"
+        ],
+        "kind": "микрорассказ",
+        "year": 2014,
+        "rating": 6.8,
+        "votes": 45
+      },
+      {
+        "work": 942732,
+        "title": "Орлиный коготь",
+        "orig": "The Eagle's Talon",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.04,
+        "votes": 49
+      },
+      {
+        "work": 942733,
+        "title": "Железные трупы",
+        "orig": "Iron Corpses",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7,
+        "votes": 47
+      },
+      {
+        "work": 942735,
+        "title": "Окончательное согласие Шестьдесят три Четырнадцать",
+        "orig": "The Final Compliance of Sixty-Three Fourteen",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.7,
+        "votes": 56
+      },
+      {
+        "work": 942737,
+        "title": "Герольд Сангвиния",
+        "orig": "The Herald of Sanguinius",
+        "authors": [
+          "Энди Смайлли"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.51,
+        "votes": 47
+      }
+    ],
+    "garro": [
+      {
+        "work": 777986,
+        "title": "Гарро. Особая клятва",
+        "orig": "Garro: Oath of Moment",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 7.64,
+        "votes": 53
+      },
+      {
+        "work": 777997,
+        "title": "Гарро. Сам себе легион",
+        "orig": "Garro: Legion of One",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.85,
+        "votes": 46
+      },
+      {
+        "work": 777988,
+        "title": "Гарро. Меч истины",
+        "orig": "Garro: Sword of Truth",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.83,
+        "votes": 47
+      },
+      {
+        "work": 778003,
+        "title": "Гарро. Бремя долга",
+        "orig": "Garro: Burden of Duty",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.28,
+        "votes": 43
+      },
+      {
+        "work": 778008,
+        "title": "Гарро. Щит лжи",
+        "orig": "Garro: Shield of Lies",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.62,
+        "votes": 40
+      },
+      {
+        "work": 989158,
+        "title": "Гарро: Пепел верности",
+        "orig": "Garro. Ashes of Fealty",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.36,
+        "votes": 45
+      },
+      {
+        "work": 777992,
+        "title": "Гарро. Обет веры",
+        "orig": "Garro: Vow of Faith",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "повесть",
+        "year": 2016,
+        "rating": 7.67,
+        "votes": 33
+      }
+    ],
+    "heirs-of-the-emperor": [
+      {
+        "work": 1040355,
+        "title": "Успение ангелов",
+        "orig": "The Passing of Angels",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.33,
+        "votes": 45
+      },
+      {
+        "work": 1040353,
+        "title": "На краю бездны",
+        "orig": "The Abyssal Edge",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.73,
+        "votes": 49
+      },
+      {
+        "work": 1040356,
+        "title": "Милосердие дракона",
+        "orig": "Mercy of the Dragon",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.58,
+        "votes": 43
+      },
+      {
+        "work": 1040357,
+        "title": "Тень минувшего",
+        "orig": "Shadow of the Past",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.48,
+        "votes": 44
+      },
+      {
+        "work": 1040358,
+        "title": "Зодчий Императора",
+        "orig": "The Emperor's Architect",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 8,
+        "votes": 42
+      },
+      {
+        "work": 1040360,
+        "title": "Древний ждёт",
+        "orig": "The Ancient Awaits",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 8.14,
+        "votes": 51
+      },
+      {
+        "work": 1040361,
+        "title": "Выродки",
+        "orig": "Misbegotten",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.7,
+        "votes": 54
+      },
+      {
+        "work": 1068924,
+        "title": "Урок о железе",
+        "orig": "A Lesson in Iron",
+        "authors": [
+          "Дэвид Гаймер"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 6.87,
+        "votes": 30
+      },
+      {
+        "work": 1033800,
+        "title": "Искупление в огне",
+        "orig": "The Atonement of Fire",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 6.67,
+        "votes": 24
+      },
+      {
+        "work": 1126111,
+        "title": "Свет Лампиона",
+        "orig": "Lantern's Light",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.68,
+        "votes": 41
+      },
+      {
+        "work": 1131110,
+        "title": "Псалом",
+        "orig": "Canticle",
+        "authors": [
+          "Дэвид Гаймер"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 6.17,
+        "votes": 42
+      },
+      {
+        "work": 1131113,
+        "title": "Приговор косы",
+        "orig": "The Verdict of the Scythe",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 6.95,
+        "votes": 40
+      },
+      {
+        "work": 1131114,
+        "title": "Игра противоположностей",
+        "orig": "A Game of Opposites",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.12,
+        "votes": 34
+      },
+      {
+        "work": 1131116,
+        "title": "Лучшие ангелы",
+        "orig": "Better Angels",
+        "authors": [
+          "Иэн Сент-Мартин"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.22,
+        "votes": 32
+      },
+      {
+        "work": 1131117,
+        "title": "Истина завоевателя",
+        "orig": "The Conqueror's Truth",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 6.67,
+        "votes": 39
+      },
+      {
+        "work": 1131118,
+        "title": "Движущая сила войны",
+        "orig": "The Sinew of War",
+        "authors": [
+          "Дариус Хинкс"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.53,
+        "votes": 38
+      },
+      {
+        "work": 1131120,
+        "title": "Покои в конце памяти",
+        "orig": "The Chamber at the end of Memory",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.98,
+        "votes": 41
+      },
+      {
+        "work": 1131121,
+        "title": "Первый легион",
+        "orig": "First Legion",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.22,
+        "votes": 41
+      },
+      {
+        "work": 1379085,
+        "title": "Отблески угасания",
+        "orig": "Embers of Extinction",
+        "authors": [
+          "Брендон Истон"
+        ],
+        "kind": "рассказ",
+        "year": 2020,
+        "rating": 6.58,
+        "votes": 24
+      },
+      {
+        "work": 1410605,
+        "title": "Lupus Daemonis",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.06,
+        "votes": 34
+      },
+      {
+        "work": 1410607,
+        "title": "Съкяльды",
+        "orig": "Skjalds",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.34,
+        "votes": 29
+      },
+      {
+        "work": 1410609,
+        "title": "Шестой культ отверженных",
+        "orig": "The Sixth Cult of the Denied",
+        "authors": [
+          "Дэвид Гаймер"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.41,
+        "votes": 29
+      },
+      {
+        "work": 1272967,
+        "title": "Воля легиона",
+        "orig": "The Will of the Legion",
+        "authors": [
+          "Энди Кларк"
+        ],
+        "kind": "рассказ",
+        "year": 2020,
+        "rating": 6.56,
+        "votes": 32
+      },
+      {
+        "work": 1410612,
+        "title": "Совет Истины",
+        "orig": "Council of Truth",
+        "authors": [
+          "Майк Брукс"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.13,
+        "votes": 30
+      },
+      {
+        "work": 1410614,
+        "title": "Terminus",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 7.24,
+        "votes": 29
+      },
+      {
+        "work": 946606,
+        "title": "Дедушкин подарок",
+        "orig": "Grandfather's Gift",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.44,
+        "votes": 36
+      }
+    ],
+    "heralds-of-the-siege": [
+      {
+        "work": 1083276,
+        "title": "Мириад",
+        "orig": "Myriad",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.48,
+        "votes": 31
+      },
+      {
+        "work": 1083279,
+        "title": "Серый ворон",
+        "orig": "The Grey Raven",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.9,
+        "votes": 29
+      },
+      {
+        "work": 1083280,
+        "title": "Валерий",
+        "orig": "Valerius",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.39,
+        "votes": 28
+      },
+      {
+        "work": 1083277,
+        "title": "Угольные волки",
+        "orig": "The Ember Wolves",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 6.37,
+        "votes": 30
+      },
+      {
+        "work": 1083282,
+        "title": "Чёрный щит",
+        "orig": "Blackshield",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.83,
+        "votes": 30
+      },
+      {
+        "work": 1083275,
+        "title": "Дети Сикаруса",
+        "orig": "Children of Sicarus",
+        "authors": [
+          "Энтони Рейнольдс"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.07,
+        "votes": 30
+      },
+      {
+        "work": 1083278,
+        "title": "Экзоцитоз",
+        "orig": "Exocytosis",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.38,
+        "votes": 29
+      },
+      {
+        "work": 1083272,
+        "title": "Крашенный граф",
+        "orig": "The Painted Count",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.13,
+        "votes": 31
+      },
+      {
+        "work": 1083283,
+        "title": "Последний сын Просперо",
+        "orig": "The Last Son of Prospero",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.94,
+        "votes": 32
+      },
+      {
+        "work": 1083284,
+        "title": "Рассечённая душа",
+        "orig": "The Soul, Severed",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.63,
+        "votes": 27
+      },
+      {
+        "work": 1083270,
+        "title": "Тёмное согласие",
+        "orig": "Dark Compliance",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 6.68,
+        "votes": 28
+      },
+      {
+        "work": 1083273,
+        "title": "Долг есть долг",
+        "orig": "Duty Waits",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.33,
+        "votes": 30
+      },
+      {
+        "work": 1083285,
+        "title": "Магистериум",
+        "orig": "Magisterium",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.28,
+        "votes": 29
+      },
+      {
+        "work": 1083271,
+        "title": "И пробило полночь",
+        "orig": "Now Peals Midnight",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.47,
+        "votes": 30
+      },
+      {
+        "work": 1083274,
+        "title": "Грёзы о Единстве",
+        "orig": "Dreams of Unity",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.85,
+        "votes": 33
+      },
+      {
+        "work": 1083281,
+        "title": "Фигуры расставлены",
+        "orig": "The Board is Set",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 8.03,
+        "votes": 35
+      }
+    ],
+    "legacies-of-betrayal": [
+      {
+        "work": 777901,
+        "title": "Братство Бури",
+        "orig": "Brotherhood of the Storm",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "повесть",
+        "year": 2012,
+        "rating": 7.38,
+        "votes": 65
+      },
+      {
+        "work": 801173,
+        "title": "Змей",
+        "orig": "Serpent",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 5.9,
+        "votes": 61
+      },
+      {
+        "work": 801174,
+        "title": "Луна охотника",
+        "orig": "Hunter's Moon",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.18,
+        "votes": 65
+      },
+      {
+        "work": 801175,
+        "title": "«Веритас феррум»",
+        "orig": "Veritas Ferrum",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "микрорассказ",
+        "year": 2012,
+        "rating": 6.88,
+        "votes": 65
+      },
+      {
+        "work": 801176,
+        "title": "Рассеченный",
+        "orig": "Riven",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.29,
+        "votes": 63
+      },
+      {
+        "work": 801177,
+        "title": "Бей и отступай",
+        "orig": "Strike and Fade",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "микрорассказ",
+        "year": 2012,
+        "rating": 6.55,
+        "votes": 62
+      },
+      {
+        "work": 801178,
+        "title": "Почести павшим",
+        "orig": "Honour to the Dead",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.23,
+        "votes": 61
+      },
+      {
+        "work": 543971,
+        "title": "Гвозди Мясника",
+        "orig": "Butcher's Nails",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.38,
+        "votes": 77
+      },
+      {
+        "work": 801181,
+        "title": "Магистр войны",
+        "orig": "Warmaster",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "микрорассказ",
+        "year": 2012,
+        "rating": 6.45,
+        "votes": 62
+      },
+      {
+        "work": 801182,
+        "title": "Криптос",
+        "orig": "Kryptos",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.36,
+        "votes": 70
+      },
+      {
+        "work": 777909,
+        "title": "Коготь волка",
+        "orig": "Wolf's Claw",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "микрорассказ",
+        "year": 2014,
+        "rating": 6.75,
+        "votes": 59
+      },
+      {
+        "work": 801183,
+        "title": "Вор откровений",
+        "orig": "Thief of Revelations",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 6.99,
+        "votes": 67
+      },
+      {
+        "work": 801179,
+        "title": "Слово Божие",
+        "orig": "The Divine Word",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.53,
+        "votes": 60
+      },
+      {
+        "work": 801184,
+        "title": "Люций. Вечный клинок",
+        "orig": "Lucius: The Eternal Blade",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 6.91,
+        "votes": 65
+      },
+      {
+        "work": 801185,
+        "title": "Восьмеричный путь",
+        "orig": "Khârn: The Eightfold Path",
+        "authors": [
+          "Энтони Рейнольдс"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 7.24,
+        "votes": 59
+      },
+      {
+        "work": 801180,
+        "title": "Хранитель порядка",
+        "orig": "Cypher: Guardian of Order",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 5.98,
+        "votes": 65
+      },
+      {
+        "work": 710411,
+        "title": "Сердце «Завоевателя»",
+        "orig": "Heart of the Conqueror",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "микрорассказ",
+        "year": 2014,
+        "rating": 7.48,
+        "votes": 63
+      },
+      {
+        "work": 801186,
+        "title": "Порицание",
+        "orig": "Censure",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.56,
+        "votes": 57
+      },
+      {
+        "work": 777903,
+        "title": "Одинокий волк",
+        "orig": "Bjorn: Lone Wolf",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 6.27,
+        "votes": 56
+      }
+    ],
+    "lupercal-s-war": [
+      {
+        "work": 283141,
+        "title": "Последний храм",
+        "orig": "The Last Church",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 8.09,
+        "votes": 210
+      },
+      {
+        "work": 356686,
+        "title": "Жестокое оружие",
+        "orig": "Savage Weapons",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.58,
+        "votes": 119
+      },
+      {
+        "work": 778419,
+        "title": "Несовершенный",
+        "orig": "Imperfect",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.33,
+        "votes": 51
+      },
+      {
+        "work": 356685,
+        "title": "Железо внутри",
+        "orig": "The Iron Within",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 8.16,
+        "votes": 135
+      },
+      {
+        "work": 914468,
+        "title": "Черное Око",
+        "orig": "Black Oculus",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "микрорассказ",
+        "year": 2015,
+        "rating": 5.78,
+        "votes": 50
+      },
+      {
+        "work": 942722,
+        "title": "Братство Луны",
+        "orig": "Brotherhood of the Moon",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.83,
+        "votes": 52
+      },
+      {
+        "work": 777903,
+        "title": "Одинокий волк",
+        "orig": "Bjorn: Lone Wolf",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 6.27,
+        "votes": 56
+      },
+      {
+        "work": 1508827,
+        "title": "Кровавый вой",
+        "orig": "Bloodhowl",
+        "authors": [
+          "Крис Форрестер"
+        ],
+        "kind": "рассказ",
+        "year": 2021,
+        "rating": 6.11,
+        "votes": 18
+      },
+      {
+        "work": 1088365,
+        "title": "Чемпион клятв",
+        "orig": "Champion of Oaths",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.26,
+        "votes": 23
+      },
+      {
+        "work": 961909,
+        "title": "Дитя ночи",
+        "orig": "Child of Night",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.98,
+        "votes": 49
+      },
+      {
+        "work": 961908,
+        "title": "Потерянные сыны",
+        "orig": "Lost Sons",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.31,
+        "votes": 49
+      },
+      {
+        "work": 989163,
+        "title": "Долг бессмертных",
+        "orig": "Immortal Duty",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.93,
+        "votes": 41
+      },
+      {
+        "work": 283142,
+        "title": "После Деш'эа",
+        "orig": "After Desh'ea",
+        "authors": [
+          "Мэтью Фаррер"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 7.63,
+        "votes": 166
+      },
+      {
+        "work": 914470,
+        "title": "Венок непокорности",
+        "orig": "The Laurel of Defiance",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.33,
+        "votes": 48
+      },
+      {
+        "work": 777912,
+        "title": "Демонология",
+        "orig": "Daemonology",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.06,
+        "votes": 62
+      },
+      {
+        "work": 356682,
+        "title": "Возрождение",
+        "orig": "Rebirth",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.29,
+        "votes": 120
+      },
+      {
+        "work": 356684,
+        "title": "Маленький Хорус",
+        "orig": "Little Horus",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.27,
+        "votes": 148
+      },
+      {
+        "work": 1088366,
+        "title": "Дитя Хаоса",
+        "orig": "Child of Chaos",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.47,
+        "votes": 30
+      },
+      {
+        "work": 859994,
+        "title": "Артефакты",
+        "orig": "Artefacts",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.59,
+        "votes": 54
+      },
+      {
+        "work": 1083279,
+        "title": "Серый ворон",
+        "orig": "The Grey Raven",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.9,
+        "votes": 29
+      },
+      {
+        "work": 356678,
+        "title": "Вклад лжеца",
+        "orig": "Liar's Due",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.08,
+        "votes": 123
+      }
+    ],
+    "mark-of-calth": [
+      {
+        "work": 757234,
+        "title": "Эребовы осколки",
+        "orig": "The Shards of Erebus",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.37,
+        "votes": 75
+      },
+      {
+        "work": 757235,
+        "title": "Былой Калт",
+        "orig": "Calth That Was",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "повесть",
+        "year": 2013,
+        "rating": 7.72,
+        "votes": 76
+      },
+      {
+        "work": 757236,
+        "title": "Тёмное сердце",
+        "orig": "Dark Heart",
+        "authors": [
+          "Энтони Рейнольдс"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.46,
+        "votes": 74
+      },
+      {
+        "work": 757237,
+        "title": "Странник",
+        "orig": "The Traveller",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.25,
+        "votes": 72
+      },
+      {
+        "work": 757238,
+        "title": "Темнее тьмы",
+        "orig": "A Deeper Darkness",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.43,
+        "votes": 68
+      },
+      {
+        "work": 710410,
+        "title": "Подземная война",
+        "orig": "The Underworld War",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.73,
+        "votes": 77
+      },
+      {
+        "work": 757240,
+        "title": "Атам",
+        "orig": "Athame",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.24,
+        "votes": 72
+      },
+      {
+        "work": 632287,
+        "title": "Неотмеченный",
+        "orig": "Unmarked",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.7,
+        "votes": 83
+      }
+    ],
+    "scions-of-the-emperor": [
+      {
+        "work": 1131110,
+        "title": "Псалом",
+        "orig": "Canticle",
+        "authors": [
+          "Дэвид Гаймер"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 6.17,
+        "votes": 42
+      },
+      {
+        "work": 1131113,
+        "title": "Приговор косы",
+        "orig": "The Verdict of the Scythe",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 6.95,
+        "votes": 40
+      },
+      {
+        "work": 1131114,
+        "title": "Игра противоположностей",
+        "orig": "A Game of Opposites",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.12,
+        "votes": 34
+      },
+      {
+        "work": 1131116,
+        "title": "Лучшие ангелы",
+        "orig": "Better Angels",
+        "authors": [
+          "Иэн Сент-Мартин"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.22,
+        "votes": 32
+      },
+      {
+        "work": 1131117,
+        "title": "Истина завоевателя",
+        "orig": "The Conqueror's Truth",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 6.67,
+        "votes": 39
+      },
+      {
+        "work": 1131118,
+        "title": "Движущая сила войны",
+        "orig": "The Sinew of War",
+        "authors": [
+          "Дариус Хинкс"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.53,
+        "votes": 38
+      },
+      {
+        "work": 1131120,
+        "title": "Покои в конце памяти",
+        "orig": "The Chamber at the end of Memory",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.98,
+        "votes": 41
+      },
+      {
+        "work": 1131121,
+        "title": "Первый легион",
+        "orig": "First Legion",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2019,
+        "rating": 7.22,
+        "votes": 41
+      }
+    ],
+    "shadows-of-treachery": [
+      {
+        "work": 458258,
+        "title": "Багровый кулак",
+        "orig": "The Crimson Fist",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "повесть",
+        "year": 2012,
+        "rating": 7.7,
+        "votes": 88
+      },
+      {
+        "work": 74832,
+        "title": "Тёмный Король",
+        "orig": "The Dark King",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2007,
+        "rating": 7.51,
+        "votes": 144
+      },
+      {
+        "work": 74833,
+        "title": "Башня Молний",
+        "orig": "The Lightning Tower",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2007,
+        "rating": 7.36,
+        "votes": 165
+      },
+      {
+        "work": 308697,
+        "title": "Проект «Каба»",
+        "orig": "The Kaban Project",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 7.6,
+        "votes": 149
+      },
+      {
+        "work": 458259,
+        "title": "Полёт ворона",
+        "orig": "Raven's Flight",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.47,
+        "votes": 85
+      },
+      {
+        "work": 458260,
+        "title": "Смерть серебряных дел мастера",
+        "orig": "Death of a Silversmith",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.03,
+        "votes": 97
+      },
+      {
+        "work": 458261,
+        "title": "Вороний принц",
+        "orig": "Prince of Crows",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "повесть",
+        "year": 2012,
+        "rating": 8.36,
+        "votes": 96
+      }
+    ],
+    "shattered-legions": [
+      {
+        "work": 989161,
+        "title": "Медузон",
+        "orig": "Meduson",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.8,
+        "votes": 46
+      },
+      {
+        "work": 989162,
+        "title": "Без единства",
+        "orig": "Unforged",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.75,
+        "votes": 44
+      },
+      {
+        "work": 989163,
+        "title": "Долг бессмертных",
+        "orig": "Immortal Duty",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.93,
+        "votes": 41
+      },
+      {
+        "work": 989164,
+        "title": "Эсминец «Серый Коготь»",
+        "orig": "Grey Talon",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.25,
+        "votes": 40
+      },
+      {
+        "work": 989165,
+        "title": "Ключи Хель",
+        "orig": "The Keys of Hel",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.39,
+        "votes": 46
+      },
+      {
+        "work": 989167,
+        "title": "Деяния вечны",
+        "orig": "Deeds Endured",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.76,
+        "votes": 41
+      },
+      {
+        "work": 989166,
+        "title": "Смертельная петля",
+        "orig": "The Noose",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.03,
+        "votes": 39
+      },
+      {
+        "work": 989168,
+        "title": "Без голоса",
+        "orig": "Unspoken",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.07,
+        "votes": 42
+      },
+      {
+        "work": 908612,
+        "title": "Седьмой змей",
+        "orig": "The Seventh Serpent",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "повесть",
+        "year": 2014,
+        "rating": 7.73,
+        "votes": 45
+      },
+      {
+        "work": 989170,
+        "title": "Избранная длань",
+        "orig": "The Hand Elect",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.74,
+        "votes": 34
+      },
+      {
+        "work": 989169,
+        "title": "Другой",
+        "orig": "The Either",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.87,
+        "votes": 38
+      }
+    ],
+    "sons-of-the-emperor": [
+      {
+        "work": 1040355,
+        "title": "Успение ангелов",
+        "orig": "The Passing of Angels",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.33,
+        "votes": 45
+      },
+      {
+        "work": 1040353,
+        "title": "На краю бездны",
+        "orig": "The Abyssal Edge",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.73,
+        "votes": 49
+      },
+      {
+        "work": 1040356,
+        "title": "Милосердие дракона",
+        "orig": "Mercy of the Dragon",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.58,
+        "votes": 43
+      },
+      {
+        "work": 1040357,
+        "title": "Тень минувшего",
+        "orig": "Shadow of the Past",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.48,
+        "votes": 44
+      },
+      {
+        "work": 1040358,
+        "title": "Зодчий Императора",
+        "orig": "The Emperor's Architect",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 8,
+        "votes": 42
+      },
+      {
+        "work": 1040359,
+        "title": "Принц крови",
+        "orig": "Prince of Blood",
+        "authors": [
+          "Лори Голдинг"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.32,
+        "votes": 41
+      },
+      {
+        "work": 1040360,
+        "title": "Древний ждёт",
+        "orig": "The Ancient Awaits",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 8.14,
+        "votes": 51
+      },
+      {
+        "work": 1040361,
+        "title": "Выродки",
+        "orig": "Misbegotten",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2018,
+        "rating": 7.7,
+        "votes": 54
+      }
+    ],
+    "tales-of-heresy": [
+      {
+        "work": 283136,
+        "title": "Кровавые игры",
+        "orig": "Blood Games",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 7.56,
+        "votes": 216
+      },
+      {
+        "work": 283137,
+        "title": "Волк у ворот",
+        "orig": "Wolf at the Door",
+        "authors": [
+          "Майк Ли"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 7.66,
+        "votes": 167
+      },
+      {
+        "work": 283138,
+        "title": "Отпрыски бури",
+        "orig": "Scions of the Storm",
+        "authors": [
+          "Энтони Рейнольдс"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 6.96,
+        "votes": 159
+      },
+      {
+        "work": 283139,
+        "title": "Голос",
+        "orig": "The Voice",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 7.31,
+        "votes": 162
+      },
+      {
+        "work": 283140,
+        "title": "По зову льва",
+        "orig": "Call of the Lion",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 6.67,
+        "votes": 165
+      },
+      {
+        "work": 283141,
+        "title": "Последний храм",
+        "orig": "The Last Church",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 8.09,
+        "votes": 210
+      },
+      {
+        "work": 283142,
+        "title": "После Деш'эа",
+        "orig": "After Desh'ea",
+        "authors": [
+          "Мэтью Фаррер"
+        ],
+        "kind": "рассказ",
+        "year": 2009,
+        "rating": 7.63,
+        "votes": 166
+      }
+    ],
+    "tallarn": [
+      {
+        "work": 989155,
+        "title": "Талларн. Очевидец",
+        "orig": "Tallarn: Witness",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "микрорассказ",
+        "year": 2015,
+        "rating": 7.07,
+        "votes": 41
+      },
+      {
+        "work": 777965,
+        "title": "Талларн. «Палач»",
+        "orig": "Tallarn: Executioner",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "повесть",
+        "year": 2013,
+        "rating": 7.48,
+        "votes": 54
+      },
+      {
+        "work": 989156,
+        "title": "Талларн. Сирена",
+        "orig": "Tallarn: Siren",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.56,
+        "votes": 41
+      },
+      {
+        "work": 908613,
+        "title": "Талларн. Броненосец",
+        "orig": "Tallarn: Ironclad",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "повесть",
+        "year": 2015,
+        "rating": 7.93,
+        "votes": 46
+      }
+    ],
+    "the-burden-of-loyalty": [
+      {
+        "work": 994024,
+        "title": "Тринадцатая волчья",
+        "orig": "The Thirteenth Wolf",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.39,
+        "votes": 31
+      },
+      {
+        "work": 994017,
+        "title": "В изгнание",
+        "orig": "Into Exile",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.83,
+        "votes": 35
+      },
+      {
+        "work": 908614,
+        "title": "Кибернетика",
+        "orig": "Cybernetica",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "повесть",
+        "year": 2015,
+        "rating": 7.28,
+        "votes": 40
+      },
+      {
+        "work": 994019,
+        "title": "Ордо Синистер",
+        "orig": "Ordo Sinister",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.55,
+        "votes": 33
+      },
+      {
+        "work": 994020,
+        "title": "Сердце Фароса",
+        "orig": "The Heart of the Pharos",
+        "authors": [
+          "Лори Голдинг"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.83,
+        "votes": 30
+      },
+      {
+        "work": 777898,
+        "title": "Волчий Король",
+        "orig": "Wolf King",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "повесть",
+        "year": 2015,
+        "rating": 7.72,
+        "votes": 47
+      },
+      {
+        "work": 994016,
+        "title": "Двойное наследование",
+        "orig": "The Binary Succession",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2017,
+        "rating": 7.41,
+        "votes": 34
+      },
+      {
+        "work": 994014,
+        "title": "Вечный",
+        "orig": "Perpetual",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.51,
+        "votes": 39
+      }
+    ],
+    "the-primarchs": [
+      {
+        "work": 458717,
+        "title": "Расколотое отражение",
+        "orig": "The Reflection Crack'd",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "повесть",
+        "year": 2012,
+        "rating": 7.43,
+        "votes": 105
+      },
+      {
+        "work": 458718,
+        "title": "Прочность железа",
+        "orig": "Feat of Iron",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "повесть",
+        "year": 2012,
+        "rating": 6.71,
+        "votes": 99
+      },
+      {
+        "work": 458719,
+        "title": "Лев",
+        "orig": "The Lion",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "повесть",
+        "year": 2012,
+        "rating": 7.43,
+        "votes": 90
+      },
+      {
+        "work": 458720,
+        "title": "Притаившийся змей",
+        "orig": "The Serpent Beneath",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "повесть",
+        "year": 2012,
+        "rating": 7.33,
+        "votes": 93
+      }
+    ],
+    "the-silent-war": [
+      {
+        "work": 908611,
+        "title": "Чистка",
+        "orig": "The Purge",
+        "authors": [
+          "Энтони Рейнольдс"
+        ],
+        "kind": "повесть",
+        "year": 2014,
+        "rating": 8.14,
+        "votes": 50
+      },
+      {
+        "work": 961903,
+        "title": "Сигиллит",
+        "orig": "The Sigillite",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.73,
+        "votes": 56
+      },
+      {
+        "work": 778414,
+        "title": "Охота на Волка",
+        "orig": "Wolf Hunt",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.49,
+        "votes": 53
+      },
+      {
+        "work": 939962,
+        "title": "Один в поле воин",
+        "orig": "Army of One",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "микрорассказ",
+        "year": 2012,
+        "rating": 6.75,
+        "votes": 55
+      },
+      {
+        "work": 667329,
+        "title": "Врата Терры",
+        "orig": "The Gates of Terra",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.08,
+        "votes": 50
+      },
+      {
+        "work": 961904,
+        "title": "Призраки безмолвны",
+        "orig": "Ghosts Speak Not",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.73,
+        "votes": 44
+      },
+      {
+        "work": 961905,
+        "title": "Храмовник",
+        "orig": "Templar",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.1,
+        "votes": 52
+      },
+      {
+        "work": 961906,
+        "title": "Далекие отголоски Древней Ночи",
+        "orig": "Distant Echoes of Old Night",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.12,
+        "votes": 50
+      },
+      {
+        "work": 961907,
+        "title": "Серый ангел",
+        "orig": "Grey Angel",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.12,
+        "votes": 51
+      },
+      {
+        "work": 961908,
+        "title": "Потерянные сыны",
+        "orig": "Lost Sons",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.31,
+        "votes": 49
+      },
+      {
+        "work": 961909,
+        "title": "Дитя ночи",
+        "orig": "Child of Night",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.98,
+        "votes": 49
+      },
+      {
+        "work": 961910,
+        "title": "Luna Mendax",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.43,
+        "votes": 58
+      },
+      {
+        "work": 961911,
+        "title": "Терпение",
+        "orig": "Patience",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 6.95,
+        "votes": 42
+      },
+      {
+        "work": 961912,
+        "title": "Дозорный",
+        "orig": "The Watcher",
+        "authors": [
+          "Кристиан Данн"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.14,
+        "votes": 44
+      }
+    ],
+    "war-without-end": [
+      {
+        "work": 914459,
+        "title": "Возлюбленная супруга",
+        "orig": "The Devine Adoratrice",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 6.84,
+        "votes": 49
+      },
+      {
+        "work": 710413,
+        "title": "Вой Родного Мира",
+        "orig": "Howl of the Hearthworld",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.77,
+        "votes": 61
+      },
+      {
+        "work": 914461,
+        "title": "Владыка Красных Песков",
+        "orig": "Lord of the Red Sands",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 6.88,
+        "votes": 67
+      },
+      {
+        "work": 859994,
+        "title": "Артефакты",
+        "orig": "Artefacts",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.59,
+        "votes": 54
+      },
+      {
+        "work": 914462,
+        "title": "Десницы Императора",
+        "orig": "Hands of the Emperor",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 6.96,
+        "votes": 53
+      },
+      {
+        "work": 859997,
+        "title": "Фениксиец",
+        "orig": "The Phoenician",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "микрорассказ",
+        "year": 2013,
+        "rating": 6.5,
+        "votes": 58
+      },
+      {
+        "work": 914463,
+        "title": "Проповедь исхода",
+        "orig": "Sermon of Exodus",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.2,
+        "votes": 49
+      },
+      {
+        "work": 914464,
+        "title": "По приказу Льва",
+        "orig": "By the Lion's Command",
+        "authors": [
+          "Гэв Торп"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 6.78,
+        "votes": 49
+      },
+      {
+        "work": 914465,
+        "title": "Вспарывание",
+        "orig": "The Harrowing",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.18,
+        "votes": 51
+      },
+      {
+        "work": 819181,
+        "title": "Это всё, что останется...",
+        "orig": "All That Remains",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 6.98,
+        "votes": 46
+      },
+      {
+        "work": 778006,
+        "title": "Прицел",
+        "orig": "Gunsight",
+        "authors": [
+          "Джеймс Сваллоу"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.1,
+        "votes": 50
+      },
+      {
+        "work": 777911,
+        "title": "Верность",
+        "orig": "Allegiance",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.1,
+        "votes": 52
+      },
+      {
+        "work": 777912,
+        "title": "Демонология",
+        "orig": "Daemonology",
+        "authors": [
+          "Крис Райт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.06,
+        "votes": 62
+      },
+      {
+        "work": 914468,
+        "title": "Черное Око",
+        "orig": "Black Oculus",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "микрорассказ",
+        "year": 2015,
+        "rating": 5.78,
+        "votes": 50
+      },
+      {
+        "work": 778418,
+        "title": "Добродетели сынов",
+        "orig": "Virtue of the Sons",
+        "authors": [
+          "Энди Смайлли"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.08,
+        "votes": 48
+      },
+      {
+        "work": 914470,
+        "title": "Венок непокорности",
+        "orig": "The Laurel of Defiance",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.33,
+        "votes": 48
+      },
+      {
+        "work": 778420,
+        "title": "Укромный уголок",
+        "orig": "A Safe and Shadowed Place",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 6.67,
+        "votes": 52
+      },
+      {
+        "work": 778419,
+        "title": "Несовершенный",
+        "orig": "Imperfect",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2014,
+        "rating": 7.33,
+        "votes": 51
+      },
+      {
+        "work": 859995,
+        "title": "Хирургеон",
+        "orig": "Chirurgeon",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.41,
+        "votes": 54
+      },
+      {
+        "work": 914475,
+        "title": "Кривой",
+        "orig": "Twisted",
+        "authors": [
+          "Гай Хейли"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.35,
+        "votes": 54
+      },
+      {
+        "work": 914478,
+        "title": "Волчица",
+        "orig": "Wolf Mother",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.25,
+        "votes": 53
+      }
+    ]
+  }
+}
