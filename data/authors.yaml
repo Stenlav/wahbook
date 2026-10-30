@@ -1,0 +1,28 @@
+# Имена авторов и составителей по-русски: имя как в books.yaml → русское написание.
+# Написание — как на русской вики и FantLab (там они совпадают). Каждое имя из books.yaml
+# (author и editors) должно быть здесь — это проверяет тест.
+Aaron Dembski-Bowden: Аарон Дембски-Боуден
+Ben Counter: Бен Каунтер
+Chris Wraight: Крис Райт
+Christian Dunn: Кристиан Данн
+Dan Abnett: Дэн Абнетт
+David Annandale: Дэвид Аннандейл
+David Guymer: Дэвид Гаймер
+Gav Thorpe: Гэв Торп
+Graham McNeill: Грэм Макнилл
+Guy Haley: Гай Хейли
+Ian St. Martin: Иэн Сент-Мартин
+James Swallow: Джеймс Сваллоу
+John French: Джон Френч
+Josh Reynolds: Джош Рейнольдс
+Laurie Goulding: Лори Голдинг
+Lindsey Priestley: Линдси Пристли
+Marc Collins: Марк Коллинз
+Mike Brooks: Майк Брукс
+Mike Lee: Майк Ли
+Mitchel Scanlon: Митчел Сканлон
+Nick Kyme: Ник Кайм
+Rich McCormick: Рич Маккормик
+Rob Sanders: Роб Сандерс
+Anthony Reynolds: Энтони Рейнольдс
+Alan Merrett: Алан Меррет

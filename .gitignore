@@ -1,0 +1,4 @@
+/dist/
+/data/state.json
+*.part
+.DS_Store

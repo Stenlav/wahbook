@@ -1,0 +1,625 @@
+{
+  "updated": "2026-10-30",
+  "books": {
+    "a-thousand-sons": {
+      "work": 283119,
+      "rating": 8.36,
+      "votes": 373
+    },
+    "age-of-darkness": {
+      "work": 356585,
+      "rating": 7.62,
+      "votes": 229
+    },
+    "alpharius-head-of-the-hydra": {
+      "work": 1418589,
+      "rating": 7.9,
+      "votes": 70
+    },
+    "angel-exterminatus": {
+      "work": 426614,
+      "rating": 8.05,
+      "votes": 193
+    },
+    "angels-of-caliban": {
+      "work": 865458,
+      "rating": 7.64,
+      "votes": 87
+    },
+    "angron-slave-of-nuceria": {
+      "work": 1127499,
+      "rating": 8.35,
+      "votes": 91
+    },
+    "ashes-of-the-imperium": {
+      "work": 2244060,
+      "rating": 8,
+      "votes": 12
+    },
+    "aurelian": {
+      "work": 710412,
+      "rating": 8.12,
+      "votes": 76
+    },
+    "battle-for-the-abyss": {
+      "work": 63661,
+      "rating": 6.87,
+      "votes": 348
+    },
+    "betrayer": {
+      "work": 572386,
+      "rating": 8.46,
+      "votes": 202
+    },
+    "blood-of-the-emperor": {
+      "work": 1410606,
+      "rating": 7.28,
+      "votes": 36
+    },
+    "born-of-flame": {
+      "work": 1036606,
+      "rating": 7.37,
+      "votes": 46
+    },
+    "brotherhood-of-the-storm": {
+      "work": 777901,
+      "rating": 7.38,
+      "votes": 65
+    },
+    "corax-lord-of-shadows": {
+      "work": 1083288,
+      "rating": 7.48,
+      "votes": 62
+    },
+    "corax-soulforge": {
+      "work": 777962,
+      "rating": 7.07,
+      "votes": 46
+    },
+    "corax-soulforger": {
+      "work": 910110,
+      "rating": 7.36,
+      "votes": 72
+    },
+    "cthonia-s-reckoning": {
+      "work": 1577708,
+      "rating": 7.36,
+      "votes": 22
+    },
+    "cybernetica": {
+      "work": 908614,
+      "rating": 7.28,
+      "votes": 40
+    },
+    "deathfire": {
+      "work": 801187,
+      "rating": 7.46,
+      "votes": 98
+    },
+    "deliverance-lost": {
+      "work": 310768,
+      "rating": 7.72,
+      "votes": 229
+    },
+    "descent-of-angels": {
+      "work": 73236,
+      "rating": 7.04,
+      "votes": 472
+    },
+    "dreadwing": {
+      "work": 1088377,
+      "rating": 7.1,
+      "votes": 29
+    },
+    "dropsite-massacre": {
+      "work": 2219741,
+      "rating": 8.57,
+      "votes": 7
+    },
+    "echoes-of-eternity": {
+      "work": 1617261,
+      "rating": 8.49,
+      "votes": 55
+    },
+    "eidolon-the-auric-hammer": {
+      "work": 1955317,
+      "rating": 6.75,
+      "votes": 20
+    },
+    "era-of-ruin": {
+      "work": 2139950,
+      "rating": 7.32,
+      "votes": 25
+    },
+    "eye-of-terra": {
+      "work": 961793,
+      "rating": 7.27,
+      "votes": 86
+    },
+    "fallen-angels": {
+      "work": 283118,
+      "rating": 7.5,
+      "votes": 300
+    },
+    "false-gods": {
+      "work": 36311,
+      "rating": 7.92,
+      "votes": 851
+    },
+    "fear-to-tread": {
+      "work": 391369,
+      "rating": 8.11,
+      "votes": 218
+    },
+    "feat-of-iron": {
+      "work": 458718,
+      "rating": 6.71,
+      "votes": 99
+    },
+    "ferrus-manus-the-gorgon-of-medusa": {
+      "work": 988828,
+      "rating": 6.87,
+      "votes": 68
+    },
+    "fulgrim": {
+      "work": 55737,
+      "rating": 7.96,
+      "votes": 597
+    },
+    "fulgrim-the-palatine-phoenix": {
+      "work": 943352,
+      "rating": 7.72,
+      "votes": 82
+    },
+    "fury-of-magnus": {
+      "work": 1345154,
+      "rating": 7.98,
+      "votes": 60
+    },
+    "galaxy-in-flames": {
+      "work": 58546,
+      "rating": 8.11,
+      "votes": 783
+    },
+    "garro": {
+      "work": 989157,
+      "rating": 7.71,
+      "votes": 82
+    },
+    "garro-knight-of-grey": {
+      "work": 1679010,
+      "rating": 7.87,
+      "votes": 46
+    },
+    "garro-vow-of-faith": {
+      "work": 777992,
+      "rating": 7.67,
+      "votes": 33
+    },
+    "heirs-of-the-emperor": {
+      "work": 1592566,
+      "rating": 7.83,
+      "votes": 23
+    },
+    "heralds-of-the-siege": {
+      "work": 1083268,
+      "rating": 7.57,
+      "votes": 47
+    },
+    "horus-rising": {
+      "work": 36166,
+      "rating": 7.84,
+      "votes": 1185
+    },
+    "jaghatai-khan-warhawk-of-chogoris": {
+      "work": 988827,
+      "rating": 7.9,
+      "votes": 69
+    },
+    "know-no-fear": {
+      "work": 345065,
+      "rating": 8.35,
+      "votes": 268
+    },
+    "konrad-curze-the-night-haunter": {
+      "work": 1151569,
+      "rating": 8.42,
+      "votes": 88
+    },
+    "legacies-of-betrayal": {
+      "work": 801172,
+      "rating": 7.22,
+      "votes": 106
+    },
+    "legion": {
+      "work": 65016,
+      "rating": 7.97,
+      "votes": 532
+    },
+    "leman-russ-the-great-wolf": {
+      "work": 873765,
+      "rating": 8.04,
+      "votes": 93
+    },
+    "lion-el-jonson-lord-of-the-first": {
+      "work": 1318056,
+      "rating": 7.4,
+      "votes": 58
+    },
+    "lorgar-bearer-of-the-word": {
+      "work": 942741,
+      "rating": 7.54,
+      "votes": 92
+    },
+    "lupercal-s-war": {
+      "work": 1577689,
+      "rating": 7.79,
+      "votes": 19
+    },
+    "luther-first-of-the-fallen": {
+      "work": 1359415,
+      "rating": 7.76,
+      "votes": 45
+    },
+    "magnus-the-red-master-of-prospero": {
+      "work": 908261,
+      "rating": 8.12,
+      "votes": 97
+    },
+    "mark-of-calth": {
+      "work": 757233,
+      "rating": 7.54,
+      "votes": 159
+    },
+    "mechanicum": {
+      "work": 127949,
+      "rating": 7.83,
+      "votes": 377
+    },
+    "mortarion-the-pale-king": {
+      "work": 1588607,
+      "rating": 7.44,
+      "votes": 48
+    },
+    "mortis": {
+      "work": 1419766,
+      "rating": 7.78,
+      "votes": 58
+    },
+    "nemesis": {
+      "work": 283120,
+      "rating": 7.85,
+      "votes": 291
+    },
+    "old-earth": {
+      "work": 989153,
+      "rating": 7.34,
+      "votes": 58
+    },
+    "perturabo-the-hammer-of-olympia": {
+      "work": 915589,
+      "rating": 8.17,
+      "votes": 99
+    },
+    "pharos": {
+      "work": 914482,
+      "rating": 7.95,
+      "votes": 110
+    },
+    "praetorian-of-dorn": {
+      "work": 941819,
+      "rating": 7.92,
+      "votes": 89
+    },
+    "prince-of-crows": {
+      "work": 458261,
+      "rating": 8.36,
+      "votes": 96
+    },
+    "promethean-sun": {
+      "work": 777959,
+      "rating": 7.11,
+      "votes": 46
+    },
+    "prospero-burns": {
+      "work": 283121,
+      "rating": 7.93,
+      "votes": 356
+    },
+    "raldoron-revenant": {
+      "work": 2447320,
+      "rating": 10,
+      "votes": 1
+    },
+    "ravenlord": {
+      "work": 778421,
+      "rating": 7.37,
+      "votes": 46
+    },
+    "roboute-guilliman-lord-of-ultramar": {
+      "work": 915512,
+      "rating": 6.98,
+      "votes": 91
+    },
+    "rogal-dorn-the-emperor-s-crusader": {
+      "work": 1613059,
+      "rating": 7.78,
+      "votes": 40
+    },
+    "ruinstorm": {
+      "work": 989152,
+      "rating": 7.21,
+      "votes": 62
+    },
+    "sanguinius-the-great-angel": {
+      "work": 1660163,
+      "rating": 7.77,
+      "votes": 52
+    },
+    "saturnine": {
+      "work": 1302332,
+      "rating": 8.56,
+      "votes": 77
+    },
+    "scars": {
+      "work": 777864,
+      "rating": 8.01,
+      "votes": 156
+    },
+    "scions-of-the-emperor": {
+      "work": 1131107,
+      "rating": 7.48,
+      "votes": 44
+    },
+    "scorched-earth": {
+      "work": 777960,
+      "rating": 7.45,
+      "votes": 38
+    },
+    "shadows-of-treachery": {
+      "work": 458257,
+      "rating": 7.87,
+      "votes": 172
+    },
+    "shattered-legions": {
+      "work": 989160,
+      "rating": 7.19,
+      "votes": 68
+    },
+    "sigismund-the-eternal-crusader": {
+      "work": 1538853,
+      "rating": 7.86,
+      "votes": 44
+    },
+    "slaves-to-darkness": {
+      "work": 1054845,
+      "rating": 7.98,
+      "votes": 65
+    },
+    "sons-of-the-emperor": {
+      "work": 1040354,
+      "rating": 7.77,
+      "votes": 52
+    },
+    "sons-of-the-forge": {
+      "work": 908617,
+      "rating": 6.96,
+      "votes": 25
+    },
+    "sons-of-the-selenar": {
+      "work": 1252210,
+      "rating": 7.58,
+      "votes": 66
+    },
+    "spear-of-ultramar": {
+      "work": 1088375,
+      "rating": 6.94,
+      "votes": 32
+    },
+    "tales-of-heresy": {
+      "work": 283135,
+      "rating": 7.57,
+      "votes": 309
+    },
+    "tallarn": {
+      "work": 989154,
+      "rating": 7.73,
+      "votes": 64
+    },
+    "tallarn-executioner": {
+      "work": 777965,
+      "rating": 7.48,
+      "votes": 54
+    },
+    "tallarn-ironclad": {
+      "work": 908613,
+      "rating": 7.93,
+      "votes": 46
+    },
+    "the-burden-of-loyalty": {
+      "work": 994013,
+      "rating": 7.37,
+      "votes": 52
+    },
+    "the-buried-dagger": {
+      "work": 1127493,
+      "rating": 8.15,
+      "votes": 60
+    },
+    "the-crimson-fist": {
+      "work": 458258,
+      "rating": 7.7,
+      "votes": 88
+    },
+    "the-crimson-king": {
+      "work": 942740,
+      "rating": 7.59,
+      "votes": 75
+    },
+    "the-damnation-of-pythos": {
+      "work": 777931,
+      "rating": 6.78,
+      "votes": 116
+    },
+    "the-end-and-the-death-volume-i": {
+      "work": 1692101,
+      "rating": 8.56,
+      "votes": 55
+    },
+    "the-end-and-the-death-volume-ii": {
+      "work": 1797305,
+      "rating": 8.12,
+      "votes": 49
+    },
+    "the-end-and-the-death-volume-iii": {
+      "work": 1824520,
+      "rating": 8.74,
+      "votes": 43
+    },
+    "the-first-heretic": {
+      "work": 283122,
+      "rating": 8.37,
+      "votes": 346
+    },
+    "the-first-wall": {
+      "work": 1252209,
+      "rating": 7.47,
+      "votes": 72
+    },
+    "the-flight-of-the-eisenstein": {
+      "work": 65013,
+      "rating": 7.94,
+      "votes": 707
+    },
+    "the-honoured": {
+      "work": 908615,
+      "rating": 6.78,
+      "votes": 27
+    },
+    "the-lion": {
+      "work": 458719,
+      "rating": 7.43,
+      "votes": 90
+    },
+    "the-lost-and-the-damned": {
+      "work": 1210026,
+      "rating": 8.05,
+      "votes": 82
+    },
+    "the-master-of-mankind": {
+      "work": 942739,
+      "rating": 8.06,
+      "votes": 120
+    },
+    "the-outcast-dead": {
+      "work": 310302,
+      "rating": 7.44,
+      "votes": 239
+    },
+    "the-path-of-heaven": {
+      "work": 941814,
+      "rating": 8.15,
+      "votes": 101
+    },
+    "the-primarchs": {
+      "work": 458716,
+      "rating": 7.44,
+      "votes": 182
+    },
+    "the-purge": {
+      "work": 908611,
+      "rating": 8.14,
+      "votes": 50
+    },
+    "the-reflection-crack-d": {
+      "work": 458717,
+      "rating": 7.43,
+      "votes": 105
+    },
+    "the-serpent-beneath": {
+      "work": 458720,
+      "rating": 7.33,
+      "votes": 93
+    },
+    "the-seventh-serpent": {
+      "work": 908612,
+      "rating": 7.73,
+      "votes": 45
+    },
+    "the-silent-war": {
+      "work": 989159,
+      "rating": 7.46,
+      "votes": 76
+    },
+    "the-solar-war": {
+      "work": 1097541,
+      "rating": 7.73,
+      "votes": 89
+    },
+    "the-unburdened": {
+      "work": 908616,
+      "rating": 6.7,
+      "votes": 27
+    },
+    "the-unremembered-empire": {
+      "work": 596776,
+      "rating": 8.49,
+      "votes": 198
+    },
+    "titandeath": {
+      "work": 1083289,
+      "rating": 7.2,
+      "votes": 54
+    },
+    "valdor-birth-of-the-imperium": {
+      "work": 1219199,
+      "rating": 7.89,
+      "votes": 90
+    },
+    "vengeful-spirit": {
+      "work": 777929,
+      "rating": 8.24,
+      "votes": 163
+    },
+    "visions-of-heresy": {
+      "work": 949031,
+      "rating": 8.86,
+      "votes": 57
+    },
+    "vulkan-lives": {
+      "work": 709616,
+      "rating": 7.49,
+      "votes": 152
+    },
+    "vulkan-lord-of-drakes": {
+      "work": 1078821,
+      "rating": 7.07,
+      "votes": 61
+    },
+    "war-without-end": {
+      "work": 914458,
+      "rating": 7.34,
+      "votes": 92
+    },
+    "warhawk": {
+      "work": 1445372,
+      "rating": 8.14,
+      "votes": 58
+    },
+    "wolf-king": {
+      "work": 777898,
+      "rating": 7.72,
+      "votes": 47
+    },
+    "wolfsbane": {
+      "work": 997353,
+      "rating": 7.85,
+      "votes": 73
+    },
+    "zardu-layak-the-crimson-apostle": {
+      "work": 2363696,
+      "rating": 0,
+      "votes": 0
+    }
+  }
+}

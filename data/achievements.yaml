@@ -1,0 +1,196 @@
+# Звания и достижения за прочитанные книги.
+#
+# Считаются отметки «Прочитано» (для «привычек» — другие отметки, см. status).
+# Полученный уровень не пропадает, даже если отметки потом снимут.
+#
+# Достижение:
+#   id, group, title, description — обязательны; group задаёт раздел в окне достижений
+#   secret: true     — до получения показывается как «???»
+#   status           — какая отметка считается: read (по умолчанию), want, reading
+#   from             — какие книги считаются (ровно одно из):
+#       series: id           все книги серии
+#       books: [id, …]       список книг
+#       kind: anthology      все книги типа (novel, novella, anthology, collection, audio)
+#       rating_at_least: 8.0 книги с оценкой читателей не ниже (оценки — data/ratings.json)
+#       votes_below: 100     малоизвестные книги: оценок меньше (но не меньше 5)
+#       authors: best        больше всего книг одного автора
+#       years: true          разные годы выхода
+#       any: true            любые книги
+#   levels           — уровни по возрастанию: need — сколько книг (или all — все), tier — bronze/silver/gold
+#
+# «Полное собрание» по каждому автору с тремя и более книгами создаётся автоматически (author_collections).
+
+ranks:
+  - {at: 1, title: Неофит}
+  - {at: 10, title: Брат-десантник}
+  - {at: 25, title: Ветеран}
+  - {at: 40, title: Сержант}
+  - {at: 55, title: Капитан}
+  - {at: 75, title: Магистр ордена}
+  - {at: all, title: Примарх}
+
+achievements:
+  # ── Серии ────────────────────────────────────────────────────────────────
+  - id: chronicles-of-heresy
+    group: Серии
+    title: Хроники Ереси
+    description: Прочитать основные книги цикла «Ересь Хоруса».
+    from: {series: heresy}
+    levels: [{need: 18, tier: bronze}, {need: 36, tier: silver}, {need: all, tier: gold}]
+  - id: besieged-terra
+    group: Серии
+    title: Осаждённая Терра
+    description: Прочитать книги серии «Осада Терры».
+    from: {series: siege}
+    levels: [{need: 5, tier: bronze}, {need: 10, tier: silver}, {need: all, tier: gold}]
+  - id: living-legend
+    group: Серии
+    title: Живая легенда
+    description: Прочитать книги серии «Примархи».
+    from: {series: primarchs}
+    levels: [{need: 7, tier: bronze}, {need: 14, tier: silver}, {need: all, tier: gold}]
+  - id: heroes-of-the-imperium
+    group: Серии
+    title: Герои Империума
+    description: Прочитать книги серии «Персонажи».
+    from: {series: characters}
+    levels: [{need: 3, tier: silver}, {need: all, tier: gold}]
+  - id: after-the-storm
+    group: Серии
+    title: После бури
+    description: Прочитать обе книги серии «Очищение».
+    from: {series: scouring}
+    levels: [{need: all, tier: gold}]
+  - id: beyond-the-cycle
+    group: Серии
+    title: За пределами цикла
+    description: Прочитать книги, вышедшие уже после завершения основного цикла.
+    from: {series: standalone}
+    levels: [{need: all, tier: gold}]
+  - id: betrayal-trilogy
+    group: Серии
+    title: Трилогия предательства
+    description: "Прочитать первые три книги цикла: «Возвышение Хоруса», «Лживые боги», «Галактика в огне»."
+    from: {books: [horus-rising, false-gods, galaxy-in-flames]}
+    levels: [{need: all, tier: silver}]
+  - id: the-end-and-the-death
+    group: Серии
+    title: Конец и смерть
+    description: Прочитать все три тома «Конца и смерти».
+    from: {books: [the-end-and-the-death-volume-i, the-end-and-the-death-volume-ii, the-end-and-the-death-volume-iii]}
+    levels: [{need: all, tier: gold}]
+
+  # ── Авторы ───────────────────────────────────────────────────────────────
+  - id: favourite-author
+    group: Авторы
+    title: Любимый автор
+    description: Прочитать несколько книг одного автора.
+    from: {authors: best}
+    levels: [{need: 3, tier: bronze}, {need: 5, tier: silver}, {need: 8, tier: gold}]
+
+  # ── Форматы ──────────────────────────────────────────────────────────────
+  - id: anthologist
+    group: Форматы
+    title: Антологист
+    description: Прочитать антологии — сборники рассказов разных авторов.
+    from: {kind: anthology}
+    levels: [{need: 3, tier: bronze}, {need: 8, tier: silver}, {need: all, tier: gold}]
+  - id: novelist
+    group: Форматы
+    title: Новеллист
+    description: Прочитать все три повести серии «Осада Терры».
+    from: {books: [sons-of-the-selenar, fury-of-magnus, garro-knight-of-grey]}
+    levels: [{need: all, tier: silver}]
+  - id: short-distance
+    group: Форматы
+    title: Короткая дистанция
+    description: Прочитать отдельные повести Ереси Хоруса.
+    from: {series: novellas}
+    levels: [{need: 6, tier: bronze}, {need: 12, tier: silver}, {need: all, tier: gold}]
+  - id: collector
+    group: Форматы
+    title: Сборщик
+    description: Прочитать все сборники новелл одного автора.
+    from: {kind: collection}
+    levels: [{need: all, tier: silver}]
+
+  # ── Оценки ───────────────────────────────────────────────────────────────
+  - id: connoisseur
+    group: Оценки
+    title: Знаток шедевров
+    description: Прочитать книги с оценкой читателей от 8,0.
+    from: {rating_at_least: 8.0}
+    levels: [{need: 5, tier: bronze}, {need: 10, tier: silver}, {need: 20, tier: gold}]
+  - id: treasure-hunter
+    group: Оценки
+    title: Искатель сокровищ
+    description: Прочитать малоизвестные книги — те, у которых меньше 100 оценок читателей.
+    from: {votes_below: 100}
+    levels: [{need: 5, tier: bronze}, {need: 15, tier: silver}, {need: 30, tier: gold}]
+
+  # ── Годы ─────────────────────────────────────────────────────────────────
+  - id: chronicler-of-eras
+    group: Годы
+    title: Летописец эпох
+    description: Прочитать хотя бы по одной книге, вышедшей в разные годы.
+    from: {years: true}
+    levels: [{need: 5, tier: bronze}, {need: 10, tier: silver}, {need: all, tier: gold}]
+
+  # ── Привычки ─────────────────────────────────────────────────────────────
+  - id: planner
+    group: Привычки
+    title: Планировщик
+    description: Добавить 10 книг в «Хочу прочитать».
+    status: want
+    from: {any: true}
+    levels: [{need: 10, tier: silver}]
+  - id: parallel-worlds
+    group: Привычки
+    title: Параллельные миры
+    description: Читать три книги одновременно.
+    status: reading
+    from: {any: true}
+    levels: [{need: 3, tier: bronze}]
+
+  # ── Линии героев ─────────────────────────────────────────────────────────
+  - id: fate-of-magnus
+    group: Линии героев
+    title: Судьба Магнуса
+    description: Прочитать книги о Магнусе Красном и падении Просперо.
+    from: {books: [a-thousand-sons, prospero-burns, the-crimson-king, magnus-the-red-master-of-prospero, fury-of-magnus]}
+    levels: [{need: 3, tier: bronze}, {need: all, tier: silver}]
+  - id: path-of-garro
+    group: Линии героев
+    title: Путь Гарро
+    description: Прочитать книги о Натаниэле Гарро.
+    from: {books: [the-flight-of-the-eisenstein, garro, garro-knight-of-grey]}
+    levels: [{need: 2, tier: bronze}, {need: all, tier: silver}]
+  - id: son-of-nocturne
+    group: Линии героев
+    title: Сын Ноктюрна
+    description: Прочитать книги о Вулкане и Саламандрах.
+    from: {books: [vulkan-lives, deathfire, old-earth, vulkan-lord-of-drakes, born-of-flame]}
+    levels: [{need: 3, tier: bronze}, {need: all, tier: silver}]
+
+  # ── Секретные ────────────────────────────────────────────────────────────
+  - id: lorgars-word
+    group: Секретные
+    title: Слово Лоргара
+    description: Пройти путь Лоргара от проповеди до предательства.
+    secret: true
+    from: {books: [lorgar-bearer-of-the-word, the-first-heretic, know-no-fear, betrayer]}
+    levels: [{need: all, tier: gold}]
+  - id: ashes-of-istvaan
+    group: Секретные
+    title: Пепел Истваана
+    description: Прочитать книги об Истваане и о том, что случилось после него.
+    secret: true
+    from: {books: [galaxy-in-flames, the-flight-of-the-eisenstein, deliverance-lost, vulkan-lives, the-damnation-of-pythos]}
+    levels: [{need: all, tier: gold}]
+
+author_collections:
+  min_books: 3
+  gold_from: 8
+  group: Авторы
+  title: "Полное собрание: {author}"
+  description: "Прочитать все книги этого автора из каталога (всего: {n})."

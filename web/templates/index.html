@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Библиотека Ереси Хоруса</title>
+<meta name="description" content="Все книги Ереси Хоруса по сериям: основная серия, Осада Терры, примархи, персонажи. С обложками и отметками прочитанного.">
+<meta name="theme-color" content="#0e0d0c">
+<link rel="icon" href="{{.BasePath}}static/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{{.BasePath}}static/style.css">
+<script>window.WAHBOOK = {base: {{.BasePath}}, api: {{.APIBase}}};</script>
+<script src="{{.BasePath}}static/app.js" defer></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-row">
+    <a class="brand" href="{{.BasePath}}">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><use href="{{.BasePath}}static/favicon.svg#mark"/></svg>
+      <span>Библиотека Ереси</span>
+    </a>
+    <label class="search">
+      <span class="sr">Поиск по названию или автору</span>
+      <input id="q" type="search" placeholder="Поиск: название, автор…" autocomplete="off">
+    </label>
+    {{if .AchievementsJSON}}<button class="btn ach-btn" id="ach-btn" type="button" title="Достижения и звание" hidden>
+      <svg viewBox="0 0 48 56" width="16" height="19" aria-hidden="true"><use href="#medal-icon"/></svg>
+      <span id="ach-rank">Достижения</span> <small id="ach-count"></small>
+    </button>{{end}}
+    <div class="account" id="account" hidden>
+      <button class="btn" id="login-btn" type="button">Войти</button>
+      <span class="who" id="who" hidden></span>
+      <button class="btn ghost" id="logout-btn" type="button" hidden>Выйти</button>
+    </div>
+  </div>
+
+  <nav class="series-nav" aria-label="Серии">
+    {{range .Series}}
+    <a href="#{{.ID}}" data-nav="{{.ID}}">
+      <span class="nav-title">{{.Title}}</span>
+      <span class="nav-count"><b data-nav-read="{{.ID}}">0</b>/{{len .Books}}</span>
+    </a>
+    {{end}}
+  </nav>
+</header>
+
+<main>
+  <section class="toolbar" aria-label="Фильтры и профиль">
+    <div class="panel filters-panel">
+      <details id="filters" open>
+        <summary>
+          <span class="panel-title">Фильтры и порядок</span>
+          <span class="f-active" id="f-active" hidden></span>
+        </summary>
+        <div class="filter-grid">
+          <label class="field"><span>Тип</span>
+            <select id="f-kind">
+              <option value="">Все</option>
+              <option value="novel">Романы</option>
+              <option value="novella">Новеллы</option>
+              <option value="anthology">Антологии</option>
+              <option value="collection">Сборники новелл</option>
+              <option value="audio">Аудиодрамы</option>
+              <option value="artbook">Артбуки</option>
+            </select>
+          </label>
+          <label class="field"><span>Статус</span>
+            <select id="f-status">
+              <option value="">Любой</option>
+              <option value="none">Не отмечено</option>
+              <option value="want">Хочу прочитать</option>
+              <option value="reading">Читаю</option>
+              <option value="read">Прочитано</option>
+            </select>
+          </label>
+          <label class="field"><span>Автор</span>
+            <select id="f-author">
+              <option value="">Все</option>
+              {{range .Authors}}<option value="{{.Key}}">{{.Label}}</option>{{end}}
+            </select>
+          </label>
+          <label class="field"><span>Порядок</span>
+            <select id="f-sort">
+              <option value="series">По порядку серии</option>
+              <option value="year-asc">Старые сначала</option>
+              <option value="year-desc">Новые сначала</option>
+              <option value="rating">Лучшие сначала</option>
+              <option value="title">По названию</option>
+              <option value="author">По автору</option>
+            </select>
+          </label>
+        </div>
+      </details>
+      <div class="panel-foot">
+        <span class="summary" id="summary" aria-live="polite"></span>
+        <button class="btn ghost" id="f-reset" type="button" hidden>Сбросить фильтры</button>
+      </div>
+    </div>
+
+    <div class="panel marks-panel">
+      <h2 class="panel-title">Мой профиль</h2>
+      <span class="backup">
+        <button class="btn ghost" id="backup-save" type="button" title="Скачать отметки в файл">Сохранить копию</button>
+        <button class="btn ghost" id="backup-load" type="button" title="Загрузить отметки из файла">Загрузить копию</button>
+        <input id="backup-file" type="file" accept="application/json,.json" hidden>
+      </span>
+      <p class="backup-note" id="backup-msg" role="status"></p>
+    </div>
+  </section>
+
+  {{range .Series}}
+  <section class="series" id="{{.ID}}" data-series="{{.ID}}">
+    <div class="series-head">
+      <h2>{{.Title}} <small>{{.TitleEN}}</small></h2>
+      {{if .Rating}}<p class="series-rate" title="Среднее значение оценок книг серии, у которых есть достаточно оценок читателей">★ {{.Rating}} <small>средняя оценка серии · оценено книг: {{.Rated}} из {{.Total}}</small></p>{{end}}
+      <p>{{.Description}}</p>
+      <div class="bar" role="img" aria-label="Прогресс по серии"><i data-bar="{{.ID}}"></i></div>
+    </div>
+    <ul class="grid">
+      {{range .Books}}
+      <li class="card" data-id="{{.ID}}" data-kind="{{.Kind}}" data-authors="{{.PeopleKeys}}" data-fantlab="{{if .Rating}}{{.FantLabURL}}{{end}}" data-rating="{{.Rating}}" data-votes="{{.Votes}}" data-summary="{{.Summary}}"
+          data-year="{{.Year}}" data-title="{{if .TitleRU}}{{.TitleRU}}{{else}}{{.Title}}{{end}}" data-by="{{if not .IsAnthology}}{{.AuthorLabel}}{{end}}"
+          data-search="{{.Title}} {{.TitleRU}} {{.Author}} {{.AuthorRU}} {{.Editors}} {{.EditorsRU}} {{.Year}}">
+        <button class="cover" type="button" data-open="{{.ID}}" aria-label="Подробнее: {{.Title}}">
+          {{if .CoverURL}}
+          <img src="{{.CoverURL}}" alt="Обложка: {{.Title}}" loading="lazy" width="200" height="300">
+          {{else}}
+          <span class="ph" aria-hidden="true"><b>{{.Initials}}</b><em>{{.Title}}</em></span>
+          {{end}}
+          {{if .HHNumber}}<span class="badge">{{.HHNumber}}</span>{{else if .Number}}<span class="badge">{{.Number}}</span>{{end}}
+          <span class="mark" aria-hidden="true"></span>
+        </button>
+        <div class="meta">
+          <h3>{{if .TitleRU}}{{.TitleRU}}{{else}}{{.Title}}{{end}}</h3>
+          {{if .TitleRU}}<p class="orig">{{.Title}}</p>{{end}}
+          <p class="by">{{.AuthorLabel}}</p>
+          {{with .AuthorOrig}}<p class="by-orig">{{.}}</p>{{end}}
+          <p class="sub">{{.Year}} · {{kindLabel .Kind}}</p>
+          <p class="rate">{{if .Rating}}<a href="{{.FantLabURL}}" target="_blank" rel="noopener" title="Средняя оценка читателей: {{.Rating}} (оценок: {{.Votes}})">★ {{.Rating}} <small>({{.Votes}})</small></a>{{else}}<span class="no-rate" title="На FantLab пока слишком мало оценок">★ нет оценок</span>{{end}}</p>
+          <button class="status" type="button" data-status="{{.ID}}">Отметить</button>
+        </div>
+      </li>
+      {{end}}
+    </ul>
+  </section>
+  {{end}}
+  <p class="empty" id="empty" hidden>Ничего не найдено. Попробуйте изменить запрос или фильтры.</p>
+</main>
+
+<footer>
+  <p>Неофициальный фан-проект. Warhammer 40,000, Horus Heresy и связанные названия — собственность Games Workshop Ltd.;
+  обложки принадлежат их правообладателям и используются в информационных целях.</p>
+  <p>Всего книг в каталоге: {{.TotalBooks}}. Данные — в <a href="{{.BasePath}}catalog.json">catalog.json</a>.</p>
+  <p>Оценки и аннотации — с <a href="https://fantlab.ru" target="_blank" rel="noopener">FantLab</a>; оценки — средние по читателям{{if .RatingsDate}} на {{.RatingsDate}}{{end}}, показаны, если оценок не меньше 5. Названия и описания серий — по <a href="https://warhammer40k.fandom.com/ru/wiki/Ересь_Хоруса_(серия)" target="_blank" rel="noopener">русской вики</a>.</p>
+</footer>
+
+<dialog id="book-dialog" aria-labelledby="bd-title">
+  <form method="dialog"><button class="close" aria-label="Закрыть">×</button></form>
+  <div class="bd-body">
+    <div class="bd-cover" id="bd-cover"></div>
+    <div class="bd-info">
+      <p class="bd-series" id="bd-series"></p>
+      <h2 id="bd-title"></h2>
+      <p class="bd-orig" id="bd-orig"></p>
+      <p id="bd-by"></p>
+      <p class="bd-orig" id="bd-by-orig"></p>
+      <p class="bd-sub" id="bd-sub"></p>
+      <p class="bd-rating"><a id="bd-rating" href="#" target="_blank" rel="noopener" hidden></a></p>
+      <details class="bd-annotation" id="bd-annotation" hidden>
+        <summary>Аннотация</summary>
+        <p class="bd-summary" id="bd-summary"></p>
+      </details>
+      <fieldset class="bd-status">
+        <legend>Мой статус</legend>
+        <label><input type="radio" name="bd-st" value=""> Нет</label>
+        <label><input type="radio" name="bd-st" value="want"> Хочу</label>
+        <label><input type="radio" name="bd-st" value="reading"> Читаю</label>
+        <label><input type="radio" name="bd-st" value="read"> Прочитано</label>
+      </fieldset>
+    </div>
+  </div>
+</dialog>
+
+{{if .AchievementsJSON}}
+<script type="application/json" id="ach-data">{{.AchievementsJSON}}</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="medal-icon" viewBox="0 0 48 56"><path d="M13 0h9l6 21-9 4zM26 0h9L30 25l-9-4z" fill="currentColor" opacity=".55"/><circle cx="24" cy="36" r="17" fill="currentColor"/><circle cx="24" cy="36" r="12" fill="none" stroke="#17130a" stroke-width="2"/></symbol>
+</svg>
+<dialog id="ach-dialog" aria-labelledby="ach-rank-title">
+  <form method="dialog"><button class="close" aria-label="Закрыть">×</button></form>
+  <header class="ach-head">
+    <p class="ach-kicker">Ваше звание</p>
+    <h2 id="ach-rank-title"></h2>
+    <div class="bar" role="img" aria-label="Прогресс до следующего звания"><i id="ach-rank-bar"></i></div>
+    <p id="ach-rank-text"></p>
+    <div class="ach-bar-row">
+      <span id="ach-summary"></span>
+      <span class="ach-filters" role="group" aria-label="Показать">
+        <button type="button" data-f="all" aria-pressed="true">Все</button>
+        <button type="button" data-f="done" aria-pressed="false">Полученные</button>
+        <button type="button" data-f="todo" aria-pressed="false">Не получены</button>
+      </span>
+    </div>
+  </header>
+  <div id="ach-list"></div>
+</dialog>
+<div id="toasts" aria-live="polite" role="status"></div>
+{{end}}
+
+<dialog id="auth-dialog" aria-labelledby="au-title">
+  <form method="dialog"><button class="close" aria-label="Закрыть">×</button></form>
+  <h2 id="au-title">Вход</h2>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="login" aria-selected="true">Вход</button>
+    <button type="button" role="tab" data-tab="register" aria-selected="false">Регистрация</button>
+  </div>
+  <form id="auth-form" novalidate>
+    <label data-only="register">Имя
+      <input name="name" type="text" autocomplete="nickname" maxlength="40">
+    </label>
+    <label>Email
+      <input name="email" type="email" autocomplete="email" required>
+    </label>
+    <label>Пароль
+      <input name="password" type="password" autocomplete="current-password" minlength="8" required>
+    </label>
+    <p class="form-error" id="auth-error" role="alert" hidden></p>
+    <button class="btn primary" type="submit">Продолжить</button>
+    <p class="hint">Отметки о прочитанном, сделанные до входа, будут перенесены в аккаунт.</p>
+  </form>
+</dialog>
+
+</body>
+</html>
