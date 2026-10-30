@@ -45,21 +45,22 @@ type Series struct {
 }
 
 type Book struct {
-	ID        string `yaml:"id" json:"id"`
-	Series    string `yaml:"series" json:"series"`
-	Number    int    `yaml:"n" json:"number,omitempty"`
-	HHNumber  int    `yaml:"hh" json:"hhNumber,omitempty"`
-	Title     string `yaml:"title" json:"title"`
-	TitleRU   string `yaml:"title_ru" json:"titleRu,omitempty"`
-	Author    string `yaml:"author" json:"author"`
-	Editors   string `yaml:"editors" json:"editors,omitempty"`
-	Year      int    `yaml:"year" json:"year"`
-	Summary   string `yaml:"-" json:"summary,omitempty"`   // from annotations.yaml
-	AuthorRU  string `yaml:"-" json:"authorRu,omitempty"`  // from authors.yaml
-	EditorsRU string `yaml:"-" json:"editorsRu,omitempty"` // from authors.yaml
-	Wiki      string `yaml:"wiki" json:"-"`                // page on the Russian wiki, "Page#Section"
-	FantLab   int    `yaml:"fantlab" json:"-"`             // FantLab work id; overrides the title search
-	Kind      Kind   `yaml:"kind" json:"kind"`
+	ID          string `yaml:"id" json:"id"`
+	Series      string `yaml:"series" json:"series"`
+	Number      int    `yaml:"n" json:"number,omitempty"`
+	HHNumber    int    `yaml:"hh" json:"hhNumber,omitempty"`
+	Title       string `yaml:"title" json:"title"`
+	TitleRU     string `yaml:"title_ru" json:"titleRu,omitempty"`
+	Author      string `yaml:"author" json:"author"`
+	Editors     string `yaml:"editors" json:"editors,omitempty"`
+	Year        int    `yaml:"year" json:"year"`
+	Summary     string `yaml:"-" json:"summary,omitempty"`   // from annotations.yaml
+	AuthorRU    string `yaml:"-" json:"authorRu,omitempty"`  // from authors.yaml
+	EditorsRU   string `yaml:"-" json:"editorsRu,omitempty"` // from authors.yaml
+	Wiki        string `yaml:"wiki" json:"-"`                // page on the Russian wiki, "Page#Section"
+	FantLab     int    `yaml:"fantlab" json:"-"`             // FantLab work id; overrides the title search
+	Translation string `yaml:"translation" json:"-"`         // yes | no; overrides data/translations.json
+	Kind        Kind   `yaml:"kind" json:"kind"`
 }
 
 // IsAnthology reports whether the book is a multi-author collection.
@@ -294,6 +295,11 @@ func Parse(raw []byte) (*Catalog, error) {
 		}
 		if _, ok := kindLabels[b.Kind]; !ok {
 			return nil, fmt.Errorf("catalog: %q: unknown kind %q", b.Title, b.Kind)
+		}
+		switch b.Translation {
+		case "", "yes", "no":
+		default:
+			return nil, fmt.Errorf("catalog: %q: unknown translation %q (want yes or no)", b.Title, b.Translation)
 		}
 		s, ok := seriesByID[b.Series]
 		if !ok {

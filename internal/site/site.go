@@ -31,7 +31,8 @@ type Config struct {
 	APIBase   string        // backend URL for accounts; empty = no accounts, progress stays in the browser
 	Ratings   *fantlab.File // FantLab snapshot; nil = no ratings shown
 
-	Achievements *achievements.Config // nil = no achievements
+	Achievements *achievements.Config      // nil = no achievements
+	Translations *fantlab.TranslationsFile // Russian editions; nil = unknown for every book without an override
 }
 
 // minVotes is how many FantLab ratings a book needs before its average is
@@ -46,6 +47,9 @@ type pageBook struct {
 	mark       float64 // the same rating as a number; 0 = not rated
 	Votes      int
 	FantLabURL string // the work page, or a search when the book is not on FantLab
+	TrStatus   string // published | fan | none; empty when unknown
+	TrLabel    string // short text for the card
+	TrNote     string // longer text for the tooltip and the book dialog
 }
 
 type authorOption struct {
@@ -98,6 +102,7 @@ func Build(cfg Config) error {
 					pb.Rating, pb.Votes, pb.mark = fmt.Sprintf("%.2f", e.Rating), e.Votes, e.Rating
 				}
 			}
+			pb.TrStatus, pb.TrLabel, pb.TrNote = translationText(b, cfg.Translations)
 			if _, err := os.Stat(filepath.Join(cfg.CoversDir, b.ID+".jpg")); err == nil {
 				pb.CoverURL = cfg.BasePath + "covers/" + b.ID + ".jpg"
 			}
@@ -188,6 +193,33 @@ func normalizeBase(b string) string {
 		b += "/"
 	}
 	return b
+}
+
+// translationText says whether a book exists in Russian, and who translated it when FantLab
+// knows. A `translation:` set by hand in books.yaml wins over the snapshot; with neither,
+// the status is unknown (empty).
+func translationText(b *catalog.Book, snap *fantlab.TranslationsFile) (status, label, note string) {
+	t, ok := snap.Entry(b.ID)
+	switch b.Translation {
+	case "yes":
+		t.Translated, ok = true, true
+	case "no":
+		t, ok = fantlab.Translation{}, true
+	}
+	switch {
+	case !ok:
+		return "", "", ""
+	case !t.Translated:
+		return "no", "Нет перевода", "На русский язык не переведена"
+	}
+	note = "Есть перевод на русский"
+	switch n := len(t.Translators); {
+	case n == 1:
+		note += ". Переводчик: " + t.Translators[0]
+	case n > 1:
+		note += ". Переводчики: " + strings.Join(t.Translators, ", ")
+	}
+	return "yes", "Есть перевод", note
 }
 
 // authorOptions lists the people books are credited to (authors, and editors of

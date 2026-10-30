@@ -174,7 +174,7 @@
 
   // ── фильтры ─────────────────────────────────────────────────────────────
   const el = {
-    q: $('#q'), kind: $('#f-kind'), status: $('#f-status'), author: $('#f-author'), sort: $('#f-sort'),
+    q: $('#q'), kind: $('#f-kind'), status: $('#f-status'), author: $('#f-author'), tr: $('#f-tr'), sort: $('#f-sort'),
     reset: $('#f-reset'), summary: $('#summary'), empty: $('#empty'), active: $('#f-active'),
   };
 
@@ -183,6 +183,7 @@
     const kind = el.kind.value;
     const status = el.status.value;
     const author = el.author.value;
+    const tr = el.tr.value;
     let shown = 0;
     const total = $$('.card').length;
 
@@ -194,7 +195,8 @@
           (!q || norm(card.dataset.search).includes(q)) &&
           (!kind || card.dataset.kind === kind) &&
           (!status || st === status) &&
-          (!author || card.dataset.authors.split('|').includes(author));
+          (!author || card.dataset.authors.split('|').includes(author)) &&
+          (!tr || card.dataset.tr === tr);
         card.hidden = !ok;
         if (ok) visible++;
       }
@@ -205,8 +207,8 @@
     const read = Object.values(progress).filter((s) => s === 'read').length;
     el.summary.textContent = `Показано ${shown} из ${total} · прочитано ${read}`;
     el.empty.hidden = shown !== 0;
-    el.reset.hidden = !(q || kind || status || author);
-    const active = [q, kind, status, author].filter(Boolean).length; // порядок — не фильтр
+    el.reset.hidden = !(q || kind || status || author || tr);
+    const active = [q, kind, status, author, tr].filter(Boolean).length; // порядок — не фильтр
     el.active.hidden = !active;
     el.active.textContent = `Активно: ${active}`;
   }
@@ -215,6 +217,7 @@
   el.kind.addEventListener('change', applyFilters);
   el.status.addEventListener('change', applyFilters);
   el.author.addEventListener('change', applyFilters);
+  el.tr.addEventListener('change', applyFilters);
   // На телефоне панель по умолчанию свёрнута: список книг важнее; заголовок с числом активных фильтров виден всегда.
   if (matchMedia('(max-width: 560px)').matches) $('#filters').open = false;
 
@@ -253,7 +256,7 @@
     if (saved && SORTS[saved]) { el.sort.value = saved; applySort(); }
   }
   el.reset.addEventListener('click', () => {
-    el.q.value = ''; el.kind.value = ''; el.status.value = ''; el.author.value = '';
+    el.q.value = ''; el.kind.value = ''; el.status.value = ''; el.author.value = ''; el.tr.value = '';
     applyFilters();
   });
   document.addEventListener('keydown', (e) => {
@@ -309,6 +312,10 @@
     const cover = $('#bd-cover');
     cover.replaceChildren($('.cover img, .cover .ph', card).cloneNode(true));
 
+    const trLine = $('#bd-tr');
+    trLine.hidden = !card.dataset.tr;
+    trLine.className = `bd-tr tr tr-${card.dataset.tr}`;
+    trLine.textContent = card.dataset.trNote || '';
     const rating = $('#bd-rating');
     rating.hidden = !card.dataset.rating;
     if (card.dataset.rating) {

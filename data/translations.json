@@ -1,0 +1,691 @@
+{
+  "updated": "2026-10-30",
+  "books": {
+    "a-thousand-sons": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "age-of-darkness": {
+      "translated": true
+    },
+    "alpharius-head-of-the-hydra": {
+      "translated": true,
+      "translators": [
+        "Никита Бахрамов"
+      ]
+    },
+    "angel-exterminatus": {
+      "translated": true,
+      "translators": [
+        "Foghost",
+        "Kashiwagi",
+        "Stahlmanns Eisenfrau",
+        "А. Дубова",
+        "О. Ананьина"
+      ]
+    },
+    "angels-of-caliban": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "angron-slave-of-nuceria": {
+      "translated": true,
+      "translators": [
+        "Юрий Антипов"
+      ]
+    },
+    "ashes-of-the-imperium": {
+      "translated": true,
+      "translators": [
+        "Антон Краснов"
+      ]
+    },
+    "aurelian": {
+      "translated": true,
+      "translators": [
+        "Владислав Лотовский"
+      ]
+    },
+    "battle-for-the-abyss": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "betrayer": {
+      "translated": true,
+      "translators": [
+        "Brenner",
+        "Всеволод Клингенберг"
+      ]
+    },
+    "blood-of-the-emperor": {
+      "translated": true
+    },
+    "born-of-flame": {
+      "translated": true
+    },
+    "brotherhood-of-the-storm": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "corax-lord-of-shadows": {
+      "translated": true,
+      "translators": [
+        "Юрий Антипов"
+      ]
+    },
+    "corax-soulforge": {
+      "translated": true,
+      "translators": [
+        "Алексей Апанасевич"
+      ]
+    },
+    "corax-soulforger": {
+      "translated": true
+    },
+    "cthonia-s-reckoning": {
+      "translated": true
+    },
+    "cybernetica": {
+      "translated": true,
+      "translators": [
+        "Екатерина Згурская"
+      ]
+    },
+    "deathfire": {
+      "translated": true,
+      "translators": [
+        "А. Дубова"
+      ]
+    },
+    "deliverance-lost": {
+      "translated": true,
+      "translators": [
+        "Владислав Лотовский"
+      ]
+    },
+    "descent-of-angels": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "dreadwing": {
+      "translated": false
+    },
+    "dropsite-massacre": {
+      "translated": true
+    },
+    "echoes-of-eternity": {
+      "translated": true,
+      "translators": [
+        "Алексей Абгалдаев",
+        "Альре Сноу",
+        "София Воронова"
+      ]
+    },
+    "eidolon-the-auric-hammer": {
+      "translated": true,
+      "translators": [
+        "Антон Краснов",
+        "Григорий Грачев"
+      ]
+    },
+    "era-of-ruin": {
+      "translated": true
+    },
+    "eye-of-terra": {
+      "translated": true
+    },
+    "fallen-angels": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "false-gods": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "fear-to-tread": {
+      "translated": true,
+      "translators": [
+        "Зенур Джемилев"
+      ]
+    },
+    "feat-of-iron": {
+      "translated": true,
+      "translators": [
+        "Зенур Джемилев"
+      ]
+    },
+    "ferrus-manus-the-gorgon-of-medusa": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "fulgrim": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "fulgrim-the-palatine-phoenix": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "fury-of-magnus": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "galaxy-in-flames": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "garro": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "garro-knight-of-grey": {
+      "translated": true,
+      "translators": [
+        "Luminor",
+        "Альре Сноу"
+      ]
+    },
+    "garro-vow-of-faith": {
+      "translated": false
+    },
+    "heirs-of-the-emperor": {
+      "translated": true
+    },
+    "heralds-of-the-siege": {
+      "translated": true
+    },
+    "horus-rising": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "jaghatai-khan-warhawk-of-chogoris": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "know-no-fear": {
+      "translated": true,
+      "translators": [
+        "Всеволод Клингенберг"
+      ]
+    },
+    "konrad-curze-the-night-haunter": {
+      "translated": true,
+      "translators": [
+        "Никита Бахрамов"
+      ]
+    },
+    "legacies-of-betrayal": {
+      "translated": true
+    },
+    "legion": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "leman-russ-the-great-wolf": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "lion-el-jonson-lord-of-the-first": {
+      "translated": true,
+      "translators": [
+        "Алексей Апанасевич",
+        "Сергей Красник",
+        "Юрий Войтко"
+      ]
+    },
+    "lorgar-bearer-of-the-word": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "lupercal-s-war": {
+      "translated": false
+    },
+    "luther-first-of-the-fallen": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "magnus-the-red-master-of-prospero": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "mark-of-calth": {
+      "translated": true
+    },
+    "mechanicum": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "mortarion-the-pale-king": {
+      "translated": true,
+      "translators": [
+        "Luminor",
+        "Юлия Зонис"
+      ]
+    },
+    "mortis": {
+      "translated": true,
+      "translators": [
+        "Алина Забияка"
+      ]
+    },
+    "nemesis": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "old-earth": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "perturabo-the-hammer-of-olympia": {
+      "translated": true,
+      "translators": [
+        "Алексей Апанасевич"
+      ]
+    },
+    "pharos": {
+      "translated": true,
+      "translators": [
+        "А. Дубова"
+      ]
+    },
+    "praetorian-of-dorn": {
+      "translated": true,
+      "translators": [
+        "О. Ананьина"
+      ]
+    },
+    "prince-of-crows": {
+      "translated": true,
+      "translators": [
+        "Юлия Зонис"
+      ]
+    },
+    "promethean-sun": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "prospero-burns": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "raldoron-revenant": {
+      "translated": false
+    },
+    "ravenlord": {
+      "translated": true,
+      "translators": [
+        "Владислав Лотовский"
+      ]
+    },
+    "roboute-guilliman-lord-of-ultramar": {
+      "translated": true,
+      "translators": [
+        "Алексей Апанасевич"
+      ]
+    },
+    "rogal-dorn-the-emperor-s-crusader": {
+      "translated": true,
+      "translators": [
+        "Luminor",
+        "Э. Нокс"
+      ]
+    },
+    "ruinstorm": {
+      "translated": true,
+      "translators": [
+        "Никита Бахрамов"
+      ]
+    },
+    "sanguinius-the-great-angel": {
+      "translated": true,
+      "translators": [
+        "Альре Сноу",
+        "Евгений Козлочков"
+      ]
+    },
+    "saturnine": {
+      "translated": true,
+      "translators": [
+        "Алина Забияка",
+        "Никита Бахрамов",
+        "Юрий Антипов"
+      ]
+    },
+    "scars": {
+      "translated": true,
+      "translators": [
+        "Зенур Джемилев"
+      ]
+    },
+    "scions-of-the-emperor": {
+      "translated": true
+    },
+    "scorched-earth": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "shadows-of-treachery": {
+      "translated": true
+    },
+    "shattered-legions": {
+      "translated": true
+    },
+    "sigismund-the-eternal-crusader": {
+      "translated": true,
+      "translators": [
+        "Сöл",
+        "Хелбрехт"
+      ]
+    },
+    "slaves-to-darkness": {
+      "translated": true,
+      "translators": [
+        "Екатерина Згурская"
+      ]
+    },
+    "sons-of-the-emperor": {
+      "translated": true
+    },
+    "sons-of-the-forge": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "sons-of-the-selenar": {
+      "translated": true,
+      "translators": [
+        "Екатерина Згурская"
+      ]
+    },
+    "spear-of-ultramar": {
+      "translated": false
+    },
+    "tales-of-heresy": {
+      "translated": true
+    },
+    "tallarn": {
+      "translated": true
+    },
+    "tallarn-executioner": {
+      "translated": true,
+      "translators": [
+        "Анастасия Липинская"
+      ]
+    },
+    "tallarn-ironclad": {
+      "translated": true,
+      "translators": [
+        "Владислав Лотовский"
+      ]
+    },
+    "the-burden-of-loyalty": {
+      "translated": true
+    },
+    "the-buried-dagger": {
+      "translated": true,
+      "translators": [
+        "Екатерина Згурская"
+      ]
+    },
+    "the-crimson-fist": {
+      "translated": true,
+      "translators": [
+        "Зенур Джемилев"
+      ]
+    },
+    "the-crimson-king": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "the-damnation-of-pythos": {
+      "translated": true,
+      "translators": [
+        "Алексей Апанасевич"
+      ]
+    },
+    "the-end-and-the-death-volume-i": {
+      "translated": true,
+      "translators": [
+        "Антон Краснов",
+        "Василий Сафронычев"
+      ]
+    },
+    "the-end-and-the-death-volume-ii": {
+      "translated": true,
+      "translators": [
+        "Антон Краснов",
+        "Василий Сафронычев"
+      ]
+    },
+    "the-end-and-the-death-volume-iii": {
+      "translated": true,
+      "translators": [
+        "Антон Краснов",
+        "Василий Сафронычев"
+      ]
+    },
+    "the-first-heretic": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "the-first-wall": {
+      "translated": true,
+      "translators": [
+        "Алина Забияка"
+      ]
+    },
+    "the-flight-of-the-eisenstein": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "the-honoured": {
+      "translated": true,
+      "translators": [
+        "Brenner"
+      ]
+    },
+    "the-lion": {
+      "translated": true,
+      "translators": [
+        "Елена Владимировна Долгова"
+      ]
+    },
+    "the-lost-and-the-damned": {
+      "translated": true,
+      "translators": [
+        "Юрий Антипов"
+      ]
+    },
+    "the-master-of-mankind": {
+      "translated": true,
+      "translators": [
+        "Никита Бахрамов"
+      ]
+    },
+    "the-outcast-dead": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "the-path-of-heaven": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "the-primarchs": {
+      "translated": true
+    },
+    "the-purge": {
+      "translated": true,
+      "translators": [
+        "Дмитрий Водолаго"
+      ]
+    },
+    "the-reflection-crack-d": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "the-serpent-beneath": {
+      "translated": true,
+      "translators": [
+        "Елена Владимировна Долгова"
+      ]
+    },
+    "the-seventh-serpent": {
+      "translated": true,
+      "translators": [
+        "Никита Аксёнов"
+      ]
+    },
+    "the-silent-war": {
+      "translated": true
+    },
+    "the-solar-war": {
+      "translated": true,
+      "translators": [
+        "Юрий Антипов"
+      ]
+    },
+    "the-unburdened": {
+      "translated": true,
+      "translators": [
+        "Brenner"
+      ]
+    },
+    "the-unremembered-empire": {
+      "translated": true,
+      "translators": [
+        "А. Козловский",
+        "Дмитрий Ерёмин"
+      ]
+    },
+    "titandeath": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "valdor-birth-of-the-imperium": {
+      "translated": true,
+      "translators": [
+        "Никита Бахрамов"
+      ]
+    },
+    "vengeful-spirit": {
+      "translated": true,
+      "translators": [
+        "Всеволод Клингенберг"
+      ]
+    },
+    "visions-of-heresy": {
+      "translated": true,
+      "translators": [
+        "Алексей Апанасевич",
+        "Юрий Войтко"
+      ]
+    },
+    "vulkan-lives": {
+      "translated": true,
+      "translators": [
+        "А. Дубова"
+      ]
+    },
+    "vulkan-lord-of-drakes": {
+      "translated": true,
+      "translators": [
+        "Ирина Савельева"
+      ]
+    },
+    "war-without-end": {
+      "translated": true
+    },
+    "warhawk": {
+      "translated": true,
+      "translators": [
+        "Ulf Voss",
+        "Алина Турн",
+        "Антон Краснов",
+        "Татьяна Ермакова",
+        "Хелбрехт"
+      ]
+    },
+    "wolf-king": {
+      "translated": true,
+      "translators": [
+        "Зенур Джемилев"
+      ]
+    },
+    "wolfsbane": {
+      "translated": true,
+      "translators": [
+        "Зенур Джемилев"
+      ]
+    },
+    "zardu-layak-the-crimson-apostle": {
+      "translated": false
+    }
+  }
+}

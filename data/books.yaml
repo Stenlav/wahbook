@@ -12,6 +12,7 @@
 #   year     — год первой публикации
 #   kind     — novel | novella | anthology (разные авторы) | collection (сборник одного автора) | audio | artbook
 #   author   — один автор или несколько через запятую; "Various" — для антологий
+#   translation — yes | no: вручную, если FantLab не знает книгу (иначе берётся из data/translations.json)
 #   wiki     — страница русской вики ("Страница#Раздел"): источник сведений для аннотаций, на сайте не показывается
 #   fantlab  — id произведения на FantLab, если поиск по названию не находит книгу
 #   id       — задать вручную, если автоматический slug не подходит
@@ -167,13 +168,13 @@ books:
 
   # ── Выжигание ─────────────────────────────────────────────────────────────
   - {series: scouring, n: 1, title: Ashes of the Imperium, title_ru: "Пепел Империума", author: Chris Wraight, year: 2025, kind: novel}
-  - {series: scouring, n: 2, title: Wrath of Terra, title_ru: "Гнев Терры", author: John French, year: 2026, kind: novel}
+  - {series: scouring, n: 2, title: Wrath of Terra, title_ru: "Гнев Терры", author: John French, year: 2026, kind: novel, translation: no}
 
   # ── Вне основного цикла ───────────────────────────────────────────────────
   - {series: standalone, title: "Cthonia's Reckoning", title_ru: "Расплата Хтонии", author: Various, year: 2022, kind: anthology, wiki: "Расплата Хтонии (сборник рассказов)"}
   - {series: standalone, title: Dropsite Massacre, title_ru: "Резня в Зоне Высадки", author: John French, year: 2025, kind: novel, wiki: "Резня в Зоне Высадки (роман)"}
-  - {series: standalone, title: "Lupercal's War", title_ru: "Война Луперкаля", author: Various, year: 2022, kind: anthology}
-  - {id: gnev-luperkalya, series: standalone, title: "Гнев Луперкаля", author: Various, year: 2026, kind: anthology}
+  - {series: standalone, title: "Lupercal's War", title_ru: "Война Луперкаля", author: Various, year: 2022, kind: anthology, translation: yes}
+  - {id: gnev-luperkalya, series: standalone, title: "Гнев Луперкаля", author: Various, year: 2026, kind: anthology, translation: yes}
   - {series: standalone, title: Visions of Heresy, title_ru: "Образы Ереси", author: "Alan Merrett, Guy Haley", year: 2013, kind: artbook}
 
   # ── Повести ───────────────────────────────────────────────────────────────

@@ -24,10 +24,11 @@ func TestLoadRealCatalog(t *testing.T) {
 
 func TestParseRejectsBadInput(t *testing.T) {
 	cases := map[string]string{
-		"unknown series": "series: [{id: a, title: A}]\nbooks: [{series: b, title: T, author: X, year: 2000, kind: novel}]",
-		"unknown kind":   "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: comic}]",
-		"duplicate id":   "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: novel}, {series: a, title: t, author: X, year: 2000, kind: novel}]",
-		"unknown field":  "series: [{id: a, title: A, bogus: 1}]",
+		"unknown series":  "series: [{id: a, title: A}]\nbooks: [{series: b, title: T, author: X, year: 2000, kind: novel}]",
+		"unknown kind":    "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: comic}]",
+		"duplicate id":    "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: novel}, {series: a, title: t, author: X, year: 2000, kind: novel}]",
+		"unknown field":   "series: [{id: a, title: A, bogus: 1}]",
+		"bad translation": "series: [{id: a, title: A}]\nbooks: [{series: a, title: T, author: X, year: 2000, kind: novel, translation: maybe}]",
 	}
 	for name, src := range cases {
 		if _, err := Parse([]byte(src)); err == nil {
