@@ -244,3 +244,69 @@ func TestEveryBookHasATranslationStatus(t *testing.T) {
 		t.Errorf("suspicious distribution: %v", counts)
 	}
 }
+
+func TestAnthologyContentsAreEmbedded(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	snap := &fantlab.ContentsFile{Updated: "2026-10-30", Books: map[string][]fantlab.Story{
+		"cthonia-s-reckoning": {
+			{Work: 11, Title: "Сыны Хтонии", Orig: "Sons of Cthonia", Authors: []string{"Джон Френч"}, Kind: "рассказ", Year: 2022, Rating: 7.4, Votes: 20},
+			{Work: 12, Title: "Банды подземья", Authors: []string{"Гэри Клостер"}, Kind: "повесть", Year: 2022, Rating: 10, Votes: 2}, // too few votes
+		},
+		"horus-rising": {}, // a book with an empty list gets no block
+	}}
+	build := func(c *fantlab.ContentsFile) string {
+		out := filepath.Join(t.TempDir(), "dist")
+		if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/", Contents: c}); err != nil {
+			t.Fatal(err)
+		}
+		raw, _ := os.ReadFile(filepath.Join(out, "index.html"))
+		return string(raw)
+	}
+
+	with := build(snap)
+	for _, want := range []string{
+		`id="contents-data"`, `id="bd-contents"`,
+		`"cthonia-s-reckoning":[{"title":"Сыны Хтонии","orig":"Sons of Cthonia","authors":"Джон Френч","year":2022,"rating":"7.40","votes":20,"url":"https://fantlab.ru/work11"}`,
+		`{"title":"Банды подземья","authors":"Гэри Клостер","kind":"повесть","year":2022,"url":"https://fantlab.ru/work12"}`, // no rating below the threshold; kind only for non-stories
+	} {
+		if !strings.Contains(with, want) {
+			t.Errorf("index.html lacks %s", want)
+		}
+	}
+	if strings.Contains(with, `"horus-rising":[`) {
+		t.Error("a book with no stories must not appear in the contents data")
+	}
+	if without := build(nil); strings.Contains(without, `id="contents-data"`) {
+		t.Error("without contents there must be no data block")
+	}
+}
+
+func TestEveryAnthologyHasContents(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	snap, err := fantlab.LoadContents("../../data/contents.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	// Books FantLab does not know have no contents; everything else must.
+	notOnFantLab := map[string]bool{"gnev-luperkalya": true}
+	for _, b := range cat.Books() {
+		if b.Kind != catalog.KindAnthology && b.Kind != catalog.KindCollection {
+			continue
+		}
+		stories, ok := snap.Entry(b.ID)
+		switch {
+		case notOnFantLab[b.ID]:
+			if ok {
+				t.Errorf("%s: expected no contents", b.ID)
+			}
+		case !ok || len(stories) < 3:
+			t.Errorf("%s has no contents: run `go run ./cmd/contents`", b.ID)
+		}
+	}
+}

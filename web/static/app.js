@@ -281,6 +281,7 @@
   }
 
   // ── карточки и диалог книги ─────────────────────────────────────────────
+  const CONTENTS = (() => { try { return JSON.parse($('#contents-data')?.textContent || '{}'); } catch { return {}; } })();
   const dlg = $('#book-dialog');
   let dlgBook = null;
 
@@ -328,9 +329,47 @@
     annotation.hidden = !summary;
     annotation.open = false; // каждая карточка открывается со свёрнутой аннотацией
 
+    renderContents(id);
+
     const cur = progress[id] || '';
     $$('input[name=bd-st]', dlg).forEach((r) => { r.checked = r.value === cur; });
     dlg.showModal();
+  }
+
+  // Состав антологии или сборника: раскрываемый список, по умолчанию свёрнут.
+  function renderContents(id) {
+    const box = $('#bd-contents');
+    const stories = CONTENTS[id] || [];
+    box.hidden = !stories.length;
+    box.open = false;
+    if (!stories.length) { $('#bd-contents-list').replaceChildren(); return; }
+    $('#bd-contents-summary').textContent = `Состав (${stories.length})`;
+    $('#bd-contents-list').replaceChildren(...stories.map((s) => {
+      const li = document.createElement('li');
+      const title = document.createElement('b');
+      title.textContent = s.title;
+      li.append(title);
+      if (s.orig) {
+        const orig = document.createElement('i');
+        orig.textContent = ` ${s.orig}`;
+        li.append(orig);
+      }
+      const meta = [s.authors, s.kind, s.year].filter(Boolean).join(' · ');
+      if (meta) {
+        const m = document.createElement('span');
+        m.className = 'meta';
+        m.textContent = ` — ${meta}`;
+        li.append(m);
+      }
+      if (s.rating) {
+        const a = document.createElement('a');
+        a.href = s.url; a.target = '_blank'; a.rel = 'noopener';
+        a.textContent = `★ ${s.rating}`;
+        a.title = `Оценок: ${s.votes}`;
+        li.append(' ', a);
+      }
+      return li;
+    }));
   }
 
   dlg.addEventListener('change', (e) => {

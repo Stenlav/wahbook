@@ -204,6 +204,23 @@ dialog h2 { margin: 0 0 .6rem; font: 600 1.4rem var(--serif); }
 }
 .bd-annotation[open] summary::before { transform: rotate(45deg); }
 .bd-annotation summary:hover { text-decoration: underline; }
+.bd-contents { margin: .6rem 0 0; }
+.bd-contents summary {
+  display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; list-style: none;
+  color: var(--gold); font-size: 14px; user-select: none;
+}
+.bd-contents summary::-webkit-details-marker { display: none; }
+.bd-contents summary::before {
+  content: ""; width: .45em; height: .45em; border: solid currentColor; border-width: 0 2px 2px 0;
+  transform: rotate(-45deg); transition: transform .15s;
+}
+.bd-contents[open] summary::before { transform: rotate(45deg); }
+.bd-contents summary:hover { text-decoration: underline; }
+.bd-contents ol { margin: .5rem 0 0; padding-left: 1.4rem; font-size: 13.5px; line-height: 1.5; }
+.bd-contents li { margin: .2rem 0; }
+.bd-contents li i, .bd-contents .meta { color: var(--muted); }
+.bd-contents li a { color: var(--gold); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.bd-contents li a:hover { text-decoration: underline; }
 .bd-summary { margin: .5rem 0 0 !important; line-height: 1.55; white-space: pre-line; } /* абзацы аннотации */
 .bd-status { border: 0; padding: 0; margin: 1rem 0; display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
 .bd-status legend { color: var(--muted); font-size: 13px; padding: 0; margin-bottom: .3rem; }
