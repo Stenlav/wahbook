@@ -7,9 +7,9 @@
 <meta name="description" content="{{if .Universe.Main}}Все книги Ереси Хоруса по сериям: основная серия, Осада Терры, примархи, персонажи. С обложками и отметками прочитанного.{{else}}Книги {{.Universe.Title}} по сериям: с обложками, оценками и отметками прочитанного.{{end}}">
 <meta name="theme-color" content="#0e0d0c">
 <link rel="icon" href="{{.BasePath}}static/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="{{.BasePath}}static/style.css">
+<link rel="stylesheet" href="{{.BasePath}}static/style.css?v={{.AssetVer}}">
 <script>window.WAHBOOK = {base: {{.BasePath}}, api: {{.APIBase}}, books: {{.AllBookIDs}}};</script>
-<script src="{{.BasePath}}static/app.js" defer></script>
+<script src="{{.BasePath}}static/app.js?v={{.AssetVer}}" defer></script>
 </head>
 <body>
 

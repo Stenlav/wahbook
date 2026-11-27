@@ -4,6 +4,8 @@ package site
 
 import (
 	"bytes"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -76,6 +78,7 @@ type universeLink struct {
 
 type pageData struct {
 	BasePath    string
+	AssetVer    string // fingerprint of style.css and app.js: a changed file is never served from a stale browser or CDN cache
 	APIBase     string
 	Universe    *catalog.Universe
 	Universes   []universeLink // the switcher in the header; empty when there is only one
@@ -136,9 +139,14 @@ func Build(cfg Config) error {
 		return err
 	}
 
+	assetVer, err := assetVersion()
+	if err != nil {
+		return err
+	}
+
 	for _, u := range cfg.Catalog.Universes {
 		data := pageData{
-			BasePath: cfg.BasePath, APIBase: strings.TrimRight(cfg.APIBase, "/"), Universe: u,
+			BasePath: cfg.BasePath, AssetVer: assetVer, APIBase: strings.TrimRight(cfg.APIBase, "/"), Universe: u,
 			AllBookIDs: template.JS(allIDs), AchievementsJSON: achJS, RatingsDate: ratingsDate,
 		}
 		if len(cfg.Catalog.Universes) > 1 {
@@ -198,7 +206,7 @@ func Build(cfg Config) error {
 	}
 
 	var buf bytes.Buffer
-	if err := tpl.ExecuteTemplate(&buf, "404.html", pageData{BasePath: cfg.BasePath}); err != nil {
+	if err := tpl.ExecuteTemplate(&buf, "404.html", pageData{BasePath: cfg.BasePath, AssetVer: assetVer}); err != nil {
 		return fmt.Errorf("render 404.html: %w", err)
 	}
 	if err := os.WriteFile(filepath.Join(cfg.OutDir, "404.html"), buf.Bytes(), 0o644); err != nil {
@@ -228,6 +236,19 @@ func Build(cfg Config) error {
 	}
 	// Tell GitHub Pages not to run Jekyll over the output.
 	return os.WriteFile(filepath.Join(cfg.OutDir, ".nojekyll"), nil, 0o644)
+}
+
+// assetVersion is a short hash of the scripts and styles; it goes into their URLs (?v=…).
+func assetVersion() (string, error) {
+	h := sha256.New()
+	for _, name := range []string{"static/style.css", "static/app.js"} {
+		raw, err := fs.ReadFile(web.FS, name)
+		if err != nil {
+			return "", err
+		}
+		h.Write(raw)
+	}
+	return hex.EncodeToString(h.Sum(nil))[:10], nil
 }
 
 // universeURL is where a universe's page lives: the root for the main one, a directory otherwise.

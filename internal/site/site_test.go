@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"testing"
 
@@ -38,7 +39,7 @@ func TestBuild(t *testing.T) {
 	}
 	index := read("index.html")
 	for _, want := range []string{
-		`href="/wahbook/static/style.css"`,       // base path applied
+		`href="/wahbook/static/style.css?v=`,     // base path applied; the version follows
 		`src="/wahbook/covers/horus-rising.jpg"`, // existing cover linked
 		`class="ph"`,                             // placeholder for books without a cover
 		`id="siege"`, `id="primarchs"`,           // series sections
@@ -355,7 +356,7 @@ func TestBuildUniversePages(t *testing.T) {
 	}
 	// the switcher links both pages from both pages; assets are addressed from the site root
 	for name, html := range map[string]string{"root": root, "40k": wh} {
-		for _, want := range []string{`<a href="/wahbook/"`, `<a href="/wahbook/40k/"`, `href="/wahbook/static/style.css"`, `aria-current="page"`} {
+		for _, want := range []string{`<a href="/wahbook/"`, `<a href="/wahbook/40k/"`, `href="/wahbook/static/style.css?v=`, `aria-current="page"`} {
 			if !strings.Contains(html, want) {
 				t.Errorf("%s page lacks %q", name, want)
 			}
@@ -410,3 +411,31 @@ func TestAchievementsIgnoreOtherUniverses(t *testing.T) {
 }
 
 func itoa(n int) string { return fmt.Sprint(n) }
+
+// The URLs of the script and the styles carry a fingerprint, so a changed file is not
+// shown from a stale cache; the same files give the same fingerprint on every page.
+func TestAssetVersion(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	out := filepath.Join(t.TempDir(), "dist")
+	if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/"}); err != nil {
+		t.Fatal(err)
+	}
+	re := regexp.MustCompile(`static/(?:style\.css|app\.js)\?v=([0-9a-f]{10})"`)
+	seen := map[string]bool{}
+	for _, name := range []string{"index.html", "40k/index.html", "404.html"} {
+		b, _ := os.ReadFile(filepath.Join(out, name))
+		m := re.FindAllStringSubmatch(string(b), -1)
+		if len(m) == 0 {
+			t.Fatalf("%s: assets have no version", name)
+		}
+		for _, x := range m {
+			seen[x[1]] = true
+		}
+	}
+	if len(seen) != 1 {
+		t.Errorf("one build must have one version, got %v", seen)
+	}
+}
