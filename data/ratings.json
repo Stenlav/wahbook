@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-27",
   "books": {
     "a-thousand-sons": {
       "work": 283119,
@@ -40,6 +40,11 @@
       "work": 710412,
       "rating": 8.12,
       "votes": 76
+    },
+    "avenging-son": {
+      "work": 1331448,
+      "rating": 8.29,
+      "votes": 31
     },
     "battle-for-the-abyss": {
       "work": 63661,
@@ -195,6 +200,11 @@
       "work": 777992,
       "rating": 7.67,
       "votes": 33
+    },
+    "hand-of-abaddon": {
+      "work": 1942133,
+      "rating": 4.33,
+      "votes": 3
     },
     "heirs-of-the-emperor": {
       "work": 1592566,
@@ -376,6 +386,11 @@
       "rating": 7.45,
       "votes": 38
     },
+    "sea-of-souls": {
+      "work": 1807850,
+      "rating": 7.83,
+      "votes": 6
+    },
     "shadows-of-treachery": {
       "work": 458257,
       "rating": 7.87,
@@ -491,10 +506,20 @@
       "rating": 7.94,
       "votes": 707
     },
+    "the-gate-of-bones": {
+      "work": 1395421,
+      "rating": 7.67,
+      "votes": 21
+    },
     "the-honoured": {
       "work": 908615,
       "rating": 6.78,
       "votes": 27
+    },
+    "the-iron-kingdom": {
+      "work": 1692102,
+      "rating": 8,
+      "votes": 13
     },
     "the-lion": {
       "work": 458719,
@@ -505,6 +530,11 @@
       "work": 1210026,
       "rating": 8.05,
       "votes": 82
+    },
+    "the-martyr-s-tomb": {
+      "work": 1748267,
+      "rating": 5.8,
+      "votes": 5
     },
     "the-master-of-mankind": {
       "work": 942739,
@@ -546,6 +576,11 @@
       "rating": 7.73,
       "votes": 45
     },
+    "the-silent-king": {
+      "work": 2156016,
+      "rating": 6.5,
+      "votes": 6
+    },
     "the-silent-war": {
       "work": 989159,
       "rating": 7.46,
@@ -565,6 +600,16 @@
       "work": 596776,
       "rating": 8.49,
       "votes": 198
+    },
+    "the-wolftime": {
+      "work": 1491322,
+      "rating": 7.6,
+      "votes": 15
+    },
+    "throne-of-light": {
+      "work": 1560895,
+      "rating": 7.38,
+      "votes": 16
     },
     "titandeath": {
       "work": 1083289,
@@ -615,6 +660,11 @@
       "work": 997353,
       "rating": 7.85,
       "votes": 73
+    },
+    "wrath-of-terra": {
+      "work": 2489622,
+      "rating": 10,
+      "votes": 1
     },
     "zardu-layak-the-crimson-apostle": {
       "work": 2363696,

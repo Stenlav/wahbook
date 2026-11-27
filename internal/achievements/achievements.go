@@ -135,6 +135,7 @@ type Page struct {
 	Ranks        []Rank        `json:"ranks"`
 	Achievements []Achievement `json:"achievements"`
 	Total        int           `json:"total"` // books in the catalog
+	Scope        []string      `json:"scope"` // ids of those books: only they count towards the rank
 }
 
 // Inputs is what the rules are resolved against.
@@ -149,7 +150,10 @@ var tiers = map[string]bool{"bronze": true, "silver": true, "gold": true}
 // Resolve checks the rules and expands them into a Page.
 func (c *Config) Resolve(in Inputs) (*Page, error) {
 	books := in.Catalog.Books()
-	page := &Page{Total: len(books)}
+	page := &Page{Total: len(books), Scope: make([]string, 0, len(books))}
+	for _, b := range books {
+		page.Scope = append(page.Scope, b.ID)
+	}
 	seen := map[string]bool{}
 
 	// ranks

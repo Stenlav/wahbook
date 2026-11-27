@@ -60,6 +60,13 @@ select, input[type=search], input[type=text], input[type=email], input[type=pass
 .account { display: flex; align-items: center; gap: .6rem; }
 .who { color: var(--muted); font-size: 14px; }
 
+.universe-nav { max-width: 1280px; margin: .55rem auto 0; display: flex; gap: 1.2rem; border-bottom: 1px solid var(--line); }
+.universe-nav a {
+  padding: .25rem .1rem .45rem; margin-bottom: -1px; border-bottom: 2px solid transparent;
+  color: var(--muted); text-decoration: none; font: 600 1rem var(--serif); letter-spacing: .02em;
+}
+.universe-nav a:hover { color: var(--text); }
+.universe-nav a[aria-current="page"] { color: var(--gold); border-bottom-color: var(--gold); }
 .series-nav { max-width: 1280px; margin: .55rem auto 0; display: flex; gap: .5rem; overflow-x: auto; scrollbar-width: thin; }
 .series-nav a {
   flex: none; display: flex; align-items: baseline; gap: .5rem;

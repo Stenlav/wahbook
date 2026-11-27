@@ -204,7 +204,7 @@
       shown += visible;
     }
 
-    const read = Object.values(progress).filter((s) => s === 'read').length;
+    const read = $$('.card').filter((c) => progress[c.dataset.id] === 'read').length; // только на этой странице
     el.summary.textContent = `Показано ${shown} из ${total} · прочитано ${read}`;
     el.empty.hidden = shown !== 0;
     el.reset.hidden = !(q || kind || status || author || tr);
@@ -460,7 +460,8 @@
     try {
       const raw = JSON.parse(await f.text());
       const incoming = cleanProgress(raw.progress ?? raw);
-      const known = new Set($$('.card').map((c) => c.dataset.id));
+      // книги всех разделов, а не только открытой страницы: в копии есть отметки и с других страниц
+      const known = new Set(CFG.books?.length ? CFG.books : $$('.card').map((c) => c.dataset.id));
       unlocked = mergeUnlocked(unlocked, cleanUnlocked(raw.unlocked)); // сначала полученное: оно не должно объявляться заново
       let n = 0;
       for (const [id, st] of Object.entries(incoming)) {
@@ -478,7 +479,11 @@
   const achDialog = $('#ach-dialog');
   let achFilter = 'all';
 
-  const readCount = () => Object.values(progress).filter((s) => s === 'read').length;
+  // в звания идут только книги основного раздела (ACH.scope); отметки в других разделах не считаются
+  const readCount = () => {
+    const scope = ACH.scope ? new Set(ACH.scope) : null;
+    return Object.entries(progress).filter(([id, s]) => s === 'read' && (!scope || scope.has(id))).length;
+  };
 
   // сколько засчитано достижению: см. комментарий к Achievement в Go
   function achProgress(a) {
