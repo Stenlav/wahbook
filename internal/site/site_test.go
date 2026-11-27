@@ -439,3 +439,52 @@ func TestAssetVersion(t *testing.T) {
 		t.Errorf("one build must have one version, got %v", seen)
 	}
 }
+
+// A book with too few votes of its own shows the mean over the works in its contents; a book
+// that has its own rating, or whose contents do not add up to enough votes, is left alone.
+func TestRatingFromContents(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	ratings := &fantlab.File{Updated: "2026-11-27", Books: map[string]fantlab.Entry{
+		"hand-of-abaddon": {Work: 1942133, Rating: 4.33, Votes: 3}, // too few votes
+		"avenging-son":    {Work: 1331448, Rating: 8.29, Votes: 31},
+		"sea-of-souls":    {Work: 1807850, Rating: 7.83, Votes: 3},
+	}}
+	contents := &fantlab.ContentsFile{Books: map[string][]fantlab.Story{
+		"hand-of-abaddon": {{Work: 1942133, Title: "Рука Абаддона", Rating: 4.33, Votes: 3}, {Work: 1942134, Title: "Дефрагментация", Kind: "рассказ", Rating: 5.33, Votes: 3}},
+		"avenging-son":    {{Work: 1, Title: "A", Rating: 1, Votes: 50}, {Work: 2, Title: "B", Rating: 1, Votes: 50}},
+		"sea-of-souls":    {{Work: 1807850, Title: "Море душ", Rating: 7.83, Votes: 3}, {Work: 3, Title: "Тяжкий труд", Rating: 6.75, Votes: 1}}, // 4 votes in all
+	}}
+	out := filepath.Join(t.TempDir(), "dist")
+	if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/", Ratings: ratings, Contents: contents}); err != nil {
+		t.Fatal(err)
+	}
+	b, err := os.ReadFile(filepath.Join(out, "40k", "index.html"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	page := string(b)
+	card := func(id string) string {
+		i := strings.Index(page, `data-id="`+id+`"`)
+		if i < 0 {
+			t.Fatalf("no card %s", id)
+		}
+		return page[i : i+strings.Index(page[i:], "</li>")]
+	}
+
+	if c := card("hand-of-abaddon"); !strings.Contains(c, `data-rating="4.83"`) || !strings.Contains(c, `data-votes="6"`) ||
+		!strings.Contains(c, "среднее по её составу (произведений: 2)") || !strings.Contains(c, `href="https://fantlab.ru/work1942133"`) {
+		t.Errorf("hand-of-abaddon must show the mean 4.83 of 6 votes with a note:\n%s", c)
+	}
+	if c := card("avenging-son"); !strings.Contains(c, `data-rating="8.29"`) || strings.Contains(c, "среднее по её составу") {
+		t.Errorf("a book with its own rating keeps it:\n%s", c)
+	}
+	if c := card("sea-of-souls"); !strings.Contains(c, `data-rating=""`) || !strings.Contains(c, "нет оценок") {
+		t.Errorf("not enough votes even in the contents: no rating:\n%s", c)
+	}
+	if strings.Contains(page, "оценено книг: 9 из 9") {
+		t.Error("the series rating must not count a book rated only through its contents")
+	}
+}

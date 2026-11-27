@@ -49,6 +49,7 @@ type pageBook struct {
 	Rating     string  // "7.84", empty when there are too few votes
 	mark       float64 // the same rating as a number; 0 = not rated
 	Votes      int
+	RatingNote string // set when Rating is not the book's own: says what it is the mean of
 	FantLabURL string // the work page, or a search when the book is not on FantLab
 	TrStatus   string // published | fan | none; empty when unknown
 	TrLabel    string // short text for the card
@@ -163,6 +164,12 @@ func Build(cfg Config) error {
 					pb.FantLabURL = fantlab.WorkURL(e.Work)
 					if e.Votes >= minVotes {
 						pb.Rating, pb.Votes, pb.mark = fmt.Sprintf("%.2f", e.Rating), e.Votes, e.Rating
+					}
+				}
+				if pb.Rating == "" { // too few votes for the book itself: fall back to the works in its contents
+					if mean, votes, n := contentsRating(cfg.Contents, b.ID); n > 0 {
+						pb.Rating, pb.Votes = fmt.Sprintf("%.2f", mean), votes
+						pb.RatingNote = fmt.Sprintf("У самой книги мало оценок: показано среднее по её составу (произведений: %d): %s, оценок: %d", n, pb.Rating, votes)
 					}
 				}
 				pb.TrStatus, pb.TrLabel, pb.TrNote = translationText(b, cfg.Translations)
@@ -285,6 +292,25 @@ type contentsStory struct {
 	Rating  string `json:"rating,omitempty"` // empty when there are too few votes
 	Votes   int    `json:"votes,omitempty"`
 	URL     string `json:"url"`
+}
+
+// contentsRating is the plain mean of the ratings of the works in a book's contents, the
+// number of their votes, and how many works went into it. The mean counts only when there
+// are enough votes in total (minVotes); otherwise n is 0.
+func contentsRating(snap *fantlab.ContentsFile, bookID string) (mean float64, votes, n int) {
+	stories, _ := snap.Entry(bookID)
+	var sum float64
+	for _, s := range stories {
+		if s.Rating > 0 {
+			sum += s.Rating
+			votes += s.Votes
+			n++
+		}
+	}
+	if n == 0 || votes < minVotes {
+		return 0, 0, 0
+	}
+	return sum / float64(n), votes, n
 }
 
 // contentsJSON turns the snapshot into {bookId: [story, …]} for the page. Stories of books

@@ -783,6 +783,32 @@
         "votes": 33
       }
     ],
+    "hand-of-abaddon": [
+      {
+        "work": 1942133,
+        "title": "Рука Абаддона",
+        "orig": "Hand of Abaddon",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "роман",
+        "year": 2024,
+        "rating": 4.33,
+        "votes": 3
+      },
+      {
+        "work": 1942134,
+        "title": "Дефрагментация",
+        "orig": "Defragmentation",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2024,
+        "rating": 5.33,
+        "votes": 3
+      }
+    ],
     "heirs-of-the-emperor": [
       {
         "work": 1040355,

@@ -320,7 +320,8 @@
     const rating = $('#bd-rating');
     rating.hidden = !card.dataset.rating;
     if (card.dataset.rating) {
-      rating.textContent = `★ ${card.dataset.rating} · оценок: ${card.dataset.votes}`;
+      rating.textContent = `★ ${card.dataset.rating} · оценок: ${card.dataset.votes}${card.dataset.ratingNote ? ' · среднее по составу' : ''}`;
+      rating.title = card.dataset.ratingNote || '';
       rating.href = card.dataset.fantlab;
     }
     const summary = card.dataset.summary || '';

@@ -130,7 +130,7 @@
     </div>
     <ul class="grid">
       {{range .Books}}
-      <li class="card" data-id="{{.ID}}" data-kind="{{.Kind}}" data-authors="{{.PeopleKeys}}" data-tr="{{.TrStatus}}" data-tr-note="{{.TrNote}}" data-fantlab="{{if .Rating}}{{.FantLabURL}}{{end}}" data-rating="{{.Rating}}" data-votes="{{.Votes}}" data-summary="{{.Summary}}"
+      <li class="card" data-id="{{.ID}}" data-kind="{{.Kind}}" data-authors="{{.PeopleKeys}}" data-tr="{{.TrStatus}}" data-tr-note="{{.TrNote}}" data-fantlab="{{if .Rating}}{{.FantLabURL}}{{end}}" data-rating="{{.Rating}}" data-rating-note="{{.RatingNote}}" data-votes="{{.Votes}}" data-summary="{{.Summary}}"
           data-year="{{.Year}}" data-title="{{if .TitleRU}}{{.TitleRU}}{{else}}{{.Title}}{{end}}" data-by="{{if not .IsAnthology}}{{.AuthorLabel}}{{end}}"
           data-search="{{.Title}} {{.TitleRU}} {{.Author}} {{.AuthorRU}} {{.Editors}} {{.EditorsRU}} {{.Year}}">
         <button class="cover" type="button" data-open="{{.ID}}" aria-label="Подробнее: {{.Title}}">
@@ -149,7 +149,7 @@
           {{with .AuthorOrig}}<p class="by-orig">{{.}}</p>{{end}}
           <p class="sub">{{.Year}} · {{kindLabel .Kind}}</p>
           {{if .TrStatus}}<p class="tr tr-{{.TrStatus}}" title="{{.TrNote}}">{{.TrLabel}}</p>{{end}}
-          <p class="rate">{{if .Rating}}<a href="{{.FantLabURL}}" target="_blank" rel="noopener" title="Средняя оценка читателей: {{.Rating}} (оценок: {{.Votes}})">★ {{.Rating}} <small>({{.Votes}})</small></a>{{else}}<span class="no-rate" title="На FantLab пока слишком мало оценок">★ нет оценок</span>{{end}}</p>
+          <p class="rate">{{if .Rating}}<a href="{{.FantLabURL}}" target="_blank" rel="noopener" title="{{if .RatingNote}}{{.RatingNote}}{{else}}Средняя оценка читателей: {{.Rating}} (оценок: {{.Votes}}){{end}}">★ {{.Rating}} <small>({{.Votes}})</small></a>{{else}}<span class="no-rate" title="На FantLab пока слишком мало оценок">★ нет оценок</span>{{end}}</p>
           <button class="status" type="button" data-status="{{.ID}}">Отметить</button>
         </div>
       </li>
