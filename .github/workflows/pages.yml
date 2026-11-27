@@ -1,16 +1,16 @@
 name: Pages
 
+# Только ручной запуск: Actions → Pages → Run workflow (или `gh workflow run pages.yml --ref <ветка>`).
+# Автоматически ничего не запускается — ни при push, ни в пул-реквестах.
+# Из любой ветки: тесты и сборка. Из master: ещё и публикация сайта.
 on:
-  push:
-    branches: [master]
-  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
 
-# Свежий запуск отменяет предыдущий для той же ветки или пул-реквеста, но запуск на master
-# не отменяется никогда: иначе правка в открытом PR могла бы сорвать публикацию сайта.
+# Свежий запуск отменяет предыдущий для той же ветки, но запуск на master
+# не отменяется никогда: иначе второй запуск мог бы сорвать публикацию сайта.
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
@@ -48,10 +48,10 @@ jobs:
         with:
           path: dist
 
-  # Публикация — только после слияния в master (push в master). Пул-реквесты и ручные запуски
-  # на других ветках проходят тесты и сборку, но сайт не публикуют.
+  # Публикация — только при ручном запуске из master. Запуск из другой ветки проходит тесты
+  # и сборку, но сайт не публикует (окружение github-pages и так разрешает только master).
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     concurrency:
