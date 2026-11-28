@@ -189,3 +189,76 @@ func TestRussianOnlyBookAndHandWrittenAnnotation(t *testing.T) {
 		t.Errorf("summary = %q", got.Summary)
 	}
 }
+
+func TestUniverses(t *testing.T) {
+	const head = "universes: [{id: a, title: A}, {id: b, title: B, path: bee}]\n"
+	c, err := Parse([]byte(head +
+		"series: [{id: s1, title: S1}, {id: s2, title: S2, universe: b}]\n" +
+		"books: [{series: s1, title: T1, author: X, year: 2000, kind: novel}, {series: s2, title: T2, author: X, year: 2001, kind: novel}]"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !c.Main().Main() || c.Universes[1].Main() {
+		t.Fatalf("only the first universe is the main one: %+v", c.Universes)
+	}
+	if s := c.Series[0]; s.Universe != "a" { // a series without `universe` joins the first one
+		t.Errorf("default universe = %q, want a", s.Universe)
+	}
+	if got := c.Universes[1].Books(); len(got) != 1 || got[0].ID != "t2" {
+		t.Errorf("books of universe b: %+v", got)
+	}
+	sub := c.Only(c.Main())
+	if _, ok := sub.Book("t2"); ok || len(sub.Books()) != 1 {
+		t.Errorf("Only(main) must hide the other universes: %d books", len(sub.Books()))
+	}
+
+	// a catalog without `universes` is one universe at the root
+	one, err := Parse([]byte("series: [{id: s, title: S}]\nbooks: [{series: s, title: T, author: X, year: 2000, kind: novel}]"))
+	if err != nil || len(one.Universes) != 1 || !one.Main().Main() || len(one.Main().Books()) != 1 {
+		t.Fatalf("implicit universe: %v %+v", err, one)
+	}
+
+	bad := map[string]string{
+		"unknown universe":    "universes: [{id: a, title: A}]\nseries: [{id: s, title: S, universe: zzz}]",
+		"first has a path":    "universes: [{id: a, title: A, path: x}]",
+		"second has no path":  "universes: [{id: a, title: A}, {id: b, title: B}]",
+		"path with a slash":   "universes: [{id: a, title: A}, {id: b, title: B, path: b/c}]",
+		"path in capitals":    "universes: [{id: a, title: A}, {id: b, title: B, path: Bee}]",
+		"duplicate universe":  "universes: [{id: a, title: A}, {id: a, title: B, path: b}]",
+		"universe w/o a name": "universes: [{id: a, title: A}, {id: b, path: b}]",
+	}
+	for name, src := range bad {
+		if _, err := Parse([]byte(src)); err == nil {
+			t.Errorf("%s: expected error", name)
+		}
+	}
+}
+
+// The real catalog: the 40k section exists and its books are all in it.
+func TestRealCatalogUniverses(t *testing.T) {
+	c, err := Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(c.Universes) < 2 || c.Main().ID != "heresy" {
+		t.Fatalf("universes: %+v", c.Universes)
+	}
+	b, ok := c.Book("avenging-son")
+	if !ok {
+		t.Fatal("avenging-son missing")
+	}
+	var found bool
+	for _, u := range c.Universes[1:] {
+		for _, x := range u.Books() {
+			found = found || x == b
+		}
+	}
+	if !found {
+		t.Error("avenging-son must be outside the main universe")
+	}
+	for _, x := range c.Main().Books() {
+		if x.Series == "dawn-of-fire" {
+			t.Errorf("%s leaked into the main universe", x.ID)
+		}
+	}
+}

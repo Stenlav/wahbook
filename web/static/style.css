@@ -60,6 +60,15 @@ select, input[type=search], input[type=text], input[type=email], input[type=pass
 .account { display: flex; align-items: center; gap: .6rem; }
 .who { color: var(--muted); font-size: 14px; }
 
+/* переключатель разделов: крупные «кнопки» над мелкими плашками серий */
+.universe-nav { max-width: 1280px; margin: .6rem auto 0; display: flex; gap: .5rem; overflow-x: auto; scrollbar-width: thin; }
+.universe-nav a {
+  flex: none; padding: .4rem 1.1rem; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--panel); color: var(--text); text-decoration: none;
+  font: 600 1rem var(--serif); letter-spacing: .02em;
+}
+.universe-nav a:hover { border-color: var(--gold); color: var(--gold); }
+.universe-nav a[aria-current="page"] { background: var(--gold); border-color: var(--gold); color: #17130a; cursor: default; }
 .series-nav { max-width: 1280px; margin: .55rem auto 0; display: flex; gap: .5rem; overflow-x: auto; scrollbar-width: thin; }
 .series-nav a {
   flex: none; display: flex; align-items: baseline; gap: .5rem;

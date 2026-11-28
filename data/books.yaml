@@ -19,6 +19,18 @@
 #
 # Порядок книг в файле = порядок на сайте внутри серии.
 
+# Разделы сайта. Первый — главная страница; у остальных своя страница в каталоге `path`
+# (например, /40k/). Серия относится к разделу полем `universe` (по умолчанию — к первому).
+# Звания и достижения считаются только по первому разделу.
+universes:
+  - id: heresy
+    title: Ересь Хоруса
+    wiki: "Ересь_Хоруса_(серия)"
+  - id: w40k
+    title: Warhammer 40,000
+    path: 40k
+    wiki: "Огненная_заря_(серия_книг)"
+
 series:
   - id: heresy
     title: Ересь Хоруса
@@ -61,6 +73,13 @@ series:
     description: >-
       Отдельные повести Ереси Хоруса: многие выходили в электронном виде, а потом вошли в сборники
       и антологии.
+  - id: dawn-of-fire
+    universe: w40k
+    title: Огненная заря
+    title_en: Dawn of Fire
+    description: >-
+      Цикл к выходу 9-й редакции Warhammer 40,000: воскресший Робаут Жиллиман собирает
+      Неодолимый крестовый поход и начинает отвоёвывать у Хаоса потерянные миры.
 
 books:
   # ── Ересь Хоруса: основная серия ──────────────────────────────────────────
@@ -202,3 +221,14 @@ books:
   - {series: novellas, title: Sons of the Forge, title_ru: "Сыны кузни", author: Nick Kyme, year: 2016, kind: novella, wiki: "Рождённые в пламени (сборник рассказов)#Сыны кузни"}
   - {series: novellas, title: Dreadwing, title_ru: "Крыло Ужаса", author: David Guymer, year: 2018, kind: novella, wiki: "Ересь Хоруса (серия)#Крыло Ужаса"}
   - {series: novellas, title: Spear of Ultramar, title_ru: "Копьё Ультрамара", author: David Annandale, year: 2018, kind: novella, wiki: "Ересь Хоруса (серия)#Копьё Ультрамара"}
+
+  # ── Warhammer 40,000: Огненная заря ───────────────────────────────────────
+  - {series: dawn-of-fire, n: 1, title: Avenging Son, title_ru: "Мстящий Сын", author: Guy Haley, year: 2020, kind: novel, wiki: "Мстящий Сын (роман)"}
+  - {series: dawn-of-fire, n: 2, title: The Gate of Bones, title_ru: "Костяные Врата", author: Andy Clark, year: 2021, kind: novel, wiki: "Костяные Врата (роман)"}
+  - {series: dawn-of-fire, n: 3, title: The Wolftime, title_ru: "Время Волка", author: Gav Thorpe, year: 2021, kind: novel, wiki: "Время Волка (роман)"}
+  - {series: dawn-of-fire, n: 4, title: Throne of Light, title_ru: "Трон света", author: Guy Haley, year: 2022, kind: novel, wiki: "Трон света (роман)"}
+  - {series: dawn-of-fire, n: 5, title: The Iron Kingdom, title_ru: "Железное королевство", author: Nick Kyme, year: 2023, kind: novel, wiki: "Железное королевство (роман)"}
+  - {series: dawn-of-fire, n: 6, title: "The Martyr's Tomb", title_ru: "Гробница мученицы", author: Marc Collins, year: 2023, kind: novel, wiki: "Гробница мученицы (роман)"}
+  - {series: dawn-of-fire, n: 7, title: Sea of Souls, title_ru: "Море душ", author: Chris Wraight, year: 2023, kind: novel, wiki: "Море душ (роман)"}
+  - {series: dawn-of-fire, n: 8, title: Hand of Abaddon, title_ru: "Рука Абаддона", author: Nick Kyme, year: 2024, kind: novel, wiki: "Рука Абаддона (роман)"}
+  - {series: dawn-of-fire, n: 9, title: The Silent King, title_ru: "Безмолвный Царь", author: Guy Haley, year: 2025, kind: novel, wiki: "Безмолвный Царь (роман)"}

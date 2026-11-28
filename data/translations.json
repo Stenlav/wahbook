@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-27",
   "books": {
     "a-thousand-sons": {
       "translated": true,
@@ -48,6 +48,14 @@
       "translated": true,
       "translators": [
         "Владислав Лотовский"
+      ]
+    },
+    "avenging-son": {
+      "translated": true,
+      "translators": [
+        "А. Смолькин",
+        "Евгения Егорова",
+        "Сергей Красник"
       ]
     },
     "battle-for-the-abyss": {
@@ -213,6 +221,12 @@
     },
     "garro-vow-of-faith": {
       "translated": false
+    },
+    "hand-of-abaddon": {
+      "translated": true,
+      "translators": [
+        "Летающий Свин"
+      ]
     },
     "heirs-of-the-emperor": {
       "translated": true
@@ -416,6 +430,15 @@
         "Ирина Савельева"
       ]
     },
+    "sea-of-souls": {
+      "translated": true,
+      "translators": [
+        "А. Смолькин",
+        "Алина Турн",
+        "Евгения Егорова",
+        "Летающий Свин"
+      ]
+    },
     "shadows-of-treachery": {
       "translated": true
     },
@@ -537,10 +560,25 @@
         "Ирина Савельева"
       ]
     },
+    "the-gate-of-bones": {
+      "translated": true,
+      "translators": [
+        "Clarion",
+        "А. Смолькин"
+      ]
+    },
     "the-honoured": {
       "translated": true,
       "translators": [
         "Brenner"
+      ]
+    },
+    "the-iron-kingdom": {
+      "translated": true,
+      "translators": [
+        "А. Смолькин",
+        "Евгения Егорова",
+        "Летающий Свин"
       ]
     },
     "the-lion": {
@@ -553,6 +591,14 @@
       "translated": true,
       "translators": [
         "Юрий Антипов"
+      ]
+    },
+    "the-martyr-s-tomb": {
+      "translated": true,
+      "translators": [
+        "Clarion",
+        "А. Смолькин",
+        "Евгения Егорова"
       ]
     },
     "the-master-of-mankind": {
@@ -600,6 +646,12 @@
         "Никита Аксёнов"
       ]
     },
+    "the-silent-king": {
+      "translated": true,
+      "translators": [
+        "А. Смолькин"
+      ]
+    },
     "the-silent-war": {
       "translated": true
     },
@@ -620,6 +672,22 @@
       "translators": [
         "А. Козловский",
         "Дмитрий Ерёмин"
+      ]
+    },
+    "the-wolftime": {
+      "translated": true,
+      "translators": [
+        "А. Смолькин",
+        "Евгения Егорова",
+        "Сöл"
+      ]
+    },
+    "throne-of-light": {
+      "translated": true,
+      "translators": [
+        "А. Смолькин",
+        "Евгения Егорова",
+        "Сергей Красник"
       ]
     },
     "titandeath": {
@@ -683,6 +751,9 @@
       "translators": [
         "Зенур Джемилев"
       ]
+    },
+    "wrath-of-terra": {
+      "translated": false
     },
     "zardu-layak-the-crimson-apostle": {
       "translated": false

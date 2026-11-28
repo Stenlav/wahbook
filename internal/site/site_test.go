@@ -1,8 +1,10 @@
 package site
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"testing"
 
@@ -37,7 +39,7 @@ func TestBuild(t *testing.T) {
 	}
 	index := read("index.html")
 	for _, want := range []string{
-		`href="/wahbook/static/style.css"`,       // base path applied
+		`href="/wahbook/static/style.css?v=`,     // base path applied; the version follows
 		`src="/wahbook/covers/horus-rising.jpg"`, // existing cover linked
 		`class="ph"`,                             // placeholder for books without a cover
 		`id="siege"`, `id="primarchs"`,           // series sections
@@ -308,5 +310,181 @@ func TestEveryAnthologyHasContents(t *testing.T) {
 		case !ok || len(stories) < 3:
 			t.Errorf("%s has no contents: run `go run ./cmd/contents`", b.ID)
 		}
+	}
+}
+
+// Every universe gets its own page: the main one at the root, the others in a directory.
+func TestBuildUniversePages(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	out := filepath.Join(t.TempDir(), "dist")
+	if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/wahbook/"}); err != nil {
+		t.Fatal(err)
+	}
+	read := func(name string) string {
+		b, err := os.ReadFile(filepath.Join(out, name))
+		if err != nil {
+			t.Fatal(err)
+		}
+		return string(b)
+	}
+	root, wh := read("index.html"), read("40k/index.html")
+
+	for page, wants := range map[string][]string{
+		"root": {`id="heresy"`, "Возвышение Хоруса", `<option value="Dan Abnett">`},
+		"40k":  {`id="dawn-of-fire"`, "Мстящий Сын", `<option value="Marc Collins">Марк Коллинз (1)</option>`, `<option value="Guy Haley">Гай Хейли (3)</option>`, "<title>Warhammer 40,000 — Библиотека Ереси</title>"},
+	} {
+		html := map[string]string{"root": root, "40k": wh}[page]
+		for _, want := range wants {
+			if !strings.Contains(html, want) {
+				t.Errorf("%s page lacks %q", page, want)
+			}
+		}
+	}
+	// the pages do not mix: no Heresy on the 40k page and no Dawn of Fire at the root
+	for _, bad := range []string{`id="heresy"`, "Возвышение Хоруса", `<option value="Dan Abnett">`} {
+		if strings.Contains(wh, bad) {
+			t.Errorf("40k page must not contain %q", bad)
+		}
+	}
+	for _, bad := range []string{`id="dawn-of-fire"`, "Мстящий Сын", `<option value="Andy Clark">`} {
+		if strings.Contains(root, bad) {
+			t.Errorf("root page must not contain %q", bad)
+		}
+	}
+	// the switcher links both pages from both pages; assets are addressed from the site root
+	for name, html := range map[string]string{"root": root, "40k": wh} {
+		for _, want := range []string{`<a href="/wahbook/"`, `<a href="/wahbook/40k/"`, `href="/wahbook/static/style.css?v=`, `aria-current="page"`} {
+			if !strings.Contains(html, want) {
+				t.Errorf("%s page lacks %q", name, want)
+			}
+		}
+	}
+	// a backup file can hold marks from any page: both pages know every book
+	for name, html := range map[string]string{"root": root, "40k": wh} {
+		if !strings.Contains(html, `"avenging-son"`) || !strings.Contains(html, `"horus-rising"`) {
+			t.Errorf("%s page must list the ids of all books for the backup import", name)
+		}
+	}
+	if _, err := os.Stat(filepath.Join(out, "404.html")); err != nil {
+		t.Error("404.html is missing")
+	}
+}
+
+// Ranks and achievements are about the main universe: 40k books are not counted.
+func TestAchievementsIgnoreOtherUniverses(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	rules, err := achievements.Load("../../data/achievements.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	ratings, err := fantlab.Load("../../data/ratings.json") // some rules pick books by their rating
+	if err != nil {
+		t.Fatal(err)
+	}
+	out := filepath.Join(t.TempDir(), "dist")
+	if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/", Achievements: rules, Ratings: ratings}); err != nil {
+		t.Fatal(err)
+	}
+	for _, name := range []string{"index.html", "40k/index.html"} {
+		b, _ := os.ReadFile(filepath.Join(out, name))
+		html := string(b)
+		i := strings.Index(html, `id="ach-data"`)
+		if i < 0 {
+			t.Fatalf("%s: no achievements data", name)
+		}
+		data := html[i:]
+		data = data[:strings.Index(data, "</script>")]
+		if strings.Contains(data, "avenging-son") {
+			t.Errorf("%s: a 40k book got into the achievements data", name)
+		}
+		want := len(cat.Main().Books())
+		if !strings.Contains(data, `"total":`+itoa(want)) {
+			t.Errorf("%s: total must be %d (books of the main universe)", name, want)
+		}
+	}
+}
+
+func itoa(n int) string { return fmt.Sprint(n) }
+
+// The URLs of the script and the styles carry a fingerprint, so a changed file is not
+// shown from a stale cache; the same files give the same fingerprint on every page.
+func TestAssetVersion(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	out := filepath.Join(t.TempDir(), "dist")
+	if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/"}); err != nil {
+		t.Fatal(err)
+	}
+	re := regexp.MustCompile(`static/(?:style\.css|app\.js)\?v=([0-9a-f]{10})"`)
+	seen := map[string]bool{}
+	for _, name := range []string{"index.html", "40k/index.html", "404.html"} {
+		b, _ := os.ReadFile(filepath.Join(out, name))
+		m := re.FindAllStringSubmatch(string(b), -1)
+		if len(m) == 0 {
+			t.Fatalf("%s: assets have no version", name)
+		}
+		for _, x := range m {
+			seen[x[1]] = true
+		}
+	}
+	if len(seen) != 1 {
+		t.Errorf("one build must have one version, got %v", seen)
+	}
+}
+
+// A book with too few votes of its own shows the mean over the works in its contents; a book
+// that has its own rating, or whose contents do not add up to enough votes, is left alone.
+func TestRatingFromContents(t *testing.T) {
+	cat, err := catalog.Load("../../data/books.yaml")
+	if err != nil {
+		t.Fatal(err)
+	}
+	ratings := &fantlab.File{Updated: "2026-11-27", Books: map[string]fantlab.Entry{
+		"hand-of-abaddon": {Work: 1942133, Rating: 4.33, Votes: 3}, // too few votes
+		"avenging-son":    {Work: 1331448, Rating: 8.29, Votes: 31},
+		"sea-of-souls":    {Work: 1807850, Rating: 7.83, Votes: 3},
+	}}
+	contents := &fantlab.ContentsFile{Books: map[string][]fantlab.Story{
+		"hand-of-abaddon": {{Work: 1942133, Title: "Рука Абаддона", Rating: 4.33, Votes: 3}, {Work: 1942134, Title: "Дефрагментация", Kind: "рассказ", Rating: 5.33, Votes: 3}},
+		"avenging-son":    {{Work: 1, Title: "A", Rating: 1, Votes: 50}, {Work: 2, Title: "B", Rating: 1, Votes: 50}},
+		"sea-of-souls":    {{Work: 1807850, Title: "Море душ", Rating: 7.83, Votes: 3}, {Work: 3, Title: "Тяжкий труд", Rating: 6.75, Votes: 1}}, // 4 votes in all
+	}}
+	out := filepath.Join(t.TempDir(), "dist")
+	if err := Build(Config{Catalog: cat, OutDir: out, CoversDir: t.TempDir(), BasePath: "/", Ratings: ratings, Contents: contents}); err != nil {
+		t.Fatal(err)
+	}
+	b, err := os.ReadFile(filepath.Join(out, "40k", "index.html"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	page := string(b)
+	card := func(id string) string {
+		i := strings.Index(page, `data-id="`+id+`"`)
+		if i < 0 {
+			t.Fatalf("no card %s", id)
+		}
+		return page[i : i+strings.Index(page[i:], "</li>")]
+	}
+
+	if c := card("hand-of-abaddon"); !strings.Contains(c, `data-rating="4.83"`) || !strings.Contains(c, `data-votes="6"`) ||
+		!strings.Contains(c, "среднее по её составу (произведений: 2)") || !strings.Contains(c, `href="https://fantlab.ru/work1942133"`) {
+		t.Errorf("hand-of-abaddon must show the mean 4.83 of 6 votes with a note:\n%s", c)
+	}
+	if c := card("avenging-son"); !strings.Contains(c, `data-rating="8.29"`) || strings.Contains(c, "среднее по её составу") {
+		t.Errorf("a book with its own rating keeps it:\n%s", c)
+	}
+	if c := card("sea-of-souls"); !strings.Contains(c, `data-rating=""`) || !strings.Contains(c, "нет оценок") {
+		t.Errorf("not enough votes even in the contents: no rating:\n%s", c)
+	}
+	if strings.Contains(page, "оценено книг: 9 из 9") {
+		t.Error("the series rating must not count a book rated only through its contents")
 	}
 }

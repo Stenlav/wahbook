@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Библиотека Ереси Хоруса</title>
-<meta name="description" content="Все книги Ереси Хоруса по сериям: основная серия, Осада Терры, примархи, персонажи. С обложками и отметками прочитанного.">
+<title>{{if .Universe.Main}}Библиотека Ереси Хоруса{{else}}{{.Universe.Title}} — Библиотека Ереси{{end}}</title>
+<meta name="description" content="{{if .Universe.Main}}Все книги Ереси Хоруса по сериям: основная серия, Осада Терры, примархи, персонажи. С обложками и отметками прочитанного.{{else}}Книги {{.Universe.Title}} по сериям: с обложками, оценками и отметками прочитанного.{{end}}">
 <meta name="theme-color" content="#0e0d0c">
 <link rel="icon" href="{{.BasePath}}static/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="{{.BasePath}}static/style.css">
-<script>window.WAHBOOK = {base: {{.BasePath}}, api: {{.APIBase}}};</script>
-<script src="{{.BasePath}}static/app.js" defer></script>
+<link rel="stylesheet" href="{{.BasePath}}static/style.css?v={{.AssetVer}}">
+<script>window.WAHBOOK = {base: {{.BasePath}}, api: {{.APIBase}}, books: {{.AllBookIDs}}};</script>
+<script src="{{.BasePath}}static/app.js?v={{.AssetVer}}" defer></script>
 </head>
 <body>
 
@@ -33,6 +33,11 @@
       <button class="btn ghost" id="logout-btn" type="button" hidden>Выйти</button>
     </div>
   </div>
+
+  {{if .Universes}}<nav class="universe-nav" aria-label="Разделы">
+    {{range .Universes}}<a href="{{.URL}}"{{if .Current}} aria-current="page"{{end}}>{{.Title}}</a>
+    {{end}}
+  </nav>{{end}}
 
   <nav class="series-nav" aria-label="Серии">
     {{range .Series}}
@@ -125,7 +130,7 @@
     </div>
     <ul class="grid">
       {{range .Books}}
-      <li class="card" data-id="{{.ID}}" data-kind="{{.Kind}}" data-authors="{{.PeopleKeys}}" data-tr="{{.TrStatus}}" data-tr-note="{{.TrNote}}" data-fantlab="{{if .Rating}}{{.FantLabURL}}{{end}}" data-rating="{{.Rating}}" data-votes="{{.Votes}}" data-summary="{{.Summary}}"
+      <li class="card" data-id="{{.ID}}" data-kind="{{.Kind}}" data-authors="{{.PeopleKeys}}" data-tr="{{.TrStatus}}" data-tr-note="{{.TrNote}}" data-fantlab="{{if .Rating}}{{.FantLabURL}}{{end}}" data-rating="{{.Rating}}" data-rating-note="{{.RatingNote}}" data-votes="{{.Votes}}" data-summary="{{.Summary}}"
           data-year="{{.Year}}" data-title="{{if .TitleRU}}{{.TitleRU}}{{else}}{{.Title}}{{end}}" data-by="{{if not .IsAnthology}}{{.AuthorLabel}}{{end}}"
           data-search="{{.Title}} {{.TitleRU}} {{.Author}} {{.AuthorRU}} {{.Editors}} {{.EditorsRU}} {{.Year}}">
         <button class="cover" type="button" data-open="{{.ID}}" aria-label="Подробнее: {{.Title}}">
@@ -144,7 +149,7 @@
           {{with .AuthorOrig}}<p class="by-orig">{{.}}</p>{{end}}
           <p class="sub">{{.Year}} · {{kindLabel .Kind}}</p>
           {{if .TrStatus}}<p class="tr tr-{{.TrStatus}}" title="{{.TrNote}}">{{.TrLabel}}</p>{{end}}
-          <p class="rate">{{if .Rating}}<a href="{{.FantLabURL}}" target="_blank" rel="noopener" title="Средняя оценка читателей: {{.Rating}} (оценок: {{.Votes}})">★ {{.Rating}} <small>({{.Votes}})</small></a>{{else}}<span class="no-rate" title="На FantLab пока слишком мало оценок">★ нет оценок</span>{{end}}</p>
+          <p class="rate">{{if .Rating}}<a href="{{.FantLabURL}}" target="_blank" rel="noopener" title="{{if .RatingNote}}{{.RatingNote}}{{else}}Средняя оценка читателей: {{.Rating}} (оценок: {{.Votes}}){{end}}">★ {{.Rating}} <small>({{.Votes}})</small></a>{{else}}<span class="no-rate" title="На FantLab пока слишком мало оценок">★ нет оценок</span>{{end}}</p>
           <button class="status" type="button" data-status="{{.ID}}">Отметить</button>
         </div>
       </li>
@@ -159,7 +164,7 @@
   <p>Неофициальный фан-проект. Warhammer 40,000, Horus Heresy и связанные названия — собственность Games Workshop Ltd.;
   обложки принадлежат их правообладателям и используются в информационных целях.</p>
   <p>Всего книг в каталоге: {{.TotalBooks}}. Данные — в <a href="{{.BasePath}}catalog.json">catalog.json</a>.</p>
-  <p>Оценки, аннотации и сведения об изданиях — с <a href="https://fantlab.ru" target="_blank" rel="noopener">FantLab</a>; оценки — средние по читателям{{if .RatingsDate}} на {{.RatingsDate}}{{end}}, показаны, если оценок не меньше 5. Названия и описания серий — по <a href="https://warhammer40k.fandom.com/ru/wiki/Ересь_Хоруса_(серия)" target="_blank" rel="noopener">русской вики</a>.</p>
+  <p>Оценки, аннотации и сведения об изданиях — с <a href="https://fantlab.ru" target="_blank" rel="noopener">FantLab</a>; оценки — средние по читателям{{if .RatingsDate}} на {{.RatingsDate}}{{end}}, показаны, если оценок не меньше 5. Названия и описания серий — по {{with .Universe.Wiki}}<a href="https://warhammer40k.fandom.com/ru/wiki/{{.}}" target="_blank" rel="noopener">русской вики</a>{{else}}русской вики{{end}}.</p>
 </footer>
 
 <dialog id="book-dialog" aria-labelledby="bd-title">

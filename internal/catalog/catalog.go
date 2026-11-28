@@ -35,8 +35,23 @@ var kindLabels = map[Kind]string{
 // Label returns the Russian display name of the kind.
 func (k Kind) Label() string { return kindLabels[k] }
 
+// Universe is a section of the site with its own page: the main one lives at the site
+// root, the others in a subdirectory (Path).
+type Universe struct {
+	ID    string `yaml:"id" json:"id"`
+	Title string `yaml:"title" json:"title"`
+	Path  string `yaml:"path" json:"path"` // "" = the site root; otherwise a directory name like "40k"
+	Wiki  string `yaml:"wiki" json:"-"`    // Russian wiki page the series list was checked against, for the footer
+
+	Series []*Series `yaml:"-" json:"-"`
+}
+
+// Main reports whether this is the universe shown at the site root.
+func (u *Universe) Main() bool { return u.Path == "" }
+
 type Series struct {
 	ID          string `yaml:"id" json:"id"`
+	Universe    string `yaml:"universe" json:"universe"` // id of the universe; empty = the first one
 	Title       string `yaml:"title" json:"title"`
 	TitleEN     string `yaml:"title_en" json:"titleEn"`
 	Description string `yaml:"description" json:"description"`
@@ -144,9 +159,32 @@ func (b *Book) AuthorOrig() string {
 }
 
 type Catalog struct {
-	Series []*Series `json:"series"`
+	Universes []*Universe `json:"universes"` // the first one is the main one (site root)
+	Series    []*Series   `json:"series"`
 
 	byID map[string]*Book
+}
+
+// Main is the universe shown at the site root.
+func (c *Catalog) Main() *Universe { return c.Universes[0] }
+
+// Books returns the books of one universe in display order.
+func (u *Universe) Books() []*Book {
+	var all []*Book
+	for _, s := range u.Series {
+		all = append(all, s.Books...)
+	}
+	return all
+}
+
+// Only returns a catalog holding just one universe. Rules that must not see the
+// other universes (achievements) are resolved against it.
+func (c *Catalog) Only(u *Universe) *Catalog {
+	sub := &Catalog{Universes: []*Universe{u}, Series: u.Series, byID: map[string]*Book{}}
+	for _, b := range u.Books() {
+		sub.byID[b.ID] = b
+	}
+	return sub
 }
 
 // Book returns a book by id.
@@ -165,8 +203,9 @@ func (c *Catalog) Books() []*Book {
 }
 
 type file struct {
-	Series []*Series `yaml:"series"`
-	Books  []*Book   `yaml:"books"`
+	Universes []*Universe `yaml:"universes"`
+	Series    []*Series   `yaml:"series"`
+	Books     []*Book     `yaml:"books"`
 }
 
 // Load reads and validates a catalog file. Russian author names and annotations are
@@ -277,7 +316,31 @@ func Parse(raw []byte) (*Catalog, error) {
 		return nil, fmt.Errorf("catalog: %w", err)
 	}
 
-	c := &Catalog{Series: f.Series, byID: map[string]*Book{}}
+	if len(f.Universes) == 0 { // a catalog without sections is one section at the root
+		f.Universes = []*Universe{{ID: "main"}}
+	}
+	c := &Catalog{Universes: f.Universes, Series: f.Series, byID: map[string]*Book{}}
+	universeByID := map[string]*Universe{}
+	paths := map[string]bool{}
+	for i, u := range f.Universes {
+		if u.ID == "" || (u.Title == "" && len(f.Universes) > 1) {
+			return nil, fmt.Errorf("catalog: universe needs id and title: %+v", u)
+		}
+		if _, dup := universeByID[u.ID]; dup {
+			return nil, fmt.Errorf("catalog: duplicate universe %q", u.ID)
+		}
+		if (i == 0) != (u.Path == "") {
+			return nil, fmt.Errorf("catalog: universe %q: only the first universe has an empty path (the site root)", u.ID)
+		}
+		if u.Path != "" && !pathRe.MatchString(u.Path) {
+			return nil, fmt.Errorf("catalog: universe %q: path %q must be lower-case letters, digits and dashes", u.ID, u.Path)
+		}
+		if paths[u.Path] {
+			return nil, fmt.Errorf("catalog: duplicate universe path %q", u.Path)
+		}
+		paths[u.Path] = true
+		universeByID[u.ID] = u
+	}
 	seriesByID := map[string]*Series{}
 	for _, s := range f.Series {
 		if s.ID == "" || s.Title == "" {
@@ -286,6 +349,14 @@ func Parse(raw []byte) (*Catalog, error) {
 		if _, dup := seriesByID[s.ID]; dup {
 			return nil, fmt.Errorf("catalog: duplicate series %q", s.ID)
 		}
+		if s.Universe == "" {
+			s.Universe = f.Universes[0].ID
+		}
+		u, ok := universeByID[s.Universe]
+		if !ok {
+			return nil, fmt.Errorf("catalog: series %q: unknown universe %q", s.ID, s.Universe)
+		}
+		u.Series = append(u.Series, s)
 		seriesByID[s.ID] = s
 	}
 
@@ -317,7 +388,10 @@ func Parse(raw []byte) (*Catalog, error) {
 	return c, nil
 }
 
-var nonSlug = regexp.MustCompile(`[^a-z0-9]+`)
+var (
+	nonSlug = regexp.MustCompile(`[^a-z0-9]+`)
+	pathRe  = regexp.MustCompile(`^[a-z0-9]+(-[a-z0-9]+)*$`)
+)
 
 // Slug turns a title into a URL- and file-safe identifier.
 func Slug(title string) string {

@@ -4,6 +4,8 @@ package site
 
 import (
 	"bytes"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -47,6 +49,7 @@ type pageBook struct {
 	Rating     string  // "7.84", empty when there are too few votes
 	mark       float64 // the same rating as a number; 0 = not rated
 	Votes      int
+	RatingNote string // set when Rating is not the book's own: says what it is the mean of
 	FantLabURL string // the work page, or a search when the book is not on FantLab
 	TrStatus   string // published | fan | none; empty when unknown
 	TrLabel    string // short text for the card
@@ -68,9 +71,19 @@ type pageSeries struct {
 	Total  int    // how many books the series has
 }
 
+type universeLink struct {
+	Title   string
+	URL     string
+	Current bool
+}
+
 type pageData struct {
 	BasePath    string
+	AssetVer    string // fingerprint of style.css and app.js: a changed file is never served from a stale browser or CDN cache
 	APIBase     string
+	Universe    *catalog.Universe
+	Universes   []universeLink // the switcher in the header; empty when there is only one
+	AllBookIDs  template.JS    // every book of the catalog: a backup file may hold marks from other pages
 	Series      []pageSeries
 	TotalBooks  int
 	RatingsDate string // "30.10.2026", empty without ratings
@@ -93,49 +106,16 @@ func Build(cfg Config) error {
 		return err
 	}
 
-	data := pageData{BasePath: cfg.BasePath, APIBase: strings.TrimRight(cfg.APIBase, "/")}
-	for _, s := range cfg.Catalog.Series {
-		ps := pageSeries{Series: s}
-		for _, b := range s.Books {
-			pb := pageBook{Book: b, Initials: initials(b.Title)}
-			pb.FantLabURL = fantlab.SearchURL(b.Title)
-			if e, ok := cfg.Ratings.Entry(b.ID); ok {
-				pb.FantLabURL = fantlab.WorkURL(e.Work)
-				if e.Votes >= minVotes {
-					pb.Rating, pb.Votes, pb.mark = fmt.Sprintf("%.2f", e.Rating), e.Votes, e.Rating
-				}
-			}
-			pb.TrStatus, pb.TrLabel, pb.TrNote = translationText(b, cfg.Translations)
-			if _, err := os.Stat(filepath.Join(cfg.CoversDir, b.ID+".jpg")); err == nil {
-				pb.CoverURL = cfg.BasePath + "covers/" + b.ID + ".jpg"
-			}
-			ps.Books = append(ps.Books, pb)
-		}
-		ps.Total = len(ps.Books)
-		var sum float64
-		for _, pb := range ps.Books {
-			if pb.mark > 0 {
-				sum += pb.mark
-				ps.Rated++
-			}
-		}
-		if ps.Rated > 0 {
-			ps.Rating = fmt.Sprintf("%.2f", sum/float64(ps.Rated))
-		}
-		data.Series = append(data.Series, ps)
-		data.TotalBooks += len(ps.Books)
-	}
-
-	data.Authors = authorOptions(cfg.Catalog.Books())
-
-	if js, err := contentsJSON(cfg.Catalog, cfg.Contents); err != nil {
+	allIDs, err := json.Marshal(bookIDs(cfg.Catalog.Books()))
+	if err != nil {
 		return err
-	} else {
-		data.ContentsJSON = js
 	}
 
+	// Achievements belong to the main universe: other pages let you mark books, but
+	// these do not count towards ranks and achievements.
+	var achJS template.JS
 	if cfg.Achievements != nil {
-		page, err := cfg.Achievements.Resolve(achievements.Inputs{Catalog: cfg.Catalog, Ratings: cfg.Ratings, MinVotes: minVotes})
+		page, err := cfg.Achievements.Resolve(achievements.Inputs{Catalog: cfg.Catalog.Only(cfg.Catalog.Main()), Ratings: cfg.Ratings, MinVotes: minVotes})
 		if err != nil {
 			return err
 		}
@@ -143,12 +123,13 @@ func Build(cfg Config) error {
 		if err != nil {
 			return err
 		}
-		data.AchievementsJSON = template.JS(raw)
+		achJS = template.JS(raw)
 	}
 
+	var ratingsDate string
 	if cfg.Ratings != nil && cfg.Ratings.Updated != "" {
 		if t, err := time.Parse("2006-01-02", cfg.Ratings.Updated); err == nil {
-			data.RatingsDate = t.Format("02.01.2006")
+			ratingsDate = t.Format("02.01.2006")
 		}
 	}
 
@@ -158,17 +139,85 @@ func Build(cfg Config) error {
 	if err != nil {
 		return err
 	}
-	for _, page := range []struct{ tmpl, file string }{
-		{"index.html", "index.html"},
-		{"404.html", "404.html"},
-	} {
-		var buf bytes.Buffer
-		if err := tpl.ExecuteTemplate(&buf, page.tmpl, data); err != nil {
-			return fmt.Errorf("render %s: %w", page.tmpl, err)
+
+	assetVer, err := assetVersion()
+	if err != nil {
+		return err
+	}
+
+	for _, u := range cfg.Catalog.Universes {
+		data := pageData{
+			BasePath: cfg.BasePath, AssetVer: assetVer, APIBase: strings.TrimRight(cfg.APIBase, "/"), Universe: u,
+			AllBookIDs: template.JS(allIDs), AchievementsJSON: achJS, RatingsDate: ratingsDate,
 		}
-		if err := os.WriteFile(filepath.Join(cfg.OutDir, page.file), buf.Bytes(), 0o644); err != nil {
+		if len(cfg.Catalog.Universes) > 1 {
+			for _, o := range cfg.Catalog.Universes {
+				data.Universes = append(data.Universes, universeLink{Title: o.Title, URL: universeURL(cfg.BasePath, o), Current: o == u})
+			}
+		}
+		for _, s := range u.Series {
+			ps := pageSeries{Series: s}
+			for _, b := range s.Books {
+				pb := pageBook{Book: b, Initials: initials(b.Title)}
+				pb.FantLabURL = fantlab.SearchURL(b.Title)
+				if e, ok := cfg.Ratings.Entry(b.ID); ok {
+					pb.FantLabURL = fantlab.WorkURL(e.Work)
+					if e.Votes >= minVotes {
+						pb.Rating, pb.Votes, pb.mark = fmt.Sprintf("%.2f", e.Rating), e.Votes, e.Rating
+					}
+				}
+				if pb.Rating == "" { // too few votes for the book itself: fall back to the works in its contents
+					if mean, votes, n := contentsRating(cfg.Contents, b.ID); n > 0 {
+						pb.Rating, pb.Votes = fmt.Sprintf("%.2f", mean), votes
+						pb.RatingNote = fmt.Sprintf("У самой книги мало оценок: показано среднее по её составу (произведений: %d): %s, оценок: %d", n, pb.Rating, votes)
+					}
+				}
+				pb.TrStatus, pb.TrLabel, pb.TrNote = translationText(b, cfg.Translations)
+				if _, err := os.Stat(filepath.Join(cfg.CoversDir, b.ID+".jpg")); err == nil {
+					pb.CoverURL = cfg.BasePath + "covers/" + b.ID + ".jpg"
+				}
+				ps.Books = append(ps.Books, pb)
+			}
+			ps.Total = len(ps.Books)
+			var sum float64
+			for _, pb := range ps.Books {
+				if pb.mark > 0 {
+					sum += pb.mark
+					ps.Rated++
+				}
+			}
+			if ps.Rated > 0 {
+				ps.Rating = fmt.Sprintf("%.2f", sum/float64(ps.Rated))
+			}
+			data.Series = append(data.Series, ps)
+			data.TotalBooks += len(ps.Books)
+		}
+
+		data.Authors = authorOptions(u.Books())
+
+		if data.ContentsJSON, err = contentsJSON(u.Books(), cfg.Contents); err != nil {
 			return err
 		}
+
+		var buf bytes.Buffer
+		if err := tpl.ExecuteTemplate(&buf, "index.html", data); err != nil {
+			return fmt.Errorf("render %s: %w", u.ID, err)
+		}
+		dir := filepath.Join(cfg.OutDir, u.Path)
+		if err := os.MkdirAll(dir, 0o755); err != nil {
+			return err
+		}
+		if err := os.WriteFile(filepath.Join(dir, "index.html"), buf.Bytes(), 0o644); err != nil {
+			return err
+		}
+	}
+
+	var buf bytes.Buffer
+	if err := tpl.ExecuteTemplate(&buf, "404.html", pageData{BasePath: cfg.BasePath, AssetVer: assetVer}); err != nil {
+		return fmt.Errorf("render 404.html: %w", err)
+	}
+	if err := os.WriteFile(filepath.Join(cfg.OutDir, "404.html"), buf.Bytes(), 0o644); err != nil {
+		return err
 	}
 
 	// Machine-readable catalog: handy for the frontend and any future client.
@@ -196,6 +245,35 @@ func Build(cfg Config) error {
 	return os.WriteFile(filepath.Join(cfg.OutDir, ".nojekyll"), nil, 0o644)
 }
 
+// assetVersion is a short hash of the scripts and styles; it goes into their URLs (?v=…).
+func assetVersion() (string, error) {
+	h := sha256.New()
+	for _, name := range []string{"static/style.css", "static/app.js"} {
+		raw, err := fs.ReadFile(web.FS, name)
+		if err != nil {
+			return "", err
+		}
+		h.Write(raw)
+	}
+	return hex.EncodeToString(h.Sum(nil))[:10], nil
+}
+
+// universeURL is where a universe's page lives: the root for the main one, a directory otherwise.
+func universeURL(base string, u *catalog.Universe) string {
+	if u.Main() {
+		return base
+	}
+	return base + u.Path + "/"
+}
+
+func bookIDs(books []*catalog.Book) []string {
+	ids := make([]string, 0, len(books))
+	for _, b := range books {
+		ids = append(ids, b.ID)
+	}
+	return ids
+}
+
 func normalizeBase(b string) string {
 	b = "/" + strings.Trim(b, "/")
 	if b != "/" {
@@ -216,11 +294,30 @@ type contentsStory struct {
 	URL     string `json:"url"`
 }
 
+// contentsRating is the plain mean of the ratings of the works in a book's contents, the
+// number of their votes, and how many works went into it. The mean counts only when there
+// are enough votes in total (minVotes); otherwise n is 0.
+func contentsRating(snap *fantlab.ContentsFile, bookID string) (mean float64, votes, n int) {
+	stories, _ := snap.Entry(bookID)
+	var sum float64
+	for _, s := range stories {
+		if s.Rating > 0 {
+			sum += s.Rating
+			votes += s.Votes
+			n++
+		}
+	}
+	if n == 0 || votes < minVotes {
+		return 0, 0, 0
+	}
+	return sum / float64(n), votes, n
+}
+
 // contentsJSON turns the snapshot into {bookId: [story, …]} for the page. Stories of books
 // that are not in the catalog are ignored; the result is empty without contents.
-func contentsJSON(cat *catalog.Catalog, snap *fantlab.ContentsFile) (template.JS, error) {
+func contentsJSON(books []*catalog.Book, snap *fantlab.ContentsFile) (template.JS, error) {
 	out := map[string][]contentsStory{}
-	for _, b := range cat.Books() {
+	for _, b := range books {
 		stories, ok := snap.Entry(b.ID)
 		if !ok {
 			continue
