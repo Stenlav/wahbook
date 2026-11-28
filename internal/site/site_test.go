@@ -334,7 +334,7 @@ func TestBuildUniversePages(t *testing.T) {
 
 	for page, wants := range map[string][]string{
 		"root": {`id="heresy"`, "Возвышение Хоруса", `<option value="Dan Abnett">`},
-		"40k":  {`id="dawn-of-fire"`, "Мстящий Сын", `<option value="Marc Collins">Марк Коллинз (1)</option>`, `<option value="Guy Haley">Гай Хейли (3)</option>`, "<title>Warhammer 40,000 — Библиотека Ереси</title>"},
+		"40k":  {`id="dawn-of-fire"`, "Мстящий Сын", `<option value="Marc Collins">Марк Коллинз (1)</option>`, `<option value="Guy Haley">Гай Хейли (6)</option>`, "<title>Warhammer 40,000 — Библиотека Ереси</title>"},
 	} {
 		html := map[string]string{"root": root, "40k": wh}[page]
 		for _, want := range wants {
@@ -344,7 +344,7 @@ func TestBuildUniversePages(t *testing.T) {
 		}
 	}
 	// the pages do not mix: no Heresy on the 40k page and no Dawn of Fire at the root
-	for _, bad := range []string{`id="heresy"`, "Возвышение Хоруса", `<option value="Dan Abnett">`} {
+	for _, bad := range []string{`id="heresy"`, "Возвышение Хоруса", `<option value="Graham McNeill">`} {
 		if strings.Contains(wh, bad) {
 			t.Errorf("40k page must not contain %q", bad)
 		}

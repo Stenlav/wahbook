@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "books": {
     "age-of-darkness": [
       {
@@ -1897,6 +1897,237 @@
         "votes": 83
       }
     ],
+    "sabbat-crusade": [
+      {
+        "work": 796576,
+        "title": "Семья",
+        "orig": "Family",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.22,
+        "votes": 23
+      },
+      {
+        "work": 802982,
+        "title": "The Blood Bound",
+        "authors": [
+          "Роб Сандерс"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.56,
+        "votes": 16
+      },
+      {
+        "work": 796578,
+        "title": "Кто знает?",
+        "orig": "You Never Know",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.63,
+        "votes": 19
+      },
+      {
+        "work": 802984,
+        "title": "Son of Sek",
+        "authors": [
+          "Джон Френч"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.88,
+        "votes": 8
+      },
+      {
+        "work": 802985,
+        "title": "Tempest",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7,
+        "votes": 9
+      },
+      {
+        "work": 802986,
+        "title": "Viduity",
+        "authors": [
+          "Ник Винсент"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.25,
+        "votes": 8
+      },
+      {
+        "work": 802987,
+        "title": "The Deeper Wounds",
+        "authors": [
+          "Дэвид Аннандейл"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.22,
+        "votes": 9
+      },
+      {
+        "work": 796577,
+        "title": "Призраки и плохие тени",
+        "orig": "Ghosts and Bad Shadows",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.64,
+        "votes": 22
+      },
+      {
+        "work": 802989,
+        "title": "Arnogaur",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.88,
+        "votes": 8
+      },
+      {
+        "work": 802990,
+        "title": "The Inheritor King",
+        "authors": [
+          "Мэтью Фаррер"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7,
+        "votes": 12
+      },
+      {
+        "work": 802991,
+        "title": "The Fissure",
+        "authors": [
+          "Ник Винсент"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 6.47,
+        "votes": 15
+      },
+      {
+        "work": 796575,
+        "title": "«Призрак» на экране",
+        "orig": "A Ghost Return",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2015,
+        "rating": 7.36,
+        "votes": 44
+      }
+    ],
+    "sabbat-worlds": [
+      {
+        "work": 710400,
+        "title": "Apostle's Creed",
+        "authors": [
+          "Грэм Макнилл"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 6.11,
+        "votes": 9
+      },
+      {
+        "work": 710401,
+        "title": "The Headstone and the Hammerstone Kings",
+        "authors": [
+          "Мэтью Фаррер"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 6.58,
+        "votes": 12
+      },
+      {
+        "work": 710402,
+        "title": "Регецид",
+        "orig": "Regicide",
+        "authors": [
+          "Аарон Дембски-Боуден"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 7.22,
+        "votes": 18
+      },
+      {
+        "work": 710403,
+        "title": "Железная звезда",
+        "orig": "The Iron Star",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 7.74,
+        "votes": 27
+      },
+      {
+        "work": 710404,
+        "title": "Cell",
+        "authors": [
+          "Ник Винсент"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 6.14,
+        "votes": 7
+      },
+      {
+        "work": 710405,
+        "title": "Blueblood",
+        "authors": [
+          "Ник Кайм"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 6.88,
+        "votes": 8
+      },
+      {
+        "work": 345086,
+        "title": "A Good Man",
+        "authors": [
+          "Алекс Стюарт"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 7.1,
+        "votes": 10
+      },
+      {
+        "work": 710406,
+        "title": "О жизни людей на руинах их городов",
+        "orig": "Of Their Lives in the Ruins of Their Cities",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 7.81,
+        "votes": 32
+      }
+    ],
     "scions-of-the-emperor": [
       {
         "work": 1131110,
@@ -2545,6 +2776,176 @@
         "year": 2016,
         "rating": 7.51,
         "votes": 39
+      }
+    ],
+    "the-magos": [
+      {
+        "work": 2441522,
+        "title": "Предисловие",
+        "orig": "Introduction",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "статья",
+        "year": 2018,
+        "rating": 8,
+        "votes": 1
+      },
+      {
+        "work": 36127,
+        "title": "Чума",
+        "orig": "Pestilence",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2001,
+        "rating": 7.93,
+        "votes": 160
+      },
+      {
+        "work": 632286,
+        "title": "Проступок мастера Има",
+        "orig": "Master Imus's Transgression",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2013,
+        "rating": 7.84,
+        "votes": 150
+      },
+      {
+        "work": 870218,
+        "title": "Региа Оккульта",
+        "orig": "Regia Occulta",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2011,
+        "rating": 7.57,
+        "votes": 169
+      },
+      {
+        "work": 36126,
+        "title": "Боевые потери",
+        "orig": "Missing in Action",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2001,
+        "rating": 8.07,
+        "votes": 567
+      },
+      {
+        "work": 36131,
+        "title": "Фон за дополнительную крону",
+        "orig": "Backcloth for a Crown Additional",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2002,
+        "rating": 7.63,
+        "votes": 475
+      },
+      {
+        "work": 427518,
+        "title": "Загадочная смерть Тита Эндора",
+        "orig": "The strange demise of Titus Endor",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 8,
+        "votes": 157
+      },
+      {
+        "work": 36140,
+        "title": "Диковина",
+        "orig": "The Curiosity",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2003,
+        "rating": 7.92,
+        "votes": 108
+      },
+      {
+        "work": 239467,
+        "title": "Изображая терпение",
+        "orig": "Playing Patience",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2006,
+        "rating": 7.79,
+        "votes": 236
+      },
+      {
+        "work": 36148,
+        "title": "Шип вызывает Коготь",
+        "orig": "Thorn Wishes Talon",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2004,
+        "rating": 7.83,
+        "votes": 277
+      },
+      {
+        "work": 36160,
+        "title": "Сады Тихо",
+        "orig": "The Gardens of Tycho",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2010,
+        "rating": 8.05,
+        "votes": 106
+      },
+      {
+        "work": 842687,
+        "title": "Снимок Киилер",
+        "orig": "The Keeler Image",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2016,
+        "rating": 7.91,
+        "votes": 102
+      },
+      {
+        "work": 475371,
+        "title": "Перигелий",
+        "orig": "Perihelion",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "рассказ",
+        "year": 2012,
+        "rating": 7.52,
+        "votes": 121
+      },
+      {
+        "work": 1013161,
+        "title": "Магос",
+        "orig": "The Magos​",
+        "authors": [
+          "Дэн Абнетт"
+        ],
+        "kind": "роман",
+        "year": 2018,
+        "rating": 8,
+        "votes": 122
       }
     ],
     "the-primarchs": [

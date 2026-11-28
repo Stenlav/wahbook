@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "books": {
     "a-thousand-sons": {
       "work": 283119,
@@ -61,6 +61,11 @@
       "rating": 7.28,
       "votes": 36
     },
+    "blood-pact": {
+      "work": 183163,
+      "rating": 7.55,
+      "votes": 29
+    },
     "born-of-flame": {
       "work": 1036606,
       "rating": 7.37,
@@ -70,6 +75,21 @@
       "work": 777901,
       "rating": 7.38,
       "votes": 65
+    },
+    "cain-s-last-stand": {
+      "work": 122050,
+      "rating": 8.03,
+      "votes": 248
+    },
+    "caves-of-ice": {
+      "work": 37615,
+      "rating": 7.96,
+      "votes": 557
+    },
+    "choose-your-enemies": {
+      "work": 1065087,
+      "rating": 7.93,
+      "votes": 42
     },
     "corax-lord-of-shadows": {
       "work": 1083288,
@@ -96,6 +116,26 @@
       "rating": 7.28,
       "votes": 40
     },
+    "dark-imperium": {
+      "work": 1007181,
+      "rating": 7.57,
+      "votes": 58
+    },
+    "dark-imperium-godblight": {
+      "work": 1432908,
+      "rating": 8.13,
+      "votes": 39
+    },
+    "dark-imperium-plague-war": {
+      "work": 1078820,
+      "rating": 7.73,
+      "votes": 51
+    },
+    "death-or-glory": {
+      "work": 37617,
+      "rating": 7.95,
+      "votes": 360
+    },
     "deathfire": {
       "work": 801187,
       "rating": 7.46,
@@ -120,6 +160,11 @@
       "work": 2219741,
       "rating": 8.57,
       "votes": 7
+    },
+    "duty-calls": {
+      "work": 122049,
+      "rating": 7.93,
+      "votes": 305
     },
     "echoes-of-eternity": {
       "work": 1617261,
@@ -166,6 +211,16 @@
       "rating": 6.87,
       "votes": 68
     },
+    "first-and-only": {
+      "work": 36114,
+      "rating": 7.65,
+      "votes": 282
+    },
+    "for-the-emperor": {
+      "work": 37611,
+      "rating": 8.08,
+      "votes": 713
+    },
     "fulgrim": {
       "work": 55737,
       "rating": 7.96,
@@ -201,6 +256,16 @@
       "rating": 7.67,
       "votes": 33
     },
+    "ghostmaker": {
+      "work": 36115,
+      "rating": 7.94,
+      "votes": 176
+    },
+    "grey-hunter": {
+      "work": 36080,
+      "rating": 7.58,
+      "votes": 301
+    },
     "hand-of-abaddon": {
       "work": 1942133,
       "rating": 4.33,
@@ -215,6 +280,21 @@
       "work": 1083268,
       "rating": 7.57,
       "votes": 47
+    },
+    "hereticus": {
+      "work": 36128,
+      "rating": 8.33,
+      "votes": 985
+    },
+    "his-last-command": {
+      "work": 36149,
+      "rating": 7.47,
+      "votes": 34
+    },
+    "honour-guard": {
+      "work": 36120,
+      "rating": 7.66,
+      "votes": 90
     },
     "horus-rising": {
       "work": 36166,
@@ -276,6 +356,11 @@
       "rating": 8.12,
       "votes": 97
     },
+    "malleus": {
+      "work": 36123,
+      "rating": 8.24,
+      "votes": 1033
+    },
     "mark-of-calth": {
       "work": 757233,
       "rating": 7.54,
@@ -296,6 +381,11 @@
       "rating": 7.78,
       "votes": 58
     },
+    "necropolis": {
+      "work": 36121,
+      "rating": 7.84,
+      "votes": 137
+    },
     "nemesis": {
       "work": 283120,
       "rating": 7.85,
@@ -305,6 +395,16 @@
       "work": 989153,
       "rating": 7.34,
       "votes": 58
+    },
+    "old-soldiers-never-die": {
+      "work": 742235,
+      "rating": 7.68,
+      "votes": 57
+    },
+    "only-in-death": {
+      "work": 55518,
+      "rating": 7.84,
+      "votes": 31
     },
     "perturabo-the-hammer-of-olympia": {
       "work": 915589,
@@ -336,6 +436,11 @@
       "rating": 7.93,
       "votes": 356
     },
+    "ragnar-s-claw": {
+      "work": 36071,
+      "rating": 7.41,
+      "votes": 325
+    },
     "raldoron-revenant": {
       "work": 2447320,
       "rating": 10,
@@ -360,6 +465,26 @@
       "work": 989152,
       "rating": 7.21,
       "votes": 62
+    },
+    "sabbat-crusade": {
+      "work": 796580,
+      "rating": 8,
+      "votes": 10
+    },
+    "sabbat-martyr": {
+      "work": 36137,
+      "rating": 7.74,
+      "votes": 42
+    },
+    "sabbat-worlds": {
+      "work": 710399,
+      "rating": 8.27,
+      "votes": 11
+    },
+    "salvation-s-reach": {
+      "work": 299994,
+      "rating": 7.44,
+      "votes": 25
     },
     "sanguinius-the-great-angel": {
       "work": 1660163,
@@ -411,6 +536,11 @@
       "rating": 7.98,
       "votes": 65
     },
+    "sons-of-fenris": {
+      "work": 83771,
+      "rating": 7.37,
+      "votes": 158
+    },
     "sons-of-the-emperor": {
       "work": 1040354,
       "rating": 7.77,
@@ -426,10 +556,20 @@
       "rating": 7.58,
       "votes": 66
     },
+    "space-wolf": {
+      "work": 36070,
+      "rating": 7.6,
+      "votes": 374
+    },
     "spear-of-ultramar": {
       "work": 1088375,
       "rating": 6.94,
       "votes": 32
+    },
+    "straight-silver": {
+      "work": 36130,
+      "rating": 7.72,
+      "votes": 40
     },
     "tales-of-heresy": {
       "work": 283135,
@@ -450,6 +590,16 @@
       "work": 908613,
       "rating": 7.93,
       "votes": 46
+    },
+    "the-anarch": {
+      "work": 1111928,
+      "rating": 8.16,
+      "votes": 19
+    },
+    "the-armour-of-contempt": {
+      "work": 36156,
+      "rating": 7.71,
+      "votes": 35
     },
     "the-burden-of-loyalty": {
       "work": 994013,
@@ -475,6 +625,16 @@
       "work": 777931,
       "rating": 6.78,
       "votes": 116
+    },
+    "the-dark-city": {
+      "work": 1597322,
+      "rating": 7.59,
+      "votes": 34
+    },
+    "the-emperor-s-finest": {
+      "work": 323693,
+      "rating": 7.94,
+      "votes": 148
     },
     "the-end-and-the-death-volume-i": {
       "work": 1692101,
@@ -511,6 +671,16 @@
       "rating": 7.67,
       "votes": 21
     },
+    "the-greater-good": {
+      "work": 426588,
+      "rating": 8.04,
+      "votes": 105
+    },
+    "the-guns-of-tanith": {
+      "work": 36129,
+      "rating": 7.67,
+      "votes": 46
+    },
     "the-honoured": {
       "work": 908615,
       "rating": 6.78,
@@ -521,6 +691,11 @@
       "rating": 8,
       "votes": 13
     },
+    "the-last-ditch": {
+      "work": 312404,
+      "rating": 8.09,
+      "votes": 135
+    },
     "the-lion": {
       "work": 458719,
       "rating": 7.43,
@@ -530,6 +705,11 @@
       "work": 1210026,
       "rating": 8.05,
       "votes": 82
+    },
+    "the-magos": {
+      "work": 1013124,
+      "rating": 8.32,
+      "votes": 28
     },
     "the-martyr-s-tomb": {
       "work": 1748267,
@@ -591,6 +771,11 @@
       "rating": 7.73,
       "votes": 89
     },
+    "the-traitor-s-hand": {
+      "work": 37618,
+      "rating": 7.96,
+      "votes": 432
+    },
     "the-unburdened": {
       "work": 908616,
       "rating": 6.7,
@@ -600,6 +785,16 @@
       "work": 596776,
       "rating": 8.49,
       "votes": 198
+    },
+    "the-vincula-insurgency": {
+      "work": 1439220,
+      "rating": 6.75,
+      "votes": 4
+    },
+    "the-warmaster": {
+      "work": 739761,
+      "rating": 8.22,
+      "votes": 18
     },
     "the-wolftime": {
       "work": 1491322,
@@ -616,10 +811,30 @@
       "rating": 7.2,
       "votes": 54
     },
+    "traitor-general": {
+      "work": 36153,
+      "rating": 7.82,
+      "votes": 39
+    },
+    "vainglorious": {
+      "work": 1764659,
+      "rating": 7.75,
+      "votes": 32
+    },
     "valdor-birth-of-the-imperium": {
       "work": 1219199,
       "rating": 7.89,
       "votes": 90
+    },
+    "vaults-of-terra-the-carrion-throne": {
+      "work": 1016811,
+      "rating": 8.07,
+      "votes": 114
+    },
+    "vaults-of-terra-the-hollow-mountain": {
+      "work": 1177584,
+      "rating": 8.07,
+      "votes": 61
     },
     "vengeful-spirit": {
       "work": 777929,
@@ -656,6 +871,16 @@
       "rating": 7.72,
       "votes": 47
     },
+    "wolf-s-honour": {
+      "work": 83772,
+      "rating": 7.58,
+      "votes": 117
+    },
+    "wolfblade": {
+      "work": 36090,
+      "rating": 7.49,
+      "votes": 271
+    },
     "wolfsbane": {
       "work": 997353,
       "rating": 7.85,
@@ -665,6 +890,11 @@
       "work": 2489622,
       "rating": 10,
       "votes": 1
+    },
+    "xenos": {
+      "work": 36124,
+      "rating": 8.11,
+      "votes": 1211
     },
     "zardu-layak-the-crimson-apostle": {
       "work": 2363696,

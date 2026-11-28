@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "books": {
     "a-thousand-sons": {
       "translated": true,
@@ -74,6 +74,12 @@
     "blood-of-the-emperor": {
       "translated": true
     },
+    "blood-pact": {
+      "translated": true,
+      "translators": [
+        "Сергей Красник"
+      ]
+    },
     "born-of-flame": {
       "translated": true
     },
@@ -81,6 +87,24 @@
       "translated": true,
       "translators": [
         "Юрий Войтко"
+      ]
+    },
+    "cain-s-last-stand": {
+      "translated": true,
+      "translators": [
+        "Даниил Фролов"
+      ]
+    },
+    "caves-of-ice": {
+      "translated": true,
+      "translators": [
+        "Даниил Фролов"
+      ]
+    },
+    "choose-your-enemies": {
+      "translated": true,
+      "translators": [
+        "Игорь Здиховский"
       ]
     },
     "corax-lord-of-shadows": {
@@ -107,6 +131,30 @@
         "Екатерина Згурская"
       ]
     },
+    "dark-imperium": {
+      "translated": true,
+      "translators": [
+        "Юрий Антипов"
+      ]
+    },
+    "dark-imperium-godblight": {
+      "translated": true,
+      "translators": [
+        "Алина Турн"
+      ]
+    },
+    "dark-imperium-plague-war": {
+      "translated": true,
+      "translators": [
+        "Юрий Антипов"
+      ]
+    },
+    "death-or-glory": {
+      "translated": true,
+      "translators": [
+        "Даниил Фролов"
+      ]
+    },
     "deathfire": {
       "translated": true,
       "translators": [
@@ -130,6 +178,12 @@
     },
     "dropsite-massacre": {
       "translated": true
+    },
+    "duty-calls": {
+      "translated": true,
+      "translators": [
+        "Даниил Фролов"
+      ]
     },
     "echoes-of-eternity": {
       "translated": true,
@@ -182,6 +236,18 @@
         "Юрий Войтко"
       ]
     },
+    "first-and-only": {
+      "translated": true,
+      "translators": [
+        "Д. Ерёменко"
+      ]
+    },
+    "for-the-emperor": {
+      "translated": true,
+      "translators": [
+        "Даниил Фролов"
+      ]
+    },
     "fulgrim": {
       "translated": true,
       "translators": [
@@ -222,6 +288,18 @@
     "garro-vow-of-faith": {
       "translated": false
     },
+    "ghostmaker": {
+      "translated": true,
+      "translators": [
+        "Д. Ерёменко"
+      ]
+    },
+    "grey-hunter": {
+      "translated": true,
+      "translators": [
+        "М. Заболотских"
+      ]
+    },
     "hand-of-abaddon": {
       "translated": true,
       "translators": [
@@ -233,6 +311,24 @@
     },
     "heralds-of-the-siege": {
       "translated": true
+    },
+    "hereticus": {
+      "translated": true,
+      "translators": [
+        "Евгений Зайцев"
+      ]
+    },
+    "his-last-command": {
+      "translated": true,
+      "translators": [
+        "Сергей Красник"
+      ]
+    },
+    "honour-guard": {
+      "translated": true,
+      "translators": [
+        "Юлия Никифорова"
+      ]
     },
     "horus-rising": {
       "translated": true,
@@ -302,6 +398,12 @@
         "Юрий Войтко"
       ]
     },
+    "malleus": {
+      "translated": true,
+      "translators": [
+        "Евгений Зайцев"
+      ]
+    },
     "mark-of-calth": {
       "translated": true
     },
@@ -324,6 +426,12 @@
         "Алина Забияка"
       ]
     },
+    "necropolis": {
+      "translated": true,
+      "translators": [
+        "Маргарита Кремнева"
+      ]
+    },
     "nemesis": {
       "translated": true,
       "translators": [
@@ -334,6 +442,18 @@
       "translated": true,
       "translators": [
         "Ирина Савельева"
+      ]
+    },
+    "old-soldiers-never-die": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "only-in-death": {
+      "translated": true,
+      "translators": [
+        "Андрей Полторан"
       ]
     },
     "perturabo-the-hammer-of-olympia": {
@@ -372,6 +492,12 @@
         "Ирина Савельева"
       ]
     },
+    "ragnar-s-claw": {
+      "translated": true,
+      "translators": [
+        "А. Алейников"
+      ]
+    },
     "raldoron-revenant": {
       "translated": false
     },
@@ -398,6 +524,24 @@
       "translated": true,
       "translators": [
         "Никита Бахрамов"
+      ]
+    },
+    "sabbat-crusade": {
+      "translated": false
+    },
+    "sabbat-martyr": {
+      "translated": true,
+      "translators": [
+        "Андрей Посецельский"
+      ]
+    },
+    "sabbat-worlds": {
+      "translated": false
+    },
+    "salvation-s-reach": {
+      "translated": true,
+      "translators": [
+        "Андрей Полторан"
       ]
     },
     "sanguinius-the-great-angel": {
@@ -458,6 +602,12 @@
         "Екатерина Згурская"
       ]
     },
+    "sons-of-fenris": {
+      "translated": true,
+      "translators": [
+        "Валерий Лушников"
+      ]
+    },
     "sons-of-the-emperor": {
       "translated": true
     },
@@ -473,8 +623,20 @@
         "Екатерина Згурская"
       ]
     },
+    "space-wolf": {
+      "translated": true,
+      "translators": [
+        "Валерий Лушников"
+      ]
+    },
     "spear-of-ultramar": {
       "translated": false
+    },
+    "straight-silver": {
+      "translated": true,
+      "translators": [
+        "Андрей Полторан"
+      ]
     },
     "tales-of-heresy": {
       "translated": true
@@ -492,6 +654,18 @@
       "translated": true,
       "translators": [
         "Владислав Лотовский"
+      ]
+    },
+    "the-anarch": {
+      "translated": true,
+      "translators": [
+        "Валерия Двинина"
+      ]
+    },
+    "the-armour-of-contempt": {
+      "translated": true,
+      "translators": [
+        "Андрей Полторан"
       ]
     },
     "the-burden-of-loyalty": {
@@ -519,6 +693,20 @@
       "translated": true,
       "translators": [
         "Алексей Апанасевич"
+      ]
+    },
+    "the-dark-city": {
+      "translated": true,
+      "translators": [
+        "D1v",
+        "Ru",
+        "соц"
+      ]
+    },
+    "the-emperor-s-finest": {
+      "translated": true,
+      "translators": [
+        "Артём Добвни"
       ]
     },
     "the-end-and-the-death-volume-i": {
@@ -567,6 +755,18 @@
         "А. Смолькин"
       ]
     },
+    "the-greater-good": {
+      "translated": true,
+      "translators": [
+        "Юрий Войтко"
+      ]
+    },
+    "the-guns-of-tanith": {
+      "translated": true,
+      "translators": [
+        "Андрей Полторан"
+      ]
+    },
     "the-honoured": {
       "translated": true,
       "translators": [
@@ -581,6 +781,12 @@
         "Летающий Свин"
       ]
     },
+    "the-last-ditch": {
+      "translated": true,
+      "translators": [
+        "Артём Добвни"
+      ]
+    },
     "the-lion": {
       "translated": true,
       "translators": [
@@ -592,6 +798,9 @@
       "translators": [
         "Юрий Антипов"
       ]
+    },
+    "the-magos": {
+      "translated": true
     },
     "the-martyr-s-tomb": {
       "translated": true,
@@ -661,6 +870,12 @@
         "Юрий Антипов"
       ]
     },
+    "the-traitor-s-hand": {
+      "translated": true,
+      "translators": [
+        "Даниил Фролов"
+      ]
+    },
     "the-unburdened": {
       "translated": true,
       "translators": [
@@ -672,6 +887,15 @@
       "translators": [
         "А. Козловский",
         "Дмитрий Ерёмин"
+      ]
+    },
+    "the-vincula-insurgency": {
+      "translated": false
+    },
+    "the-warmaster": {
+      "translated": true,
+      "translators": [
+        "Лисичка Полярная"
       ]
     },
     "the-wolftime": {
@@ -696,7 +920,31 @@
         "Ирина Савельева"
       ]
     },
+    "traitor-general": {
+      "translated": true,
+      "translators": [
+        "Андрей Полторан"
+      ]
+    },
+    "vainglorious": {
+      "translated": true,
+      "translators": [
+        "Игорь Здиховский"
+      ]
+    },
     "valdor-birth-of-the-imperium": {
+      "translated": true,
+      "translators": [
+        "Никита Бахрамов"
+      ]
+    },
+    "vaults-of-terra-the-carrion-throne": {
+      "translated": true,
+      "translators": [
+        "Никита Бахрамов"
+      ]
+    },
+    "vaults-of-terra-the-hollow-mountain": {
       "translated": true,
       "translators": [
         "Никита Бахрамов"
@@ -746,6 +994,18 @@
         "Зенур Джемилев"
       ]
     },
+    "wolf-s-honour": {
+      "translated": true,
+      "translators": [
+        "Валерий Лушников"
+      ]
+    },
+    "wolfblade": {
+      "translated": true,
+      "translators": [
+        "Валерий Лушников"
+      ]
+    },
     "wolfsbane": {
       "translated": true,
       "translators": [
@@ -754,6 +1014,12 @@
     },
     "wrath-of-terra": {
       "translated": false
+    },
+    "xenos": {
+      "translated": true,
+      "translators": [
+        "Евгений Зайцев"
+      ]
     },
     "zardu-layak-the-crimson-apostle": {
       "translated": false

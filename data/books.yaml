@@ -80,6 +80,49 @@ series:
     description: >-
       Цикл к выходу 9-й редакции Warhammer 40,000: воскресший Робаут Жиллиман собирает
       Неодолимый крестовый поход и начинает отвоёвывать у Хаоса потерянные миры.
+  - id: eisenhorn
+    universe: w40k
+    title: Эйзенхорн
+    title_en: Eisenhorn
+    description: >-
+      Инквизитор Грегор Эйзенхорн охотится на еретиков, колдунов и чужих, а сам всё глубже
+      заходит туда, где граница между долгом и ересью стирается. Цикл Дэна Абнетта, с которого
+      начался «Инквизитор».
+  - id: ciaphas-cain
+    universe: w40k
+    title: Кайафас Каин
+    title_en: Ciaphas Cain
+    description: >-
+      Комедийно-приключенческие мемуары комиссара Имперской Гвардии Кайафаса Каина — героя
+      Империума, который изо всех сил старается держаться подальше от передовой.
+  - id: space-wolf
+    universe: w40k
+    title: Космический Волк
+    title_en: Space Wolf
+    description: >-
+      Рагнар Чёрная Грива, мальчишка с ледяного Фенриса, вступает в Космических Волков, и перед ним
+      открывается путь воина Ордена — от стаи Кровавых Когтей до Серых Охотников.
+  - id: gaunts-ghosts
+    universe: w40k
+    title: Призраки Гаунта
+    title_en: "Gaunt's Ghosts"
+    description: >-
+      Танитский Первый и Единственный — полк Имперской Гвардии под командованием полковника-комиссара
+      Ибрама Гаунта — идёт сквозь войны Крестового похода в Мирах Саббат.
+  - id: dark-imperium
+    universe: w40k
+    title: Тёмный Империум
+    title_en: Dark Imperium
+    description: >-
+      Воскресший Робаут Жиллиман ведёт Неодолимый крестовый поход и пытается удержать Империум
+      Нигилус — часть Империума, отрезанную от Терры Великим Разломом. Трилогия Гая Хейли.
+  - id: vaults-of-terra
+    universe: w40k
+    title: Крипты Терры
+    title_en: Vaults of Terra
+    description: >-
+      Цикл Криса Райта о Терре, какой её не показывают в парадных речах: гниющем лабиринте архивов,
+      храмов и катакомб, где инквизиторы и слуги Трона охотятся друг на друга не меньше, чем на еретиков.
 
 books:
   # ── Ересь Хоруса: основная серия ──────────────────────────────────────────
@@ -232,3 +275,61 @@ books:
   - {series: dawn-of-fire, n: 7, title: Sea of Souls, title_ru: "Море душ", author: Chris Wraight, year: 2023, kind: novel, wiki: "Море душ (роман)"}
   - {series: dawn-of-fire, n: 8, title: Hand of Abaddon, title_ru: "Рука Абаддона", author: Nick Kyme, year: 2024, kind: novel, wiki: "Рука Абаддона (роман)"}
   - {series: dawn-of-fire, n: 9, title: The Silent King, title_ru: "Безмолвный Царь", author: Guy Haley, year: 2025, kind: novel, wiki: "Безмолвный Царь (роман)"}
+
+  # ── Warhammer 40,000: Эйзенхорн ───────────────────────────────────────────
+  - {series: eisenhorn, n: 1, title: Xenos, title_ru: Ордо Ксенос, author: Dan Abnett, year: 2001, kind: novel, fantlab: 36124}
+  - {series: eisenhorn, n: 2, title: Malleus, title_ru: Ордо Маллеус, author: Dan Abnett, year: 2001, kind: novel, fantlab: 36123}
+  - {series: eisenhorn, n: 3, title: Hereticus, title_ru: Ордо Еретикус, author: Dan Abnett, year: 2002, kind: novel, fantlab: 36128}
+  - {series: eisenhorn, n: 4, title: The Magos, title_ru: Магос, author: Dan Abnett, year: 2018, kind: collection, fantlab: 1013124}
+
+  # ── Warhammer 40,000: Кайафас Каин ────────────────────────────────────────
+  - {series: ciaphas-cain, n: 1, title: For the Emperor, title_ru: "За Императора!", author: Sandy Mitchell, year: 2003, kind: novel, fantlab: 37611}
+  - {series: ciaphas-cain, n: 2, title: Caves of Ice, title_ru: Ледяные пещеры, author: Sandy Mitchell, year: 2004, kind: novel, fantlab: 37615}
+  - {series: ciaphas-cain, n: 3, title: "The Traitor's Hand", title_ru: Игра предателя, author: Sandy Mitchell, year: 2005, kind: novel, fantlab: 37618}
+  - {series: ciaphas-cain, n: 4, title: Death or Glory, title_ru: Смерть или слава, author: Sandy Mitchell, year: 2006, kind: novel, fantlab: 37617}
+  - {series: ciaphas-cain, n: 5, title: Duty Calls, title_ru: Зов долга, author: Sandy Mitchell, year: 2007, kind: novel, fantlab: 122049}
+  - {series: ciaphas-cain, n: 6, title: "Cain's Last Stand", title_ru: Последний бой Каина, author: Sandy Mitchell, year: 2008, kind: novel, fantlab: 122050}
+  - {series: ciaphas-cain, n: 7, title: "The Emperor's Finest", title_ru: Избранные воины Императора, author: Sandy Mitchell, year: 2010, kind: novel, fantlab: 323693}
+  - {series: ciaphas-cain, n: 8, title: The Last Ditch, title_ru: Последний рубеж, author: Sandy Mitchell, year: 2012, kind: novel, fantlab: 312404}
+  - {series: ciaphas-cain, n: 9, title: The Greater Good, title_ru: Высшее Благо, author: Sandy Mitchell, year: 2013, kind: novel, fantlab: 426588}
+  - {series: ciaphas-cain, n: 10, title: Choose Your Enemies, title_ru: Выбирай своих врагов, author: Sandy Mitchell, year: 2018, kind: novel, fantlab: 1065087}
+  - {series: ciaphas-cain, n: 11, title: Vainglorious, title_ru: Тщеславный, author: Sandy Mitchell, year: 2023, kind: novel, fantlab: 1764659}
+  - {series: ciaphas-cain, title: Old Soldiers Never Die, title_ru: Старые вояки никогда не умирают, author: Sandy Mitchell, year: 2012, kind: novella, fantlab: 742235}
+
+  # ── Warhammer 40,000: Космический Волк ────────────────────────────────────
+  - {series: space-wolf, n: 1, title: Space Wolf, title_ru: Космический Волк, author: William King, year: 1999, kind: novel, fantlab: 36070}
+  - {series: space-wolf, n: 2, title: "Ragnar's Claw", title_ru: Коготь Рагнара, author: William King, year: 1999, kind: novel, fantlab: 36071}
+  - {series: space-wolf, n: 3, title: Grey Hunter, title_ru: Серый Охотник, author: William King, year: 2002, kind: novel, fantlab: 36080}
+  - {series: space-wolf, n: 4, title: Wolfblade, title_ru: Волчий Клинок, author: William King, year: 2003, kind: novel, fantlab: 36090}
+  - {series: space-wolf, n: 5, title: Sons of Fenris, title_ru: Сыны Фенриса, author: Lee Lightner, year: 2007, kind: novel, fantlab: 83771}
+  - {series: space-wolf, n: 6, title: "Wolf's Honour", title_ru: Честь Волка, author: Lee Lightner, year: 2008, kind: novel, fantlab: 83772}
+
+  # ── Warhammer 40,000: Призраки Гаунта ─────────────────────────────────────
+  - {series: gaunts-ghosts, n: 1, title: First and Only, title_ru: Первый и Единственный, author: Dan Abnett, year: 1999, kind: novel, fantlab: 36114}
+  - {series: gaunts-ghosts, n: 2, title: Ghostmaker, title_ru: Создатель Призраков, author: Dan Abnett, year: 2000, kind: novel, fantlab: 36115}
+  - {series: gaunts-ghosts, n: 3, title: Necropolis, title_ru: Некрополь, author: Dan Abnett, year: 2001, kind: novel, fantlab: 36121}
+  - {series: gaunts-ghosts, n: 4, title: Honour Guard, title_ru: Почётная гвардия, author: Dan Abnett, year: 2001, kind: novel, fantlab: 36120}
+  - {series: gaunts-ghosts, n: 5, title: The Guns of Tanith, title_ru: Танитское оружие, author: Dan Abnett, year: 2002, kind: novel, fantlab: 36129}
+  - {series: gaunts-ghosts, n: 6, title: Straight Silver, title_ru: Верное серебро, author: Dan Abnett, year: 2002, kind: novel, fantlab: 36130}
+  - {series: gaunts-ghosts, n: 7, title: Sabbat Martyr, title_ru: Мученики Саббат, author: Dan Abnett, year: 2003, kind: novel, fantlab: 36137}
+  - {series: gaunts-ghosts, n: 8, title: Traitor General, title_ru: Генерал-предатель, author: Dan Abnett, year: 2004, kind: novel, fantlab: 36153}
+  - {series: gaunts-ghosts, n: 9, title: His Last Command, title_ru: Его последняя команда, author: Dan Abnett, year: 2005, kind: novel, fantlab: 36149}
+  - {series: gaunts-ghosts, n: 10, title: The Armour of Contempt, title_ru: Броня презрения, author: Dan Abnett, year: 2006, kind: novel, fantlab: 36156}
+  - {series: gaunts-ghosts, n: 11, title: Only in Death, title_ru: Лишь со смертью, author: Dan Abnett, year: 2007, kind: novel, fantlab: 55518}
+  - {series: gaunts-ghosts, n: 12, title: Blood Pact, title_ru: Кровавый Договор, author: Dan Abnett, year: 2009, kind: novel, fantlab: 183163}
+  - {series: gaunts-ghosts, n: 13, title: "Salvation's Reach", title_ru: Последнее Пристанище, author: Dan Abnett, year: 2011, kind: novel, fantlab: 299994}
+  - {series: gaunts-ghosts, n: 14, title: The Warmaster, title_ru: Магистр войны, author: Dan Abnett, year: 2017, kind: novel, fantlab: 739761}
+  - {series: gaunts-ghosts, n: 15, title: The Anarch, title_ru: Анарх, author: Dan Abnett, year: 2019, kind: novel, fantlab: 1111928}
+  - {series: gaunts-ghosts, n: 16, title: The Vincula Insurgency, author: Dan Abnett, year: 2021, kind: novel, fantlab: 1439220}
+  - {series: gaunts-ghosts, title: Sabbat Worlds, author: Dan Abnett, year: 2010, kind: collection, fantlab: 710399}
+  - {series: gaunts-ghosts, title: Sabbat Crusade, author: Dan Abnett, year: 2015, kind: collection, fantlab: 796580}
+
+  # ── Warhammer 40,000: Тёмный Империум ─────────────────────────────────────
+  - {series: dark-imperium, n: 1, title: Dark Imperium, title_ru: Тёмный Империум, author: Guy Haley, year: 2017, kind: novel, fantlab: 1007181}
+  - {series: dark-imperium, n: 2, title: "Dark Imperium: Plague War", title_ru: Чумная война, author: Guy Haley, year: 2018, kind: novel, fantlab: 1078820}
+  - {series: dark-imperium, n: 3, title: "Dark Imperium: Godblight", title_ru: Божья пагуба, author: Guy Haley, year: 2021, kind: novel, fantlab: 1432908}
+
+  # ── Warhammer 40,000: Крипты Терры ────────────────────────────────────────
+  - {series: vaults-of-terra, n: 1, title: "Vaults of Terra: The Carrion Throne", title_ru: "Прогнивший Трон", author: Chris Wraight, year: 2017, kind: novel, fantlab: 1016811}
+  - {series: vaults-of-terra, n: 2, title: "Vaults of Terra: The Hollow Mountain", title_ru: "Полая гора", author: Chris Wraight, year: 2019, kind: novel, fantlab: 1177584}
+  - {series: vaults-of-terra, n: 3, title: The Dark City, title_ru: "Тёмный город", author: Chris Wraight, year: 2022, kind: novel, fantlab: 1597322}

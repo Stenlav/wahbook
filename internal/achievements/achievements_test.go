@@ -24,7 +24,8 @@ func realInputs(t *testing.T) (*Config, Inputs) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	return cfg, Inputs{Catalog: cat, Ratings: ratings, MinVotes: minVotes}
+	// the site resolves the rules against the main universe only (see site.Build)
+	return cfg, Inputs{Catalog: cat.Only(cat.Main()), Ratings: ratings, MinVotes: minVotes}
 }
 
 func TestRealRulesResolve(t *testing.T) {
